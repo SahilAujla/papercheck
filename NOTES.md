@@ -27,6 +27,12 @@ Working notes for the papercheck build (2026-11-08, 03:42 to 04:35 EST session).
     numbers are now parsed and the warnings disappeared, which is the intended behaviour.
   - Moyal and Ritov 2020 (PLOS ONE): 26 statistics, 22 means (11 with an N), 0 flags. All 26 reported p values match
     recomputation and no GRIM or GRIMMER failures.
+- Smoke-tested on a fourth paper not in the examples (Hayran et al. 2020, PLOS ONE, CC0, kept in `data/` only):
+  27 statistics, 4 means, 2 warnings (F(1, 65) = 6.30 reported p = .02 vs recomputed .015; F(1, 66) = .82 reported
+  p = .34 vs recomputed .37), no crashes. Coverage check: on all four papers every `t(`, `F(`, `r(` or `χ2(` followed by
+  a value was extracted.
+- Console script `.venv/bin/papercheck` works from any directory (the editable install had to be refreshed after
+  `__init__.py` was added; `uv pip install -e .` fixes "cannot import name __version__").
 - `docs/outreach.md`: what ERROR says about reviewer eligibility and pay, sign-up form, draft email, three other outlets
   (Institute for Replication, Black Spatula Project, PubPeer), next actions.
 
