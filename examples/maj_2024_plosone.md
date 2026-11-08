@@ -1,6 +1,6 @@
 # papercheck report: maj_2024_plosone.pdf
 
-Generated 2026-11-08 with papercheck 0.1.0. 19 pages, 23 test statistics with p values, 60 reported means (7 with a usable N for GRIM).
+Generated 2026-11-08 with papercheck 0.1.0. 19 pages, 23 test statistics with p values, 168 reported means (7 with a usable N for GRIM).
 
 ## Summary
 
@@ -11,14 +11,33 @@ Generated 2026-11-08 with papercheck 0.1.0. 19 pages, 23 test statistics with p 
 | GRIMMER (SDs of integer data) | 7 | 0 | 0 | 1 |
 | Degrees of freedom vs reported N | 23 | 0 | 0 | 0 |
 | Duplicated statistics | 23 | 0 | 0 | 0 |
+| Unverifiable statements (ps < .05, statistics without p, p without statistic) | 3 | 0 | 0 | 3 |
+| 95% CI vs point estimate | 0 | 0 | 0 | 0 |
+| Regression coefficient vs SE and p | 0 | 0 | 0 | 0 |
 
-Total flags: 3 (errors 0, warnings 0, info 3).
+Total flags: 6 (errors 0, warnings 0, info 6).
 
 Severity: an error is a reported vs recomputed p value on different sides of .05 (the conclusion about significance would change). A warning is a numeric inconsistency that does not change the decision, or a GRIM failure. Info items are worth a look but have common benign explanations.
 
 ## Flagged items
 
-### 1. [INFO] GRIMMER (SDs of integer data), page 13
+### 1. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 12
+
+Reported: `p < 0.05`
+
+Sentence: "Support seeking T2.09.06.09.12.00 -.14.17* .22** .24** .37** .51** .62** .68** *p < 0.05 **p < 0.01."
+
+'p < 0.05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 2. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 12
+
+Reported: `p < 0.01`
+
+Sentence: "Support seeking T2.09.06.09.12.00 -.14.17* .22** .24** .37** .51** .62** .68** *p < 0.05 **p < 0.01."
+
+'p < 0.01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 3. [INFO] GRIMMER (SDs of integer data), page 13
 
 Reported: `M = 1.54, SD = 1.44`
 
@@ -26,7 +45,7 @@ Sentence: "User experience of intervention users was rated as moderate (UEQ) [51
 
 GRIMMER: the mean 1.54 passes GRIM, but no whole-number data set of n = 41 (N from the nearest preceding N on the page) has this mean together with SD = 1.44. Applies only if the measure is integer-valued; treat as a prompt to check, not a conclusion.
 
-### 2. [INFO] GRIM (means of integer data), page 13
+### 4. [INFO] GRIM (means of integer data), page 13
 
 Reported: `M = 0.99, SD = 0.72`
 
@@ -34,13 +53,21 @@ Sentence: "...er experience of intervention users was rated as moderate (UEQ) [5
 
 GRIM: a mean of 0.99 with n = 41 (N taken from the nearest preceding N on the page) is not possible if each score is a whole number (for example a single Likert item or a count). The nearest possible means are 1.00, 0.98. This only matters if the measure is integer-valued; averaged multi-item scales or continuous measures make GRIM inapplicable.
 
-### 3. [INFO] GRIM (means of integer data), page 13
+### 5. [INFO] GRIM (means of integer data), page 13
 
 Reported: `M = 0.67, SD = 1.12`
 
 Sentence: "...was rated as moderate (UEQ) [51] assessed above average in the dimension of Perspicuity (M = 1.54, SD = 1.44) and below average in the dimensions of Dependability (M = 0.99, SD = 0.72), Stimulation (M = 0.67, SD = 1.12), Attractiveness (M = 1.18, SD = 1.15) and Efficiency (M = 0.99, SD = 0.97) and Novelty (M = 0.22, SD = 0.72) against the benchmarks provided by Schrepp et al. [58] based on data f..."
 
 GRIM: a mean of 0.67 with n = 41 (N taken from the nearest preceding N on the page) is not possible if each score is a whole number (for example a single Likert item or a count). The nearest possible means are 0.66, 0.68. This only matters if the measure is integer-valued; averaged multi-item scales or continuous measures make GRIM inapplicable.
+
+### 6. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 14
+
+Reported: `p = .017`
+
+Sentence: "As a result, the effect of group assignment on perceived social support at Time 2, with p = .017, was not significant."
+
+'p = .017' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
 
 ## All extracted test statistics
 

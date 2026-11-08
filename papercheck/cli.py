@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 
 from .checks import run_all
+from .extra_checks import check_ci_symmetry, check_regression, check_unverifiable
 from .extract import extract_means, extract_sample_sizes, extract_stats
 from .pdf import load_pdf, load_text
 from .report import build_payload, to_html, to_json, to_markdown
@@ -22,6 +23,12 @@ def analyze(path: str, items: int = 1) -> dict:
         means.extend(means_from_tables(load_tables(str(p))))
     sizes = extract_sample_sizes(pages)
     flags = run_all(stats, means, sizes, items=items)
+    known = {}
+    for st in stats:
+        known.setdefault(st.page, []).append((st.pos, st.pos + len(st.raw)))
+    extra = check_unverifiable(pages, known) + check_ci_symmetry(pages) + check_regression(pages)
+    order = {"error": 0, "warning": 1, "info": 2}
+    flags = sorted(flags + extra, key=lambda f: (order.get(f.severity, 3), f.page))
     return build_payload(p.name, stats, means, sizes, flags, len(pages))
 
 

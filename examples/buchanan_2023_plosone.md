@@ -11,14 +11,48 @@ Generated 2026-11-08 with papercheck 0.1.0. 26 pages, 35 test statistics with p 
 | GRIMMER (SDs of integer data) | 0 | 0 | 0 | 0 |
 | Degrees of freedom vs reported N | 35 | 0 | 0 | 0 |
 | Duplicated statistics | 35 | 0 | 0 | 0 |
+| Unverifiable statements (ps < .05, statistics without p, p without statistic) | 3 | 0 | 0 | 3 |
+| 95% CI vs point estimate | 1 | 0 | 1 | 0 |
+| Regression coefficient vs SE and p | 0 | 0 | 0 | 0 |
 
-Total flags: 0 (errors 0, warnings 0, info 0).
+Total flags: 4 (errors 0, warnings 1, info 3).
 
 Severity: an error is a reported vs recomputed p value on different sides of .05 (the conclusion about significance would change). A warning is a numeric inconsistency that does not change the decision, or a GRIM failure. Info items are worth a look but have common benign explanations.
 
 ## Flagged items
 
-No inconsistencies found by the automated checks.
+### 1. [WARNING] 95% CI vs point estimate, page 12
+
+Reported: `r = .23, SE = .05, CI95 = [.14, .21]`
+
+Sentence: "Z = 13.92, p < .001 1b 6.08 1.74 3.77 1.27 2.31.32 7.29 < .001 [1.69, 2.94] 1.53.61 1c 5.38 1.68 3.65 1.13 1.73.27 6.41 < .001 [1.20, 2.27] 1.11.46 1d 6.68 1.82 3.72 1.73 2.96.28 10.50 < .001 [2.40, 3.52] 1.67.64 Perceptions of Humanity 1a 4.24 1.20 3.65 1.26.59.21 2.84.005 [.18, 1.00] .48.23 r = .23, SE = .05, CI95 = [.14, .21]."
+
+Reported r = .23 with CI [.14, .21]. For a symmetric interval the point estimate should be at the midpoint (.14 + .21) / 2 = 0.17, but the reported value is 0.06 away. The interval may belong to a different estimate, be a bootstrap or otherwise asymmetric interval, or contain a typo. Correlation intervals from the Fisher z transform are asymmetric for large |r|.
+
+### 2. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 10
+
+Reported: `p < .001`
+
+Sentence: "Error bars represent standard errors. *** p < .001. https://doi.org/10.1371/journal.pone.0284438.g001 PLOS ONE Kindness alleviates aversive impact of media exposure to others' immorality PLOS ONE | https://doi.org/10.1371/journal.pone.0284438 May 17, 2023 10 / 26"
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 3. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 16
+
+Reported: `p < .001`
+
+Sentence: "Shown are the results from post-hoc pairwise ttests depicting the content validity of immoral, kind and amusing news stories in Study 2.. Error bars represent standard errors. *** p < .001. https://doi.org/10.1371/journal.pone.0284438.g002 Table 8."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 4. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 18
+
+Reported: `p < .001`
+
+Sentence: "Error bars represent standard errors. *** p < .001. https://doi.org/10.1371/journal.pone.0284438.g003 Table 10."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
 ## All extracted test statistics
 
 | Page | Statistic | Reported p | Recomputed p | Status |

@@ -7,18 +7,169 @@
     "statistics_extracted": 16,
     "means_extracted": 35,
     "means_with_n": 0,
-    "flags_total": 0,
-    "flags_by_severity": {},
-    "flags_by_check": {},
+    "flags_total": 11,
+    "flags_by_severity": {
+      "info": 11
+    },
+    "flags_by_check": {
+      "unverifiable": 11
+    },
     "examined": {
       "p_recompute": 16,
       "grim": 0,
       "grimmer": 0,
       "df_vs_n": 16,
-      "duplicate": 16
+      "duplicate": 16,
+      "unverifiable": 11,
+      "ci_symmetry": 0,
+      "regression": 0
     }
   },
-  "flags": [],
+  "flags": [
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 7,
+      "sentence": "In not one case did Target Sex or Participant Sex exert a main effect nor any interaction, at any level, with our dependent variables (all Fs<3.06, ps>.081.",
+      "raw": "ps>.081",
+      "explanation": "'ps>.081' is a blanket p statement covering several tests at once. It cannot be checked against a specific test statistic.",
+      "details": {
+        "kind": "blanket_p",
+        "p_comparator": ">",
+        "p": 0.081
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 11,
+      "sentence": "Our results mostly supported our hypothesis; Fischer's LSD post hoc tests revealed that Exclusion Internal (M = 3.57, SD = 2.25) was the least desirable as an affiliation partner as compared to both Exclusion Control (M = 5.51, SD = 2.13; p < .001) and Exclusion External (M = 4.78, SD = 1.74; p = .004).",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 11,
+      "sentence": "Our results mostly supported our hypothesis; Fischer's LSD post hoc tests revealed that Exclusion Internal (M = 3.57, SD = 2.25) was the least desirable as an affiliation partner as compared to both Exclusion Control (M = 5.51, SD = 2.13; p < .001) and Exclusion External (M = 4.78, SD = 1.74; p = .004).",
+      "raw": "p = .004",
+      "explanation": "'p = .004' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.004
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 11,
+      "sentence": "The latter two conditions, however, did not differ from each other (p>.08).",
+      "raw": "p>.08",
+      "explanation": "'p>.08' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": ">",
+        "p": 0.08
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "Fischer's LSD post-hoc tests revealed that, consistent with our hypothesis, Exclusion Internal (M = 3.59, SD = 2.32) resulted in the least empathy as compared to both Exclusion Control (M = 5.59, SD = 2.01; p = .011) and Exclusion External (M = 6.28, SD = 1.95; p < .001).",
+      "raw": "p = .011",
+      "explanation": "'p = .011' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.011
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "Fischer's LSD post-hoc tests revealed that, consistent with our hypothesis, Exclusion Internal (M = 3.59, SD = 2.32) resulted in the least empathy as compared to both Exclusion Control (M = 5.59, SD = 2.01; p = .011) and Exclusion External (M = 6.28, SD = 1.95; p < .001).",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "However, while Exclusion External had descriptively greater empathy than did Exclusion Control, it did not reach conventional levels of significance (p = .11).",
+      "raw": "p = .11",
+      "explanation": "'p = .11' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.11
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 14,
+      "sentence": "Model fit was good for this model on all three indices: Chi-square (χ2[1] = 3.32, p = .069), RMSEA (.10, 90% pclose = .150), and CFI (.987).",
+      "raw": "p = .069",
+      "explanation": "'p = .069' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.069
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 17,
+      "sentence": "...factors (and included a direct effect from Exclusion to External Attributions) to see if this model was better; in fact, it was a far worse model than our hypothesized one [Chi-square (χ2[1] = 82.36, p < .001), RMSEA (.590, 90%, p-close < .001), and CFI (.548)]....",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 17,
+      "sentence": "If we run the same path analysis without the direct effect of Exclusion on External Attributions, but with Empathy as the first step which then predicts External Attributions, we again get a model with very poor fit, [Chi-square (χ2[1] = 105.83, p < .001), RMSEA (.471, 90%, p-close < .001), and CFI (.423)].",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 17,
+      "sentence": "We conducted a final model in which we again reversed Empathy and External Attributions (relative to our hypothesized model), but now, we included a direct effect of Empathy on Desire to Affiliate and removed the direct effect of Exclusion on Attributions, but this was also a poor model [Chi-square (χ2[1] = 23.46, p < .001), RMSEA (.310, 90%, pclose < .001), and CFI (.875)].",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    }
+  ],
   "statistics": [
     {
       "kind": "t",

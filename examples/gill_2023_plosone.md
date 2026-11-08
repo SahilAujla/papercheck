@@ -11,8 +11,11 @@ Generated 2026-11-08 with papercheck 0.1.0. 22 pages, 48 test statistics with p 
 | GRIMMER (SDs of integer data) | 0 | 0 | 0 | 0 |
 | Degrees of freedom vs reported N | 48 | 0 | 2 | 0 |
 | Duplicated statistics | 48 | 0 | 0 | 0 |
+| Unverifiable statements (ps < .05, statistics without p, p without statistic) | 10 | 0 | 0 | 10 |
+| 95% CI vs point estimate | 0 | 0 | 0 | 0 |
+| Regression coefficient vs SE and p | 0 | 0 | 0 | 0 |
 
-Total flags: 3 (errors 0, warnings 3, info 0).
+Total flags: 13 (errors 0, warnings 3, info 10).
 
 Severity: an error is a reported vs recomputed p value on different sides of .05 (the conclusion about significance would change). A warning is a numeric inconsistency that does not change the decision, or a GRIM failure. Info items are worth a look but have common benign explanations.
 
@@ -43,6 +46,86 @@ Reported: `t(267) = -4.52, p < .001`
 Sentence: "In contrast, the narrative-neutral condition resulted in lower perceptions of control of self-formation compared to deed only, t(267) = -4.52, p < .001."
 
 The degrees of freedom in t(267) = -4.52 imply at least 268 participants under the usual design, but the largest sample size mentioned in the paper is 192. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.
+
+### 4. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 12
+
+Reported: `p = .05`
+
+Sentence: "Coefficients are unstandardized. †p = .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g003 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 12 / 22"
+
+'p = .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 5. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 12
+
+Reported: `p < .01`
+
+Sentence: "Coefficients are unstandardized. †p = .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g003 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 12 / 22"
+
+'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 6. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 12
+
+Reported: `p < .001`
+
+Sentence: "Coefficients are unstandardized. †p = .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g003 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 12 / 22"
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 7. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 14
+
+Reported: `p = .07`
+
+Sentence: "Coefficients are unstandardized. †p = .07; *p < .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g005 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 14 / 22"
+
+'p = .07' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 8. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 14
+
+Reported: `p < .05`
+
+Sentence: "Coefficients are unstandardized. †p = .07; *p < .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g005 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 14 / 22"
+
+'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 9. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 14
+
+Reported: `p < .01`
+
+Sentence: "Coefficients are unstandardized. †p = .07; *p < .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g005 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 14 / 22"
+
+'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 10. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 14
+
+Reported: `p < .001`
+
+Sentence: "Coefficients are unstandardized. †p = .07; *p < .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g005 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 14 / 22"
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 11. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 15
+
+Reported: `p < .05`
+
+Sentence: "Coefficients are unstandardized. *p < .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g006 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 15 / 22"
+
+'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 12. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 15
+
+Reported: `p < .01`
+
+Sentence: "Coefficients are unstandardized. *p < .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g006 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 15 / 22"
+
+'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 13. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 15
+
+Reported: `p < .001`
+
+Sentence: "Coefficients are unstandardized. *p < .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g006 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 15 / 22"
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
 
 ## All extracted test statistics
 

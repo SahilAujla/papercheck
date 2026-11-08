@@ -7,65 +7,28 @@
     "statistics_extracted": 28,
     "means_extracted": 31,
     "means_with_n": 7,
-    "flags_total": 4,
+    "flags_total": 20,
     "flags_by_severity": {
-      "warning": 4
+      "warning": 1,
+      "info": 19
     },
     "flags_by_check": {
+      "p_recompute": 1,
       "df_vs_n": 3,
-      "p_recompute": 1
+      "unverifiable": 16
     },
     "examined": {
       "p_recompute": 28,
       "grim": 7,
       "grimmer": 7,
       "df_vs_n": 28,
-      "duplicate": 28
+      "duplicate": 28,
+      "unverifiable": 16,
+      "ci_symmetry": 0,
+      "regression": 0
     }
   },
   "flags": [
-    {
-      "check": "df_vs_n",
-      "severity": "warning",
-      "page": 9,
-      "sentence": "Using Wilks' lambda, there was a significant effect of historical representation condition, λ = 0.81, F(6, 1156) = 22.09, p < .001, ηp 2 = .102.",
-      "raw": "F(6, 1156) = 22.09, p < .001",
-      "explanation": "The degrees of freedom in F(6, 1156) = 22.09 imply at least 1163 participants under the usual design, but the largest sample size mentioned in the paper is 950. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
-      "details": {
-        "implied_n": [
-          1163
-        ],
-        "max_reported_n": 950
-      }
-    },
-    {
-      "check": "df_vs_n",
-      "severity": "warning",
-      "page": 10,
-      "sentence": "Using Wilks' lambda, there was a non-significant effect of historical representation, λ = 0.98, F(4, 1186) = 0.42, p = .792, ηp 2 = .001.",
-      "raw": "F(4, 1186) = 0.42, p = .792",
-      "explanation": "The degrees of freedom in F(4, 1186) = 0.42 imply at least 1191 participants under the usual design, but the largest sample size mentioned in the paper is 950. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
-      "details": {
-        "implied_n": [
-          1191
-        ],
-        "max_reported_n": 950
-      }
-    },
-    {
-      "check": "df_vs_n",
-      "severity": "warning",
-      "page": 11,
-      "sentence": "Using Wilks' lambda, there was a non-significant effect of historical representation on group-based action, λ = 0.98, F(6, 1158) = 1.55, p = .157, ηp 2 = .008.",
-      "raw": "F(6, 1158) = 1.55, p = .157",
-      "explanation": "The degrees of freedom in F(6, 1158) = 1.55 imply at least 1165 participants under the usual design, but the largest sample size mentioned in the paper is 950. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
-      "details": {
-        "implied_n": [
-          1165
-        ],
-        "max_reported_n": 950
-      }
-    },
     {
       "check": "p_recompute",
       "severity": "warning",
@@ -84,6 +47,277 @@
         ],
         "consistent_if_one_tailed": false,
         "decision_error": false
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "info",
+      "page": 9,
+      "sentence": "Using Wilks' lambda, there was a significant effect of historical representation condition, λ = 0.81, F(6, 1156) = 22.09, p < .001, ηp 2 = .102.",
+      "raw": "F(6, 1156) = 22.09, p < .001",
+      "explanation": "The degrees of freedom in F(6, 1156) = 22.09 imply at least 1163 participants under the usual design, but the largest sample size mentioned in the paper is 950. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          1163
+        ],
+        "max_reported_n": 950
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 9,
+      "sentence": "Pairwise comparisons between the two historical representation conditions showed that positive precolonial history led to higher scores (i.e., significant mean difference; MD) on appraisals of the valence of African history in comparison to negative precolonial history (MD = 1.21, SE = 0.15, p < .001).",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 9,
+      "sentence": "However, pairwise comparisons between the two historical representation conditions showed that positive precolonial history did not lead to significantly higher scores on appraisals of the subjective importance of African history in comparison to the negative precolonial history (MD = -0.17, SE = 0.13, p = .190).",
+      "raw": "p = .190",
+      "explanation": "'p = .190' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.19
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 9,
+      "sentence": "COLACT .11** .14** .06.35** .20** .19** .65** Notes. * p a< .05 ** p < .01 1.",
+      "raw": "p < .01",
+      "explanation": "'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.01
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "info",
+      "page": 10,
+      "sentence": "Using Wilks' lambda, there was a non-significant effect of historical representation, λ = 0.98, F(4, 1186) = 0.42, p = .792, ηp 2 = .001.",
+      "raw": "F(4, 1186) = 0.42, p = .792",
+      "explanation": "The degrees of freedom in F(4, 1186) = 0.42 imply at least 1191 participants under the usual design, but the largest sample size mentioned in the paper is 950. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          1191
+        ],
+        "max_reported_n": 950
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "info",
+      "page": 11,
+      "sentence": "Using Wilks' lambda, there was a non-significant effect of historical representation on group-based action, λ = 0.98, F(6, 1158) = 1.55, p = .157, ηp 2 = .008.",
+      "raw": "F(6, 1158) = 1.55, p = .157",
+      "explanation": "The degrees of freedom in F(6, 1158) = 1.55 imply at least 1165 participants under the usual design, but the largest sample size mentioned in the paper is 950. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          1165
+        ],
+        "max_reported_n": 950
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 13,
+      "sentence": "Group based action .15** .06.37** 1 Notes. ** p < .01 https://doi.org/10.1371/journal.pone.0308727.t005 Fig 2.",
+      "raw": "p < .01",
+      "explanation": "'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.01
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 13,
+      "sentence": "Path entries are unstandardized coefficients. *** p < .001. https://doi.org/10.1371/journal.pone.0308727.g002 PLOS ONE Appraisals of in-group's collective history PLOS ONE | https://doi.org/10.1371/journal.pone.0308727 September 6, 2024 13 / 34",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 14,
+      "sentence": "Path entries are unstandardized coefficients. *** p < .001. https://doi.org/10.1371/journal.pone.0308727.g003 PLOS ONE Appraisals of in-group's collective history PLOS ONE | https://doi.org/10.1371/journal.pone.0308727 September 6, 2024 14 / 34",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 21,
+      "sentence": "Social competition .30** .08.32** .21** .21** Notes. ** p < .01 https://doi.org/10.1371/journal.pone.0308727.t006 Table 7.",
+      "raw": "p < .01",
+      "explanation": "'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.01
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 21,
+      "sentence": "Social competition .08.05.16* .24** .22** Notes. * p < .05 ** p < .01 https://doi.org/10.1371/journal.pone.0308727.t007 PLOS ONE Appraisals of in-group's collective history PLOS ONE | https://doi.org/10.1371/journal.pone.0308727 September 6, 2024 21 / 34",
+      "raw": "p < .05",
+      "explanation": "'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 21,
+      "sentence": "Social competition .08.05.16* .24** .22** Notes. * p < .05 ** p < .01 https://doi.org/10.1371/journal.pone.0308727.t007 PLOS ONE Appraisals of in-group's collective history PLOS ONE | https://doi.org/10.1371/journal.pone.0308727 September 6, 2024 21 / 34",
+      "raw": "p < .01",
+      "explanation": "'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.01
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 22,
+      "sentence": "The interaction effect was not significant, F(1, 252) < 1.",
+      "raw": "F(1, 252) < 1",
+      "explanation": "'F(1, 252) < 1' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 0.3183.",
+      "details": {
+        "kind": "stat_without_p",
+        "stat": "F",
+        "value": 1.0,
+        "df1": 1.0,
+        "df2": 252.0,
+        "p_implied": 0.31827
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 22,
+      "sentence": "Furthermore, as expected there were null results for the (1) main effect of the manipulation of the subjective importance of African history on participants' appraised valence of African history, F(1, 265) < 1; and (2) interaction effect, F(1, 265) < 1.",
+      "raw": "F(1, 265) < 1",
+      "explanation": "'F(1, 265) < 1' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 0.3182.",
+      "details": {
+        "kind": "stat_without_p",
+        "stat": "F",
+        "value": 1.0,
+        "df1": 1.0,
+        "df2": 265.0,
+        "p_implied": 0.318223
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 22,
+      "sentence": "Furthermore, as expected there were null results for the (1) main effect of the manipulation of the subjective importance of African history on participants' appraised valence of African history, F(1, 265) < 1; and (2) interaction effect, F(1, 265) < 1.",
+      "raw": "F(1, 265) < 1",
+      "explanation": "'F(1, 265) < 1' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 0.3182.",
+      "details": {
+        "kind": "stat_without_p",
+        "stat": "F",
+        "value": 1.0,
+        "df1": 1.0,
+        "df2": 265.0,
+        "p_implied": 0.318223
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 22,
+      "sentence": "Furthermore, as expected there were null results for the (1) main effect of the manipulation of the subjective importance of African history on participants' appraised valence of African history, F(1, 249) < 1; and (2) interaction effect, F(1, 249) < 1.",
+      "raw": "F(1, 249) < 1",
+      "explanation": "'F(1, 249) < 1' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 0.3183.",
+      "details": {
+        "kind": "stat_without_p",
+        "stat": "F",
+        "value": 1.0,
+        "df1": 1.0,
+        "df2": 249.0,
+        "p_implied": 0.318281
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 22,
+      "sentence": "Furthermore, as expected there were null results for the (1) main effect of the manipulation of the subjective importance of African history on participants' appraised valence of African history, F(1, 249) < 1; and (2) interaction effect, F(1, 249) < 1.",
+      "raw": "F(1, 249) < 1",
+      "explanation": "'F(1, 249) < 1' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 0.3183.",
+      "details": {
+        "kind": "stat_without_p",
+        "stat": "F",
+        "value": 1.0,
+        "df1": 1.0,
+        "df2": 249.0,
+        "p_implied": 0.318281
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 23,
+      "sentence": "All other effects were null, these include (1) the main effect of historical representations, F(1, 253) < 1; and (2) the interaction effect of the subjective importance of African history and historical representations, F(1, 253) < 1.",
+      "raw": "F(1, 253) < 1",
+      "explanation": "'F(1, 253) < 1' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 0.3183.",
+      "details": {
+        "kind": "stat_without_p",
+        "stat": "F",
+        "value": 1.0,
+        "df1": 1.0,
+        "df2": 253.0,
+        "p_implied": 0.318266
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 23,
+      "sentence": "All other effects were null, these include (1) the main effect of historical representations, F(1, 253) < 1; and (2) the interaction effect of the subjective importance of African history and historical representations, F(1, 253) < 1.",
+      "raw": "F(1, 253) < 1",
+      "explanation": "'F(1, 253) < 1' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 0.3183.",
+      "details": {
+        "kind": "stat_without_p",
+        "stat": "F",
+        "value": 1.0,
+        "df1": 1.0,
+        "df2": 253.0,
+        "p_implied": 0.318266
       }
     }
   ],
@@ -1011,12 +1245,6 @@
       "page": 18,
       "raw": "Two hundred and seventeen",
       "kind": "spelled out"
-    },
-    {
-      "n": 16,
-      "page": 23,
-      "raw": "016 with participants",
-      "kind": "count noun"
     }
   ],
   "disclaimer": "This report lists places where a value reported in the paper differs from the value recomputed from other reported numbers. A difference is not evidence of misconduct. Common benign causes are rounding, typos, one-tailed tests, corrections for multiple comparisons, adjusted degrees of freedom, non-integer scales (which make GRIM and GRIMMER inapplicable) and PDF text-extraction errors. Each flag should be read in the paper before drawing any conclusion."

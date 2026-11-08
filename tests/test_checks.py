@@ -108,3 +108,24 @@ def test_run_all_end_to_end_on_text():
     checks = sorted(f.check for f in flags)
     assert checks == ["df_vs_n", "duplicate", "grim", "p_recompute", "p_recompute"]
     assert flags[0].severity == "error"  # sorted errors first
+
+
+def test_value_comparator_bounds_recomputed_p():
+    # urschler_2024 p9: "t(334) < 0.01, p = .999" means the statistic is below 0.01, so p is at least .992
+    st = _stat(df1=334.0, value=0.01, value_comparator="<", p_reported=0.999, p_decimals=3,
+               raw="t(334) < 0.01, p = .999")
+    assert check_p_values(st) is None
+    st2 = _stat(df1=40.0, value=10.0, value_comparator=">", p_reported=0.001, p_comparator="<", p_decimals=3)
+    assert check_p_values(st2) is None
+
+
+def test_df_vs_n_downgraded_for_repeated_measures_wording():
+    sizes = [{"n": 29, "page": 1, "raw": "N = 29", "kind": "N ="}]
+    # takayama_2023 p6: 29 participants x 3 days, F(2, 56)
+    st = _stat(kind="F", df1=2.0, df2=56.0, value=1.84, p_reported=0.17, p_decimals=2,
+               sentence="A repeated measures ANOVA across the three days showed no effect, F(2, 56) = 1.84, p = .17.",
+               raw="F(2, 56) = 1.84, p = .17")
+    flags = check_df_vs_n([st], sizes)
+    assert len(flags) == 1 and flags[0].severity == "info"
+    plain = _stat(kind="F", df1=2.0, df2=56.0, value=1.84, sentence="Groups differed, F(2, 56) = 1.84, p = .17.")
+    assert check_df_vs_n([plain], sizes)[0].severity == "warning"

@@ -16,7 +16,7 @@ Working notes for the papercheck build (2026-11-08, 03:42 to 04:35 EST session).
 - Reports (`papercheck/report.py`): Markdown with summary table, flagged items (page, sentence, severity, explanation),
   full table of extracted statistics with recomputed p, limitations; JSON with the same payload.
 - CLI: `papercheck paper.pdf --out reports/` (also `.txt` input, `--items`, `--quiet`).
-- 55 pytest tests pass (`.venv/bin/python -m pytest -q`).
+- 55 pytest tests passed at the end of phase 1 (87 after phase 2) (`.venv/bin/python -m pytest -q`).
 - Three real runs, reports committed under `examples/` (PDFs in gitignored `data/`, citations in `examples/SOURCES.md`):
   - Yan, Zhang and Xu 2018 (PLOS ONE): 30 statistics, 59 means, 5 flags. 1 warning: reported χ2(1, N = 89) = 5.00,
     p = 0.042 vs recomputed p = 0.025 (significance decision unchanged). 4 info GRIM flags on page 18 that use the
@@ -35,6 +35,45 @@ Working notes for the papercheck build (2026-11-08, 03:42 to 04:35 EST session).
   `__init__.py` was added; `uv pip install -e .` fixes "cannot import name __version__").
 - `docs/outreach.md`: what ERROR says about reviewer eligibility and pay, sign-up form, draft email, three other outlets
   (Institute for Replication, Black Spatula Project, PubPeer), next actions.
+
+## Phase 2 (04:00 to 04:30 EST)
+
+- Table extraction (`papercheck/tables.py`): PyMuPDF `find_tables()` with cells rebuilt from positioned words, because
+  `extract()` reorders characters in some PDFs (Yan 2018 page 9 reads "0.84" as "084 ."; a synthetic table read "3.51"
+  as "351 ."). Handles M/SD/n columns, `M (SD)` cells under `Group (n = 23)` headers, and an n row. Table means count
+  as strong N for GRIM. Fixture `tests/fixtures/yan_2018_p9_table.json` (a coefficient table, must yield no means) plus
+  ruled-table PDFs generated in `tests/test_tables.py`. None of the 13 papers has a ruled M/SD/n table, so the real
+  effect so far is zero extra GRIM coverage; the code path is tested on generated PDFs only.
+- Evidence scaled to 13 PLOS ONE papers (`examples/SUMMARY.md`, `examples/SOURCES.md`): 418 statistics, 0 errors,
+  36 warnings, 169 info. Triage of the 17 pre-fix p-recompute warnings: 8 true reported vs recomputed differences
+  (all decision-preserving), 6 likely benign (one Bonferroni-style 6x p, continuity correction, rounding), 1 extraction
+  mistake. Extraction false-positive estimate about 7 percent of triaged warnings before the fixes.
+- Bugs fixed with regression tests: `t(334) < 0.01` comparator now bounds the recomputed p; table-like `M (SD)` cells no
+  longer borrow the nearest preceding n; df vs N is info when the sentence has repeated-measures wording; sample-size
+  regex rejects number tails ("0.016 with participants") and "Study 2 revealed". These removed or downgraded 2 extraction
+  mistakes and 8 of 22 df vs N warnings.
+- `docs/findings/yan-2018.md`: 2 x 2 table rebuilt two ways (percentages and the public S1 Data) as [[25, 8], [29, 27]];
+  Pearson chi2 = 5.00, p = 0.0253; Yates p = 0.044; Fisher exact p = 0.0423 (rounds to the reported 0.042). Reading:
+  the sentence pairs the Pearson statistic with the Fisher p. Significance at .05 holds under every test. The other two
+  chi-squares in the paper reproduce exactly.
+- New checks (`papercheck/extra_checks.py`, 21 tests): unverifiable statements (blanket ps, statistics without p, p
+  without statistic, capped at 40), 95% CI symmetry (additive and ratio scales), regression b/SE/p consistency.
+  On the 13 papers: 5 CI warnings (one `r = .23 ... CI95 = [.14, .21]` where the point lies outside its own interval;
+  four `effect of -.1044 (95% CI: -.1718, -.0496)` bootstrap intervals, which are legitimately asymmetric), 0 regression
+  flags, 149 unverifiable info items.
+- HTML report (`--html`): static page rendered from the Markdown, no scripts, system font, light and dark.
+- 87 tests pass.
+
+## Left after phase 2
+
+- df vs N still warns 14 times, mostly takayama 2023 (29 participants x 3 days, design wording not in the sentence);
+  the downgrade should also look at the page or the Methods section, or detect df2 as a multiple of N - 1.
+- The CI check should treat bootstrap and Fisher-z intervals as asymmetric by design (downgrade to info when the
+  sentence says bootstrap or percentile).
+- The unverifiable list is long; group it per page in the report or make it opt-in (`--unverifiable`).
+- Regression check has no real-paper hit yet; needs a paper with `b = x, SE = y, p = z` text to validate.
+- The 10 new reports were triaged by a sub-agent from the pre-fix output; the 8 "true inconsistency" items deserve the
+  same hand verification as Yan before any are cited.
 
 ## Half done or known gaps
 
@@ -61,7 +100,7 @@ Working notes for the papercheck build (2026-11-08, 03:42 to 04:35 EST session).
 ```bash
 cd ~/code/papercheck
 .venv/bin/python -m pytest -q
-.venv/bin/papercheck data/*.pdf --out reports/
+.venv/bin/papercheck data/*.pdf --out reports/ --html
 diff <(sed 1,3d reports/yan_2018_plosone.md) <(sed 1,3d examples/yan_2018_plosone.md)   # regression check
 git log --oneline
 ```

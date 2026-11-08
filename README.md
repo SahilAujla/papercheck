@@ -16,6 +16,9 @@ No API keys, no network access at run time. Python 3.10+, PyMuPDF, SciPy.
 | GRIMMER | For a mean that passes GRIM, test whether the reported SD is possible for whole-number data (Allard's parity refinement included). | info |
 | df vs N | Flag tests whose degrees of freedom imply more participants than the paper mentions anywhere; flag a chi-square N that appears nowhere else. | warning / info |
 | Duplicates | The same statistic with the same p value reported more than once. | info |
+| Unverifiable statements | Blanket `ps < .05`, test statistics without a p value (with the p they imply), p values without a statistic. Capped at 40 per paper. | info |
+| 95% CI vs point estimate | The point estimate should sit at the midpoint of an additive CI (geometric midpoint for OR, RR, HR) within rounding slack. | warning; info for a reversed interval |
+| Regression coefficient vs SE and p | Recompute z = b/SE (t when a df is given) and compare with the reported p; also t vs b/SE when both are given. | warning; error when the significance decision flips |
 
 Severities are deliberately conservative. Every flag is a "reported vs recomputed" difference,
 not a judgement about the authors. See the limitations section at the end of every report.
@@ -64,6 +67,10 @@ docs/outreach.md       ERROR project eligibility, draft email, other outlets
 docs/findings/         hand-verified write-ups of individual flags (reported vs recomputed register)
 ```
 
+`examples/SUMMARY.md` tabulates 13 papers (296 pages, 418 test statistics): zero error-level flags, 36 warnings,
+169 info items, with a triage of every p-recomputation warning into true inconsistency, likely benign cause or
+extraction mistake and the resulting false-positive estimate.
+
 ## Worked finding
 
 `docs/findings/yan-2018.md` hand-verifies the one warning in the first three papers: the 2 x 2 table rebuilt from
@@ -82,4 +89,8 @@ sentence pairs the Pearson statistic with the Fisher p. Significance at .05 hold
   recomputed p differ legitimately. One-tailed consistency is reported in each flag.
 - PDF text extraction can split or reorder numbers, especially in tables and two-column layouts.
   The sentence shown in each flag is there so the reader can check the original.
-- Statistics without a p value, and p values without a statistic (`ps < .05`), are not extracted.
+- Statistics without a p value and blanket `ps < .05` statements are listed as unverifiable (info) rather than
+  checked; this is the largest single source of info items (about 11 per paper).
+- df vs N is downgraded to info when the sentence mentions a repeated-measures design, trials, sessions, days,
+  pooled or combined samples; it still warns when that wording is elsewhere on the page (takayama 2023 is the
+  example: 29 participants over 3 days).

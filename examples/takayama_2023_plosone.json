@@ -5,66 +5,29 @@
   "date": "2026-11-08",
   "summary": {
     "statistics_extracted": 18,
-    "means_extracted": 4,
+    "means_extracted": 52,
     "means_with_n": 0,
-    "flags_total": 13,
+    "flags_total": 36,
     "flags_by_severity": {
-      "warning": 13
+      "warning": 9,
+      "info": 27
     },
     "flags_by_check": {
-      "df_vs_n": 13
+      "df_vs_n": 13,
+      "unverifiable": 23
     },
     "examined": {
       "p_recompute": 18,
       "grim": 0,
       "grimmer": 0,
       "df_vs_n": 18,
-      "duplicate": 18
+      "duplicate": 18,
+      "unverifiable": 23,
+      "ci_symmetry": 0,
+      "regression": 0
     }
   },
   "flags": [
-    {
-      "check": "df_vs_n",
-      "severity": "warning",
-      "page": 6,
-      "sentence": "There were no significant main effects of experimental days on arousal and valence (arousal: F (2, 56) = 1.84, p = .17, ηp 2 = .06; valence: F (2, 56) = 1.91, p = .16, ηp 2 = .06).",
-      "raw": "F (2, 56) = 1.84, p = .17",
-      "explanation": "The degrees of freedom in F(2, 56) = 1.84 imply at least 59 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
-      "details": {
-        "implied_n": [
-          59
-        ],
-        "max_reported_n": 29
-      }
-    },
-    {
-      "check": "df_vs_n",
-      "severity": "warning",
-      "page": 6,
-      "sentence": "There were no significant main effects of experimental days on arousal and valence (arousal: F (2, 56) = 1.84, p = .17, ηp 2 = .06; valence: F (2, 56) = 1.91, p = .16, ηp 2 = .06).",
-      "raw": "F (2, 56) = 1.91, p = .16",
-      "explanation": "The degrees of freedom in F(2, 56) = 1.91 imply at least 59 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
-      "details": {
-        "implied_n": [
-          59
-        ],
-        "max_reported_n": 29
-      }
-    },
-    {
-      "check": "df_vs_n",
-      "severity": "warning",
-      "page": 6,
-      "sentence": "However, there was a significant main effect of experimental days on HR (F (2, 56) = 4.71, p = .01, ηp 2 = .14), and it was lower on day 1 than on days 2 and 3.",
-      "raw": "F (2, 56) = 4.71, p = .01",
-      "explanation": "The degrees of freedom in F(2, 56) = 4.71 imply at least 59 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
-      "details": {
-        "implied_n": [
-          59
-        ],
-        "max_reported_n": 29
-      }
-    },
     {
       "check": "df_vs_n",
       "severity": "warning",
@@ -91,20 +54,6 @@
         "implied_n": [
           87,
           88
-        ],
-        "max_reported_n": 29
-      }
-    },
-    {
-      "check": "df_vs_n",
-      "severity": "warning",
-      "page": 10,
-      "sentence": "A MANOVA of posture (12) was performed on the arousal and valence scores of the TDMS. Posture had a significant main effect (F (11, 18) = 16.77, p < .001, ηp 2 = .91).",
-      "raw": "F (11, 18) = 16.77, p < .001",
-      "explanation": "The degrees of freedom in F(11, 18) = 16.77 imply at least 30 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
-      "details": {
-        "implied_n": [
-          30
         ],
         "max_reported_n": 29
       }
@@ -207,6 +156,361 @@
           153
         ],
         "max_reported_n": 29
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "info",
+      "page": 6,
+      "sentence": "There were no significant main effects of experimental days on arousal and valence (arousal: F (2, 56) = 1.84, p = .17, ηp 2 = .06; valence: F (2, 56) = 1.91, p = .16, ηp 2 = .06).",
+      "raw": "F (2, 56) = 1.84, p = .17",
+      "explanation": "The degrees of freedom in F(2, 56) = 1.84 imply at least 59 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          59
+        ],
+        "max_reported_n": 29
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "info",
+      "page": 6,
+      "sentence": "There were no significant main effects of experimental days on arousal and valence (arousal: F (2, 56) = 1.84, p = .17, ηp 2 = .06; valence: F (2, 56) = 1.91, p = .16, ηp 2 = .06).",
+      "raw": "F (2, 56) = 1.91, p = .16",
+      "explanation": "The degrees of freedom in F(2, 56) = 1.91 imply at least 59 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          59
+        ],
+        "max_reported_n": 29
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "info",
+      "page": 6,
+      "sentence": "However, there was a significant main effect of experimental days on HR (F (2, 56) = 4.71, p = .01, ηp 2 = .14), and it was lower on day 1 than on days 2 and 3.",
+      "raw": "F (2, 56) = 4.71, p = .01",
+      "explanation": "The degrees of freedom in F(2, 56) = 4.71 imply at least 59 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          59
+        ],
+        "max_reported_n": 29
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 7,
+      "sentence": "....36 P10 3.31 3.30 5.31 < .001*** 0.99 P11 1.17 3.71 1.67.13 0.31 P12 4.03 3.61 5.91 < .001*** 1.10 Adjusted p-value indicates the p-value corrected using the Benjamini-Hochberg (BH) method. * denotes p < .05, ** denotes p < .01, *** denotes p < .001....",
+      "raw": "p < .05",
+      "explanation": "'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 7,
+      "sentence": "...31 < .001*** 0.99 P11 1.17 3.71 1.67.13 0.31 P12 4.03 3.61 5.91 < .001*** 1.10 Adjusted p-value indicates the p-value corrected using the Benjamini-Hochberg (BH) method. * denotes p < .05, ** denotes p < .01, *** denotes p < .001....",
+      "raw": "p < .01",
+      "explanation": "'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.01
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 7,
+      "sentence": "...1.17 3.71 1.67.13 0.31 P12 4.03 3.61 5.91 < .001*** 1.10 Adjusted p-value indicates the p-value corrected using the Benjamini-Hochberg (BH) method. * denotes p < .05, ** denotes p < .01, *** denotes p < .001....",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "info",
+      "page": 10,
+      "sentence": "A MANOVA of posture (12) was performed on the arousal and valence scores of the TDMS. Posture had a significant main effect (F (11, 18) = 16.77, p < .001, ηp 2 = .91).",
+      "raw": "F (11, 18) = 16.77, p < .001",
+      "explanation": "The degrees of freedom in F(11, 18) = 16.77 imply at least 30 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          30
+        ],
+        "max_reported_n": 29
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 10,
+      "sentence": "The multiple comparison test showed that, P2, 3, and 5 had higher arousal scores than P1 and 6-12 (ps < .05), and P4 had higher scores than P7 and 9-12 (ps < .05).",
+      "raw": "ps < .05",
+      "explanation": "'ps < .05' is a blanket p statement covering several tests at once. It cannot be checked against a specific test statistic.",
+      "details": {
+        "kind": "blanket_p",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 10,
+      "sentence": "The multiple comparison test showed that, P2, 3, and 5 had higher arousal scores than P1 and 6-12 (ps < .05), and P4 had higher scores than P7 and 9-12 (ps < .05).",
+      "raw": "ps < .05",
+      "explanation": "'ps < .05' is a blanket p statement covering several tests at once. It cannot be checked against a specific test statistic.",
+      "details": {
+        "kind": "blanket_p",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 10,
+      "sentence": "Moreover, P6 and 8 had higher scores than P9 and 11 (ps < .05), and P1, 7, 10, and 12 had higher scores than P11 (ps < .05).",
+      "raw": "ps < .05",
+      "explanation": "'ps < .05' is a blanket p statement covering several tests at once. It cannot be checked against a specific test statistic.",
+      "details": {
+        "kind": "blanket_p",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 10,
+      "sentence": "Moreover, P6 and 8 had higher scores than P9 and 11 (ps < .05), and P1, 7, 10, and 12 had higher scores than P11 (ps < .05).",
+      "raw": "ps < .05",
+      "explanation": "'ps < .05' is a blanket p statement covering several tests at once. It cannot be checked against a specific test statistic.",
+      "details": {
+        "kind": "blanket_p",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 10,
+      "sentence": "The valence scores of P5 and 10 were higher than those of P1-3 and 6-9 (ps < .05); P11 was higher than that of P3 (p < .05); and P12 was higher than that of P1-4 and 6-9 (ps < .05).",
+      "raw": "ps < .05",
+      "explanation": "'ps < .05' is a blanket p statement covering several tests at once. It cannot be checked against a specific test statistic.",
+      "details": {
+        "kind": "blanket_p",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 10,
+      "sentence": "The valence scores of P5 and 10 were higher than those of P1-3 and 6-9 (ps < .05); P11 was higher than that of P3 (p < .05); and P12 was higher than that of P1-4 and 6-9 (ps < .05).",
+      "raw": "p < .05",
+      "explanation": "'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 10,
+      "sentence": "The valence scores of P5 and 10 were higher than those of P1-3 and 6-9 (ps < .05); P11 was higher than that of P3 (p < .05); and P12 was higher than that of P1-4 and 6-9 (ps < .05).",
+      "raw": "ps < .05",
+      "explanation": "'ps < .05' is a blanket p statement covering several tests at once. It cannot be checked against a specific test statistic.",
+      "details": {
+        "kind": "blanket_p",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 11,
+      "sentence": "The multiple comparison test showed that HR was higher for P3 than for P9 and 11 (ps < .05) and for P5 than for P11 (ps < .05), indicating that P3 and 5 were postures with relatively high physical strain, such as not leaning on the backrest, placing hands on the head, raising shoulders, or placing hands on the lower back and expanding the chest.",
+      "raw": "ps < .05",
+      "explanation": "'ps < .05' is a blanket p statement covering several tests at once. It cannot be checked against a specific test statistic.",
+      "details": {
+        "kind": "blanket_p",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 11,
+      "sentence": "The multiple comparison test showed that HR was higher for P3 than for P9 and 11 (ps < .05) and for P5 than for P11 (ps < .05), indicating that P3 and 5 were postures with relatively high physical strain, such as not leaning on the backrest, placing hands on the head, raising shoulders, or placing hands on the lower back and expanding the chest.",
+      "raw": "ps < .05",
+      "explanation": "'ps < .05' is a blanket p statement covering several tests at once. It cannot be checked against a specific test statistic.",
+      "details": {
+        "kind": "blanket_p",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 15,
+      "sentence": "...0.01 P9' -0.40 4.14 0.48.69 0.10 P10 2.92 3.65 4.00.002** 0.80 P11' 1.68 3.58 2.35.06 0.47 P12 4.24 3.72 5.70 < .001*** 1.14 Adjusted p indicates the p-value corrected using the BH method. * denotes p < .05, ** denotes p < .01, **** denotes p < .001....",
+      "raw": "p < .05",
+      "explanation": "'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 15,
+      "sentence": "...0.48.69 0.10 P10 2.92 3.65 4.00.002** 0.80 P11' 1.68 3.58 2.35.06 0.47 P12 4.24 3.72 5.70 < .001*** 1.14 Adjusted p indicates the p-value corrected using the BH method. * denotes p < .05, ** denotes p < .01, **** denotes p < .001....",
+      "raw": "p < .01",
+      "explanation": "'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.01
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 15,
+      "sentence": "...3.65 4.00.002** 0.80 P11' 1.68 3.58 2.35.06 0.47 P12 4.24 3.72 5.70 < .001*** 1.14 Adjusted p indicates the p-value corrected using the BH method. * denotes p < .05, ** denotes p < .01, **** denotes p < .001....",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 17,
+      "sentence": "The multiple comparison test showed that, P1', 2, 3', 4', 5, 6', and 9' had higher arousal scores than P7, 8, 10, 11', and 12 (ps < .05).",
+      "raw": "ps < .05",
+      "explanation": "'ps < .05' is a blanket p statement covering several tests at once. It cannot be checked against a specific test statistic.",
+      "details": {
+        "kind": "blanket_p",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 17,
+      "sentence": "The valence scores of P5 and 6' were higher than those of P2 and 3' (ps < .05), P10 was higher than that of P2 (p < .05), and P12 was higher than those of P1', 2, 3', 7, 8, and 9' (ps < .05).",
+      "raw": "ps < .05",
+      "explanation": "'ps < .05' is a blanket p statement covering several tests at once. It cannot be checked against a specific test statistic.",
+      "details": {
+        "kind": "blanket_p",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 17,
+      "sentence": "The valence scores of P5 and 6' were higher than those of P2 and 3' (ps < .05), P10 was higher than that of P2 (p < .05), and P12 was higher than those of P1', 2, 3', 7, 8, and 9' (ps < .05).",
+      "raw": "p < .05",
+      "explanation": "'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 17,
+      "sentence": "The valence scores of P5 and 6' were higher than those of P2 and 3' (ps < .05), P10 was higher than that of P2 (p < .05), and P12 was higher than those of P1', 2, 3', 7, 8, and 9' (ps < .05).",
+      "raw": "ps < .05",
+      "explanation": "'ps < .05' is a blanket p statement covering several tests at once. It cannot be checked against a specific test statistic.",
+      "details": {
+        "kind": "blanket_p",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 18,
+      "sentence": "was higher for P1' than for P8, 10, and 12 (ps < .05); for P3' and 6' than for P2, 5, 7, 9', 10, and 12 (ps < .05); for P4' than for P8 (p < .05); and for P11' than for P8, 10, and 12 (ps < .05).",
+      "raw": "ps < .05",
+      "explanation": "'ps < .05' is a blanket p statement covering several tests at once. It cannot be checked against a specific test statistic.",
+      "details": {
+        "kind": "blanket_p",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 18,
+      "sentence": "was higher for P1' than for P8, 10, and 12 (ps < .05); for P3' and 6' than for P2, 5, 7, 9', 10, and 12 (ps < .05); for P4' than for P8 (p < .05); and for P11' than for P8, 10, and 12 (ps < .05).",
+      "raw": "ps < .05",
+      "explanation": "'ps < .05' is a blanket p statement covering several tests at once. It cannot be checked against a specific test statistic.",
+      "details": {
+        "kind": "blanket_p",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 18,
+      "sentence": "was higher for P1' than for P8, 10, and 12 (ps < .05); for P3' and 6' than for P2, 5, 7, 9', 10, and 12 (ps < .05); for P4' than for P8 (p < .05); and for P11' than for P8, 10, and 12 (ps < .05).",
+      "raw": "p < .05",
+      "explanation": "'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 18,
+      "sentence": "was higher for P1' than for P8, 10, and 12 (ps < .05); for P3' and 6' than for P2, 5, 7, 9', 10, and 12 (ps < .05); for P4' than for P8 (p < .05); and for P11' than for P8, 10, and 12 (ps < .05).",
+      "raw": "ps < .05",
+      "explanation": "'ps < .05' is a blanket p statement covering several tests at once. It cannot be checked against a specific test statistic.",
+      "details": {
+        "kind": "blanket_p",
+        "p_comparator": "<",
+        "p": 0.05
       }
     }
   ],
@@ -566,6 +870,582 @@
       "page": 14,
       "sentence": "The one-sample t-test on arousal and valence in the seated upright posture showed significantly smaller and larger values than the criterion of 0 for arousal (M = -4.78, SD = 4.99, t (49) = 6.77, p < .001, d = 0.96) and valence (M = 4.90, SD = 4.41, t (49) = 7.86, p < .001, d = 1.11), respectively, despite the exclusion of the phrase \"medically correct posture\" in the cover story.",
       "pos": 1345
+    },
+    {
+      "mean": -4.9,
+      "mean_text": "-4.90",
+      "sd": 6.64,
+      "sd_text": "6.64",
+      "n": null,
+      "n_source": "",
+      "raw": "-4.90 (6.64)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P1'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 2.62,
+      "mean_text": "2.62",
+      "sd": 3.29,
+      "sd_text": "3.29",
+      "n": null,
+      "n_source": "",
+      "raw": "2.62 (3.29)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P2'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 2.55,
+      "mean_text": "2.55",
+      "sd": 4.55,
+      "sd_text": "4.55",
+      "n": null,
+      "n_source": "",
+      "raw": "2.55 (4.55)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P3'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 0.38,
+      "mean_text": "0.38",
+      "sd": 5.62,
+      "sd_text": "5.62",
+      "n": null,
+      "n_source": "",
+      "raw": "0.38 (5.62)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P4'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 2.24,
+      "mean_text": "2.24",
+      "sd": 3.97,
+      "sd_text": "3.97",
+      "n": null,
+      "n_source": "",
+      "raw": "2.24 (3.97)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P5'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -3.21,
+      "mean_text": "-3.21",
+      "sd": 6.03,
+      "sd_text": "6.03",
+      "n": null,
+      "n_source": "",
+      "raw": "-3.21 (6.03)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P6'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -8.03,
+      "mean_text": "-8.03",
+      "sd": 5.82,
+      "sd_text": "5.82",
+      "n": null,
+      "n_source": "",
+      "raw": "-8.03 (5.82)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P7'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -4.97,
+      "mean_text": "-4.97",
+      "sd": 4.51,
+      "sd_text": "4.51",
+      "n": null,
+      "n_source": "",
+      "raw": "-4.97 (4.51)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P8'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -9.28,
+      "mean_text": "-9.28",
+      "sd": 5.36,
+      "sd_text": "5.36",
+      "n": null,
+      "n_source": "",
+      "raw": "-9.28 (5.36)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P9'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -6.34,
+      "mean_text": "-6.34",
+      "sd": 4.89,
+      "sd_text": "4.89",
+      "n": null,
+      "n_source": "",
+      "raw": "-6.34 (4.89)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P10'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -12.41,
+      "mean_text": "-12.41",
+      "sd": 3.38,
+      "sd_text": "3.38",
+      "n": null,
+      "n_source": "",
+      "raw": "-12.41 (3.38)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P11'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -5.97,
+      "mean_text": "-5.97",
+      "sd": 4.99,
+      "sd_text": "4.99",
+      "n": null,
+      "n_source": "",
+      "raw": "-5.97 (4.99)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P12'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -0.28,
+      "mean_text": "-0.28",
+      "sd": 2.85,
+      "sd_text": "2.85",
+      "n": null,
+      "n_source": "",
+      "raw": "-0.28 (2.85)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P1'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -1.03,
+      "mean_text": "-1.03",
+      "sd": 2.67,
+      "sd_text": "2.67",
+      "n": null,
+      "n_source": "",
+      "raw": "-1.03 (2.67)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P2'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -1.93,
+      "mean_text": "-1.93",
+      "sd": 2.55,
+      "sd_text": "2.55",
+      "n": null,
+      "n_source": "",
+      "raw": "-1.93 (2.55)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P3'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 0.86,
+      "mean_text": "0.86",
+      "sd": 4.39,
+      "sd_text": "4.39",
+      "n": null,
+      "n_source": "",
+      "raw": "0.86 (4.39)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P4'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 3.28,
+      "mean_text": "3.28",
+      "sd": 3.8,
+      "sd_text": "3.80",
+      "n": null,
+      "n_source": "",
+      "raw": "3.28 (3.80)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P5'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -1.21,
+      "mean_text": "-1.21",
+      "sd": 3.03,
+      "sd_text": "3.03",
+      "n": null,
+      "n_source": "",
+      "raw": "-1.21 (3.03)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P6'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -0.93,
+      "mean_text": "-0.93",
+      "sd": 2.92,
+      "sd_text": "2.92",
+      "n": null,
+      "n_source": "",
+      "raw": "-0.93 (2.92)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P7'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -1.03,
+      "mean_text": "-1.03",
+      "sd": 3.3,
+      "sd_text": "3.30",
+      "n": null,
+      "n_source": "",
+      "raw": "-1.03 (3.30)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P8'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -1.14,
+      "mean_text": "-1.14",
+      "sd": 3.09,
+      "sd_text": "3.09",
+      "n": null,
+      "n_source": "",
+      "raw": "-1.14 (3.09)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P9'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 3.31,
+      "mean_text": "3.31",
+      "sd": 3.3,
+      "sd_text": "3.30",
+      "n": null,
+      "n_source": "",
+      "raw": "3.31 (3.30)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P10'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 1.17,
+      "mean_text": "1.17",
+      "sd": 3.71,
+      "sd_text": "3.71",
+      "n": null,
+      "n_source": "",
+      "raw": "1.17 (3.71)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P11'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 4.03,
+      "mean_text": "4.03",
+      "sd": 3.61,
+      "sd_text": "3.61",
+      "n": null,
+      "n_source": "",
+      "raw": "4.03 (3.61)",
+      "page": 7,
+      "sentence": "Table 2 presents the; row 'P12'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 0.68,
+      "mean_text": "0.68",
+      "sd": 5.86,
+      "sd_text": "5.86",
+      "n": null,
+      "n_source": "",
+      "raw": "0.68 (5.86)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P1’'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 1.68,
+      "mean_text": "1.68",
+      "sd": 4.51,
+      "sd_text": "4.51",
+      "n": null,
+      "n_source": "",
+      "raw": "1.68 (4.51)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P2'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 2.28,
+      "mean_text": "2.28",
+      "sd": 5.33,
+      "sd_text": "5.33",
+      "n": null,
+      "n_source": "",
+      "raw": "2.28 (5.33)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P3’'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 0.8,
+      "mean_text": "0.80",
+      "sd": 5.05,
+      "sd_text": "5.05",
+      "n": null,
+      "n_source": "",
+      "raw": "0.80 (5.05)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P4’'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 0.64,
+      "mean_text": "0.64",
+      "sd": 4.44,
+      "sd_text": "4.44",
+      "n": null,
+      "n_source": "",
+      "raw": "0.64 (4.44)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P5'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 2.68,
+      "mean_text": "2.68",
+      "sd": 5.75,
+      "sd_text": "5.75",
+      "n": null,
+      "n_source": "",
+      "raw": "2.68 (5.75)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P6’'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -5.92,
+      "mean_text": "-5.92",
+      "sd": 4.72,
+      "sd_text": "4.72",
+      "n": null,
+      "n_source": "",
+      "raw": "-5.92 (4.72)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P7'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -7.24,
+      "mean_text": "-7.24",
+      "sd": 5.43,
+      "sd_text": "5.43",
+      "n": null,
+      "n_source": "",
+      "raw": "-7.24 (5.43)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P8'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -0.72,
+      "mean_text": "-0.72",
+      "sd": 5.1,
+      "sd_text": "5.10",
+      "n": null,
+      "n_source": "",
+      "raw": "-0.72 (5.10)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P9’'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -6.76,
+      "mean_text": "-6.76",
+      "sd": 6.45,
+      "sd_text": "6.45",
+      "n": null,
+      "n_source": "",
+      "raw": "-6.76 (6.45)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P10'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -7.12,
+      "mean_text": "-7.12",
+      "sd": 5.87,
+      "sd_text": "5.87",
+      "n": null,
+      "n_source": "",
+      "raw": "-7.12 (5.87)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P11’'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -6.72,
+      "mean_text": "-6.72",
+      "sd": 5.34,
+      "sd_text": "5.34",
+      "n": null,
+      "n_source": "",
+      "raw": "-6.72 (5.34)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P12'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 0.2,
+      "mean_text": "0.20",
+      "sd": 4.3,
+      "sd_text": "4.30",
+      "n": null,
+      "n_source": "",
+      "raw": "0.20 (4.30)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P1’'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -0.8,
+      "mean_text": "-0.80",
+      "sd": 3.57,
+      "sd_text": "3.57",
+      "n": null,
+      "n_source": "",
+      "raw": "-0.80 (3.57)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P2'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -0.52,
+      "mean_text": "-0.52",
+      "sd": 3.28,
+      "sd_text": "3.28",
+      "n": null,
+      "n_source": "",
+      "raw": "-0.52 (3.28)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P3’'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 3.28,
+      "mean_text": "3.28",
+      "sd": 5.47,
+      "sd_text": "5.47",
+      "n": null,
+      "n_source": "",
+      "raw": "3.28 (5.47)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P4’'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 2.88,
+      "mean_text": "2.88",
+      "sd": 4.69,
+      "sd_text": "4.69",
+      "n": null,
+      "n_source": "",
+      "raw": "2.88 (4.69)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P5'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 2.92,
+      "mean_text": "2.92",
+      "sd": 3.72,
+      "sd_text": "3.72",
+      "n": null,
+      "n_source": "",
+      "raw": "2.92 (3.72)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P6’'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -0.4,
+      "mean_text": "-0.40",
+      "sd": 3.69,
+      "sd_text": "3.69",
+      "n": null,
+      "n_source": "",
+      "raw": "-0.40 (3.69)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P7'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 0.04,
+      "mean_text": "0.04",
+      "sd": 3.05,
+      "sd_text": "3.05",
+      "n": null,
+      "n_source": "",
+      "raw": "0.04 (3.05)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P8'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": -0.4,
+      "mean_text": "-0.40",
+      "sd": 4.14,
+      "sd_text": "4.14",
+      "n": null,
+      "n_source": "",
+      "raw": "-0.40 (4.14)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P9’'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 2.92,
+      "mean_text": "2.92",
+      "sd": 3.65,
+      "sd_text": "3.65",
+      "n": null,
+      "n_source": "",
+      "raw": "2.92 (3.65)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P10'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 1.68,
+      "mean_text": "1.68",
+      "sd": 3.58,
+      "sd_text": "3.58",
+      "n": null,
+      "n_source": "",
+      "raw": "1.68 (3.58)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P11’'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 4.24,
+      "mean_text": "4.24",
+      "sd": 3.72,
+      "sd_text": "3.72",
+      "n": null,
+      "n_source": "",
+      "raw": "4.24 (3.72)",
+      "page": 15,
+      "sentence": "Table 4. Means and standard deviations of TDMS arousal and valence for each posture in Experiment 2, and results of a one-sample t-test with a reference value of; row 'P12'; column 'M'",
+      "pos": 0
     }
   ],
   "sample_sizes": [

@@ -7,18 +7,78 @@
     "statistics_extracted": 27,
     "means_extracted": 6,
     "means_with_n": 2,
-    "flags_total": 0,
-    "flags_by_severity": {},
-    "flags_by_check": {},
+    "flags_total": 4,
+    "flags_by_severity": {
+      "info": 4
+    },
+    "flags_by_check": {
+      "unverifiable": 4
+    },
     "examined": {
       "p_recompute": 27,
       "grim": 2,
       "grimmer": 0,
       "df_vs_n": 27,
-      "duplicate": 27
+      "duplicate": 27,
+      "unverifiable": 4,
+      "ci_symmetry": 0,
+      "regression": 0
     }
   },
-  "flags": [],
+  "flags": [
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 9,
+      "sentence": "Suicide ideation -.43** -.01.23** .37** .37** - Mean 37.99 36.72 28.65 32.18 7.04 1.99 Standard Deviation 9.15 8.01 7.44 9.90 5.32 2.70 Hopelessness = BHS total, Suicide ideation = HDSQ-SS total. **p < .001. https://doi.org/10.1371/journal.pone.0295995.t003 PLOS ONE Humour styles as a moderator between hopelessness and suicide ideation PLOS ONE | https://doi.org/10.1371/journal.pone.0295995 Decemb...",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 10,
+      "sentence": "Suicide ideation .00 -.19.12.39** .54** - Mean 44.48 33.65 25.64 30.15 5.64 1.18 Standard Deviation 6.96 8.13 6.42 9.91 4.61 1.97 Hopelessness = BHS total, Suicide ideation = HDSQ-SS total. *p < .01. **p < .001. https://doi.org/10.1371/journal.pone.0295995.t004 PLOS ONE Humour styles as a moderator between hopelessness and suicide ideation PLOS ONE | https://doi.org/10.1371/journal.pone.0295995 De...",
+      "raw": "p < .01",
+      "explanation": "'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.01
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 10,
+      "sentence": "...icide ideation .00 -.19.12.39** .54** - Mean 44.48 33.65 25.64 30.15 5.64 1.18 Standard Deviation 6.96 8.13 6.42 9.91 4.61 1.97 Hopelessness = BHS total, Suicide ideation = HDSQ-SS total. *p < .01. **p < .001. https://doi.org/10.1371/journal.pone.0295995.t004 PLOS ONE Humour styles as a moderator between hopelessness and suicide ideation PLOS ONE | https://doi.org/10.1371/journal.pone.0295995 Dece...",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 18,
+      "sentence": "We noted that although this moderation effect was not statistically significant (p = .050) in the community sample (despite the larger sample size), the trend in the data was identical, which could indicate that these associations are present but weaker.",
+      "raw": "p = .050",
+      "explanation": "'p = .050' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.05
+      }
+    }
+  ],
   "statistics": [
     {
       "kind": "t",
@@ -734,24 +794,6 @@
       "page": 8,
       "raw": "two",
       "kind": "spelled out"
-    },
-    {
-      "n": 326,
-      "page": 11,
-      "raw": "326 Student Participants",
-      "kind": "count noun"
-    },
-    {
-      "n": 43,
-      "page": 14,
-      "raw": "043 Student Participants",
-      "kind": "count noun"
-    },
-    {
-      "n": 50,
-      "page": 15,
-      "raw": "050 Student Participants",
-      "kind": "count noun"
     }
   ],
   "disclaimer": "This report lists places where a value reported in the paper differs from the value recomputed from other reported numbers. A difference is not evidence of misconduct. Common benign causes are rounding, typos, one-tailed tests, corrections for multiple comparisons, adjusted degrees of freedom, non-integer scales (which make GRIM and GRIMMER inapplicable) and PDF text-extraction errors. Each flag should be read in the paper before drawing any conclusion."

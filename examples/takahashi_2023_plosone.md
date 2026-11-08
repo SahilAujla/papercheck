@@ -1,6 +1,6 @@
 # papercheck report: takahashi_2023_plosone.pdf
 
-Generated 2026-11-08 with papercheck 0.1.0. 16 pages, 23 test statistics with p values, 2 reported means (0 with a usable N for GRIM).
+Generated 2026-11-08 with papercheck 0.1.0. 16 pages, 23 test statistics with p values, 35 reported means (0 with a usable N for GRIM).
 
 ## Summary
 
@@ -9,10 +9,13 @@ Generated 2026-11-08 with papercheck 0.1.0. 16 pages, 23 test statistics with p 
 | p value recomputation (statcheck style) | 23 | 0 | 2 | 0 |
 | GRIM (means of integer data) | 0 | 0 | 0 | 0 |
 | GRIMMER (SDs of integer data) | 0 | 0 | 0 | 0 |
-| Degrees of freedom vs reported N | 23 | 0 | 3 | 0 |
+| Degrees of freedom vs reported N | 23 | 0 | 2 | 1 |
 | Duplicated statistics | 23 | 0 | 0 | 0 |
+| Unverifiable statements (ps < .05, statistics without p, p without statistic) | 3 | 0 | 0 | 3 |
+| 95% CI vs point estimate | 0 | 0 | 0 | 0 |
+| Regression coefficient vs SE and p | 0 | 0 | 0 | 0 |
 
-Total flags: 5 (errors 0, warnings 5, info 0).
+Total flags: 8 (errors 0, warnings 4, info 4).
 
 Severity: an error is a reported vs recomputed p value on different sides of .05 (the conclusion about significance would change). A warning is a numeric inconsistency that does not change the decision, or a GRIM failure. Info items are worth a look but have common benign explanations.
 
@@ -40,27 +43,51 @@ Recomputed p = 0.010805 (interval [0.008415, 0.013776]); consistent if one-taile
 
 ### 3. [WARNING] Degrees of freedom vs reported N, page 10
 
-Reported: `F(3, 400) = 1.02, p = .382`
-
-Sentence: "When the new data were combined with the original Study 2 data, there was no significant effect of the four conditions (i.e., original "calculation" control, new "no task" control, literary fiction, and nonfiction conditions) on ΔRMET: F(3, 400) = 1.02, p = .382, η2 = .008."
-
-The degrees of freedom in F(3, 400) = 1.02 imply at least 404 participants under the usual design, but the largest sample size mentioned in the paper is 338. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.
-
-### 4. [WARNING] Degrees of freedom vs reported N, page 10
-
 Reported: `r(378) = .09, p = .094`
 
 Sentence: "Even FS was not significantly correlated with fiction reading time, r(378) = .09, p = .094."
 
 The degrees of freedom in r(378) = 0.09 imply at least 380 participants under the usual design, but the largest sample size mentioned in the paper is 338. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.
 
-### 5. [WARNING] Degrees of freedom vs reported N, page 11
+### 4. [WARNING] Degrees of freedom vs reported N, page 11
 
 Reported: `r(378) = .16, p = .002`
 
 Sentence: "We included a vocabulary test in Study 2 and found that fiction reading time was significantly correlated with the vocabulary test score, r(378) = .16, p = .002."
 
 The degrees of freedom in r(378) = 0.16 imply at least 380 participants under the usual design, but the largest sample size mentioned in the paper is 338. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.
+
+### 5. [INFO] Degrees of freedom vs reported N, page 10
+
+Reported: `F(3, 400) = 1.02, p = .382`
+
+Sentence: "When the new data were combined with the original Study 2 data, there was no significant effect of the four conditions (i.e., original "calculation" control, new "no task" control, literary fiction, and nonfiction conditions) on ΔRMET: F(3, 400) = 1.02, p = .382, η2 = .008."
+
+The degrees of freedom in F(3, 400) = 1.02 imply at least 404 participants under the usual design, but the largest sample size mentioned in the paper is 338. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.
+
+### 6. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 10
+
+Reported: `all ps > .40`
+
+Sentence: "Fiction reading time was not significantly correlated with the three variants of the RMET score: r(378) = .003, .006, and .006 for the RMET-A, RMET-B, and total RMET (i.e., RMET-A + RMET-B) scores, respectively (all ps > .40)."
+
+'all ps > .40' is a blanket p statement covering several tests at once. It cannot be checked against a specific test statistic.
+
+### 7. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 12
+
+Reported: `r(402) = .30`
+
+Sentence: "In fact, the correlation between RMET-A and RMET-B was low: r(402) = .30."
+
+'r(402) = .30' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 7.58e-10.
+
+### 8. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 12
+
+Reported: `p = .049`
+
+Sentence: "Moreover, RMET performance is known to be positively associated with vocabulary (our measure of vocabulary was also significantly, but weakly, correlated with RMET score: r402 = .098, p = .049)."
+
+'p = .049' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
 
 ## All extracted test statistics
 

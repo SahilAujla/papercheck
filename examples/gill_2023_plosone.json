@@ -7,20 +7,25 @@
     "statistics_extracted": 48,
     "means_extracted": 9,
     "means_with_n": 0,
-    "flags_total": 3,
+    "flags_total": 13,
     "flags_by_severity": {
-      "warning": 3
+      "warning": 3,
+      "info": 10
     },
     "flags_by_check": {
       "p_recompute": 1,
-      "df_vs_n": 2
+      "df_vs_n": 2,
+      "unverifiable": 10
     },
     "examined": {
       "p_recompute": 48,
       "grim": 0,
       "grimmer": 0,
       "df_vs_n": 48,
-      "duplicate": 48
+      "duplicate": 48,
+      "unverifiable": 10,
+      "ci_symmetry": 0,
+      "regression": 0
     }
   },
   "flags": [
@@ -72,6 +77,136 @@
           269
         ],
         "max_reported_n": 192
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "Coefficients are unstandardized. †p = .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g003 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 12 / 22",
+      "raw": "p = .05",
+      "explanation": "'p = .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "Coefficients are unstandardized. †p = .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g003 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 12 / 22",
+      "raw": "p < .01",
+      "explanation": "'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.01
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "Coefficients are unstandardized. †p = .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g003 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 12 / 22",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 14,
+      "sentence": "Coefficients are unstandardized. †p = .07; *p < .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g005 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 14 / 22",
+      "raw": "p = .07",
+      "explanation": "'p = .07' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.07
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 14,
+      "sentence": "Coefficients are unstandardized. †p = .07; *p < .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g005 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 14 / 22",
+      "raw": "p < .05",
+      "explanation": "'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 14,
+      "sentence": "Coefficients are unstandardized. †p = .07; *p < .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g005 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 14 / 22",
+      "raw": "p < .01",
+      "explanation": "'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.01
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 14,
+      "sentence": "Coefficients are unstandardized. †p = .07; *p < .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g005 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 14 / 22",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 15,
+      "sentence": "Coefficients are unstandardized. *p < .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g006 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 15 / 22",
+      "raw": "p < .05",
+      "explanation": "'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 15,
+      "sentence": "Coefficients are unstandardized. *p < .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g006 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 15 / 22",
+      "raw": "p < .01",
+      "explanation": "'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.01
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 15,
+      "sentence": "Coefficients are unstandardized. *p < .05; **p < .01; ***p < .001. https://doi.org/10.1371/journal.pone.0291729.g006 PLOS ONE Social influence on utilization of blame mitigating information PLOS ONE | https://doi.org/10.1371/journal.pone.0291729 November 17, 2023 15 / 22",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
       }
     }
   ],

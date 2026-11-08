@@ -97,3 +97,19 @@ def test_means_without_comma_and_paren_sd():
     means = extract_means(load_text(txt))
     assert [(m.mean, m.sd) for m in means] == [(10.51, 2.66), (33.18, 9.88)]
     assert all(m.n == 357 for m in means)
+
+
+def test_sample_size_regex_rejects_number_tails_and_study_labels():
+    txt = ("Study 2 revealed that people chose faster. The value was 0.016 with participants responding. "
+           "A total of 584 participants took part; Experiment 3 students were excluded.")
+    found = {d["n"] for d in extract_sample_sizes(load_text(txt)) if d["kind"] == "count noun"}
+    assert found == {584}
+
+
+def test_table_like_cells_do_not_borrow_a_preceding_n():
+    # michelkrohler_2023 p6: several group n in one table block; the cell must not be tested against the wrong one
+    txt = ("Table 1. Descriptives, M (SD). n = 20 (f = 14, m = 6) n = 19 (f = 13, m = 6) n = 20 (f = 14, m = 6). "
+           "RSQ-B .77 9.70 (2.99) [8.30, 11.10] 9.42 (3.02) [7.96, 10.88] 9.60 (2.64).")
+    means = extract_means(load_text(txt))
+    cells = [m for m in means if m.mean_text == "9.42"]
+    assert cells and cells[0].n is None

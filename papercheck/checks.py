@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import math
+import re
 from collections import defaultdict
 from typing import Optional
 
@@ -58,6 +59,10 @@ def p_interval(stat: Stat) -> Optional[tuple[float, float, float]]:
     cands = [p for p in (p_a, p_b, point) if p is not None]
     if stat.kind in ("t", "z", "r") and lo_v < 0 < hi_v:
         cands.append(1.0)  # the statistic may be ~0
+    if stat.value_comparator == "<":      # "t(334) < 0.01": the true statistic is smaller, so p is at least this
+        return min(cands), point, 1.0
+    if stat.value_comparator == ">":      # "F(2, 40) > 10": p is at most this
+        return 0.0, point, max(cands)
     return min(cands), point, max(cands)
 
 
@@ -221,13 +226,21 @@ def check_df_vs_n(stats: list[Stat], sample_sizes: list[dict]) -> list[Flag]:
         if st.kind == "t" and st.df1 and not float(st.df1).is_integer():
             continue
         if min(imp) > max_n:
-            flags.append(Flag(check="df_vs_n", severity="warning", page=st.page, sentence=st.sentence, raw=st.raw,
+            design = _DESIGN_WORDS.search(st.sentence) is not None
+            flags.append(Flag(check="df_vs_n", severity="info" if design else "warning", page=st.page,
+                              sentence=st.sentence, raw=st.raw,
                               explanation=(f"The degrees of freedom in {st.label()} imply at least {min(imp)} "
                                            f"participants under the usual design, but the largest sample size "
                                            f"mentioned in the paper is {max_n}. Reported vs implied N differ; could be "
                                            f"a repeated-measures design, trials as the unit of analysis, or a typo in the df."),
                               details={"implied_n": imp, "max_reported_n": max_n}))
     return flags
+
+
+_DESIGN_WORDS = re.compile(
+    r"repeated|within[- ]subject|mixed|Wilks|Pillai|MANOVA|multivariate|trials?\b|sessions?\b|days?\b|blocks?\b|"
+    r"pooled|combined|collapsed|across (?:all )?(?:studies|experiments|conditions)|items?\b|observations|"
+    r"stimuli|ratings|unit of analysis", re.IGNORECASE)
 
 
 def _top(ns: list[int]) -> str:

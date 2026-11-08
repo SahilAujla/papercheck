@@ -7,22 +7,88 @@
     "statistics_extracted": 33,
     "means_extracted": 68,
     "means_with_n": 0,
-    "flags_total": 1,
+    "flags_total": 22,
     "flags_by_severity": {
-      "warning": 1
+      "warning": 5,
+      "info": 17
     },
     "flags_by_check": {
-      "p_recompute": 1
+      "ci_symmetry": 4,
+      "p_recompute": 1,
+      "unverifiable": 17
     },
     "examined": {
       "p_recompute": 33,
       "grim": 0,
       "grimmer": 0,
       "df_vs_n": 33,
-      "duplicate": 33
+      "duplicate": 33,
+      "unverifiable": 17,
+      "ci_symmetry": 4,
+      "regression": 0
     }
   },
   "flags": [
+    {
+      "check": "ci_symmetry",
+      "severity": "warning",
+      "page": 9,
+      "sentence": "Competence also had a significant indirect effect of -.1044 (95% CI:-.1718, -.0496).",
+      "raw": "effect of -.1044 (95% CI:-.1718, -.0496",
+      "explanation": "Reported effect = -.1044 with CI [-.1718, -.0496]. For a symmetric interval the point estimate should be at the midpoint (-.1718 + -.0496) / 2 = -0.1107, but the reported value is 0.0063 away. The interval may belong to a different estimate, be a bootstrap or otherwise asymmetric interval, or contain a typo.",
+      "details": {
+        "estimate": "effect",
+        "point": -0.1044,
+        "ci": [
+          -0.1718,
+          -0.0496
+        ],
+        "ratio_scale": false,
+        "midpoint": -0.1107,
+        "difference": 0.0063,
+        "kind": "asymmetric"
+      }
+    },
+    {
+      "check": "ci_symmetry",
+      "severity": "warning",
+      "page": 12,
+      "sentence": "This analysis revealed an indirect effect of -.3862 (95% CI:-.4915, -.2970) for prosociality, indicating a significant indirect effect.",
+      "raw": "effect of -.3862 (95% CI:-.4915, -.2970",
+      "explanation": "Reported effect = -.3862 with CI [-.4915, -.2970]. For a symmetric interval the point estimate should be at the midpoint (-.4915 + -.2970) / 2 = -0.3942, but the reported value is 0.0081 away. The interval may belong to a different estimate, be a bootstrap or otherwise asymmetric interval, or contain a typo.",
+      "details": {
+        "estimate": "effect",
+        "point": -0.3862,
+        "ci": [
+          -0.4915,
+          -0.297
+        ],
+        "ratio_scale": false,
+        "midpoint": -0.39425,
+        "difference": 0.00805,
+        "kind": "asymmetric"
+      }
+    },
+    {
+      "check": "ci_symmetry",
+      "severity": "warning",
+      "page": 12,
+      "sentence": "Competence also had a significant indirect effect of -.0803 (95% CI:-.1314, -.0345).",
+      "raw": "effect of -.0803 (95% CI:-.1314, -.0345",
+      "explanation": "Reported effect = -.0803 with CI [-.1314, -.0345]. For a symmetric interval the point estimate should be at the midpoint (-.1314 + -.0345) / 2 = -0.0829, but the reported value is 0.0026 away. The interval may belong to a different estimate, be a bootstrap or otherwise asymmetric interval, or contain a typo.",
+      "details": {
+        "estimate": "effect",
+        "point": -0.0803,
+        "ci": [
+          -0.1314,
+          -0.0345
+        ],
+        "ratio_scale": false,
+        "midpoint": -0.08295,
+        "difference": 0.00265,
+        "kind": "asymmetric"
+      }
+    },
     {
       "check": "p_recompute",
       "severity": "warning",
@@ -41,6 +107,247 @@
         ],
         "consistent_if_one_tailed": false,
         "decision_error": false
+      }
+    },
+    {
+      "check": "ci_symmetry",
+      "severity": "warning",
+      "page": 16,
+      "sentence": "Perceived competence also had a significant indirect effect of -.1275 (95% CI:-.1974, -.0657).",
+      "raw": "effect of -.1275 (95% CI:-.1974, -.0657",
+      "explanation": "Reported effect = -.1275 with CI [-.1974, -.0657]. For a symmetric interval the point estimate should be at the midpoint (-.1974 + -.0657) / 2 = -0.1316, but the reported value is 0.0040 away. The interval may belong to a different estimate, be a bootstrap or otherwise asymmetric interval, or contain a typo.",
+      "details": {
+        "estimate": "effect",
+        "point": -0.1275,
+        "ci": [
+          -0.1974,
+          -0.0657
+        ],
+        "ratio_scale": false,
+        "midpoint": -0.13155,
+        "difference": 0.00405,
+        "kind": "asymmetric"
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 5,
+      "sentence": "In one-way ANOVAs, we found coworkers with the highest perceived desire for status were afforded significantly less status (M = 4.46, 95% CI = [4.20, 4.72]) than coworkers with a moderate desire for status (M = 4.92, 95% CI = [4.67, 5.17], p = .016), and coworkers with the lowest desire for status (M = 4.93, 95% CI = [4.70, 5.16], p = .007).",
+      "raw": "p = .016",
+      "explanation": "'p = .016' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.016
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 5,
+      "sentence": "In one-way ANOVAs, we found coworkers with the highest perceived desire for status were afforded significantly less status (M = 4.46, 95% CI = [4.20, 4.72]) than coworkers with a moderate desire for status (M = 4.92, 95% CI = [4.67, 5.17], p = .016), and coworkers with the lowest desire for status (M = 4.93, 95% CI = [4.70, 5.16], p = .007).",
+      "raw": "p = .007",
+      "explanation": "'p = .007' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.007
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 5,
+      "sentence": "There were no significant differences between coworkers in the lowest third and the coworkers in the middle third, p = .999.",
+      "raw": "p = .999",
+      "explanation": "'p = .999' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.999
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 8,
+      "sentence": "Participants rated targets described as high in the desire for status (M = 4.29, 95% CI [4.15, 4.42]) as less prosocial than targets described as high in the desire for achievement (M = 5.22, 95% CI [5.09, 5.35], p < .001), and control targets (M = 5.63, 95% CI [5.50, 5.76], p < .001).",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 8,
+      "sentence": "Participants rated targets described as high in the desire for status (M = 4.29, 95% CI [4.15, 4.42]) as less prosocial than targets described as high in the desire for achievement (M = 5.22, 95% CI [5.09, 5.35], p < .001), and control targets (M = 5.63, 95% CI [5.50, 5.76], p < .001).",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 9,
+      "sentence": "Participants rated targets described as high in the desire for status (M = 5.87, 95% CI [5.81, 5.92]) as less competent than targets described as high in the desire for achievement (M = 6.28, 95% CI [6.23, 6.33], p < .001), and control targets (M = 6.19, 95% CI [6.14, 6.24], p < .001).",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 9,
+      "sentence": "Participants rated targets described as high in the desire for status (M = 5.87, 95% CI [5.81, 5.92]) as less competent than targets described as high in the desire for achievement (M = 6.28, 95% CI [6.23, 6.33], p < .001), and control targets (M = 6.19, 95% CI [6.14, 6.24], p < .001).",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "Targets described as desiring status for selfish reasons (M = 3.61, 95% CI [3.41, 3.80]) were seen as being significantly less prosocial than targets described as desiring status for prosocial reasons (M = 4.38, 95% CI [4.19, 4.58], p < .001), or the control targets (M = 5.13, 95% CI [4.94, 5.33], p < .001).",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "Targets described as desiring status for selfish reasons (M = 3.61, 95% CI [3.41, 3.80]) were seen as being significantly less prosocial than targets described as desiring status for prosocial reasons (M = 4.38, 95% CI [4.19, 4.58], p < .001), or the control targets (M = 5.13, 95% CI [4.94, 5.33], p < .001).",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "The difference between the targets desiring status for prosocial reasons and the control targets was also significant, p < .001.",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "Targets described as desiring status for selfish reasons (M = 5.36, 95% CI [5.16, 5.56]) were seen as being significantly less competent when compared to targets in the control condition (M = 5.89, 95% CI [5.69, 6.10], p < .001).",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "However, targets described as desiring status for selfish reasons and targets described as desiring status for prosocial reasons (M = 5.62, 95% CI [5.42, 5.82]) were not significantly different in their competence ratings, p = .074.",
+      "raw": "p = .074",
+      "explanation": "'p = .074' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.074
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "The competence ratings for the targets desiring status for prosocial reasons and the control condition did not significantly differ either, p = .063.",
+      "raw": "p = .063",
+      "explanation": "'p = .063' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.063
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 16,
+      "sentence": "Replicating the negative effect of desire for status on prosociality perceptions, targets described as having a strong desire for status (M = 4.23, 95% CI [4.10, 4.36]) were seen as significantly less prosocial than targets described as having a weak desire for status (M = 5.34, 95% CI [5.21, 5.47], p < .001).",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 16,
+      "sentence": "As expected and serving as a manipulation check, targets described as being highly prosocial (M = 5.07, 95% CI [4.94, 5.20]) were seen as being significantly more prosocial than targets who were not (M = 4.50, 95% CI [4.37, 4.63], p < .001).",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 16,
+      "sentence": "Similarly, targets described as having a strong desire for status (M = 5.48, 95% CI [5.36, 5.60]) were seen as significantly less competent than targets described as having a weak desire for status (M = 5.85, 95% CI [5.72, 5.97], p < .001).",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 16,
+      "sentence": "Targets described as being highly prosocial (M = 5.87, 95% CI [5.75, 6.00]) were seen as being significantly more competent than targets who were not (M = 5.45, 95% CI [5.33, 5.57], p < .001).",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
       }
     }
   ],

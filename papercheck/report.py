@@ -17,6 +17,9 @@ CHECK_NAMES = {
     "grimmer": "GRIMMER (SDs of integer data)",
     "df_vs_n": "Degrees of freedom vs reported N",
     "duplicate": "Duplicated statistics",
+    "unverifiable": "Unverifiable statements (ps < .05, statistics without p, p without statistic)",
+    "ci_symmetry": "95% CI vs point estimate",
+    "regression": "Regression coefficient vs SE and p",
 }
 
 DISCLAIMER = (
@@ -34,7 +37,10 @@ def build_payload(paper: str, stats: list[Stat], means: list[MeanSD], sample_siz
     examined = {"p_recompute": len([s for s in stats if s.p_comparator]),
                 "grim": len([m for m in means if m.n]),
                 "grimmer": len([m for m in means if m.n and m.sd is not None]),
-                "df_vs_n": len(stats), "duplicate": len(stats)}
+                "df_vs_n": len(stats), "duplicate": len(stats),
+                "unverifiable": len([f for f in flags if f.check == "unverifiable"]),
+                "ci_symmetry": len([f for f in flags if f.check == "ci_symmetry"]),
+                "regression": len([f for f in flags if f.check == "regression"])}
     enriched = []
     for s in stats:
         d = s.to_dict()

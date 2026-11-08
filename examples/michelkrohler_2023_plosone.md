@@ -1,6 +1,6 @@
 # papercheck report: michelkrohler_2023_plosone.pdf
 
-Generated 2026-11-08 with papercheck 0.1.0. 34 pages, 86 test statistics with p values, 191 reported means (7 with a usable N for GRIM).
+Generated 2026-11-08 with papercheck 0.1.0. 34 pages, 86 test statistics with p values, 458 reported means (7 with a usable N for GRIM).
 
 ## Summary
 
@@ -11,8 +11,11 @@ Generated 2026-11-08 with papercheck 0.1.0. 34 pages, 86 test statistics with p 
 | GRIMMER (SDs of integer data) | 7 | 0 | 0 | 0 |
 | Degrees of freedom vs reported N | 86 | 0 | 0 | 0 |
 | Duplicated statistics | 86 | 0 | 0 | 2 |
+| Unverifiable statements (ps < .05, statistics without p, p without statistic) | 19 | 0 | 0 | 19 |
+| 95% CI vs point estimate | 0 | 0 | 0 | 0 |
+| Regression coefficient vs SE and p | 0 | 0 | 0 | 0 |
 
-Total flags: 11 (errors 0, warnings 6, info 5).
+Total flags: 30 (errors 0, warnings 6, info 24).
 
 Severity: an error is a reported vs recomputed p value on different sides of .05 (the conclusion about significance would change). A warning is a numeric inconsistency that does not change the decision, or a GRIM failure. Info items are worth a look but have common benign explanations.
 
@@ -84,7 +87,31 @@ Sentence: "The mean age was 28.68 (SD = 13.11)."
 
 GRIM: a mean of 28.68 with n = 61 (N taken from the nearest preceding N on the page) is not possible if each score is a whole number (for example a single Likert item or a count). The nearest possible means are 28.67, 28.69. This only matters if the measure is integer-valued; averaged multi-item scales or continuous measures make GRIM inapplicable.
 
-### 8. [INFO] Duplicated statistics, page 11
+### 8. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 10
+
+Reported: `p > .05`
+
+Sentence: "We conducted a Shapiro-Wilk Test for testing the assumption of normality (p > .05) and a Levene's Test for testing the homogeneity of variance (p > .05)."
+
+'p > .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 9. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 10
+
+Reported: `p > .05`
+
+Sentence: "We conducted a Shapiro-Wilk Test for testing the assumption of normality (p > .05) and a Levene's Test for testing the homogeneity of variance (p > .05)."
+
+'p > .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 10. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 10
+
+Reported: `p < .05`
+
+Sentence: "In case of violation of sphericity, we used Mauchly's Test (p < .05) and applied a Greenhouse- Geisser correction for ANOVAs."
+
+'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 11. [INFO] Duplicated statistics, page 11
 
 Reported: `F(1,162) = 4.13, p = .04`
 
@@ -92,7 +119,15 @@ Sentence: "We found no significant difference between the conditions in our expe
 
 The statistic F(1, 162) = 4.13 with the same p value appears 2 times (pages 11, 14). Often legitimate (abstract and results, or a table and the text), but identical statistics for different analyses deserve a check.
 
-### 9. [INFO] GRIM (means of integer data), page 14
+### 12. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 11
+
+Reported: `F(1,162) < 1`
+
+Sentence: "Furthermore, time effects were obtained in all variables used except for energetic arousal, F(1,162) < 1."
+
+'F(1,162) < 1' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 0.3188.
+
+### 13. [INFO] GRIM (means of integer data), page 14
 
 Reported: `26.20 (SD = 6.79)`
 
@@ -100,7 +135,7 @@ Sentence: "The mean age was 26.20 (SD = 6.79), and participants received course 
 
 GRIM: a mean of 26.20 with n = 12 (N taken from the nearest preceding N on the page) is not possible if each score is a whole number (for example a single Likert item or a count). The nearest possible means are 26.17, 26.25. This only matters if the measure is integer-valued; averaged multi-item scales or continuous measures make GRIM inapplicable.
 
-### 10. [INFO] Duplicated statistics, page 14
+### 14. [INFO] Duplicated statistics, page 14
 
 Reported: `F(1,36) = 6.08, p = .02`
 
@@ -108,13 +143,133 @@ Sentence: "...62) = 19.45, p < .001.11 F(1,162) < 1 - Perceived strain F(1,162) 
 
 The statistic F(1, 36) = 6.08 with the same p value appears 2 times (pages 14). Often legitimate (abstract and results, or a table and the text), but identical statistics for different analyses deserve a check.
 
-### 11. [INFO] GRIM (means of integer data), page 21
+### 15. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 15
+
+Reported: `p = .21`
+
+Sentence: "...ts F-statistic Exp. 1a* M (SD) M (SD) Errors of commission Mean RT Experimental condition 1 FC(1,156) < 1 FC(1,156) < 1 Errors of commission 37.01(20.62) 39.98 (24.40) FM(1,156) < 1 FM(1,156) = 1.58, p = .21, ηp2 = .01 Mean RT 419.15 (84.33) 417.66 (86.63) FI(1,162) = 2.42, p = .12, ηp2 = .01 FI (1,156) = 2.54, p = .11, ηp2 = .02 Experimental condition 2 Errors of commission 41.29 (19.85) 40.46 (2..."
+
+'p = .21' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 16. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 15
+
+Reported: `p = .12`
+
+Sentence: "...ntal condition 1 FC(1,156) < 1 FC(1,156) < 1 Errors of commission 37.01(20.62) 39.98 (24.40) FM(1,156) < 1 FM(1,156) = 1.58, p = .21, ηp2 = .01 Mean RT 419.15 (84.33) 417.66 (86.63) FI(1,162) = 2.42, p = .12, ηp2 = .01 FI (1,156) = 2.54, p = .11, ηp2 = .02 Experimental condition 2 Errors of commission 41.29 (19.85) 40.46 (23.51) Mean RT 403.96 (79.27) 416.62 (93.00) Exp. 1b Experimental condition..."
+
+'p = .12' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 17. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 15
+
+Reported: `p = .11`
+
+Sentence: "...6) < 1 Errors of commission 37.01(20.62) 39.98 (24.40) FM(1,156) < 1 FM(1,156) = 1.58, p = .21, ηp2 = .01 Mean RT 419.15 (84.33) 417.66 (86.63) FI(1,162) = 2.42, p = .12, ηp2 = .01 FI (1,156) = 2.54, p = .11, ηp2 = .02 Experimental condition 2 Errors of commission 41.29 (19.85) 40.46 (23.51) Mean RT 403.96 (79.27) 416.62 (93.00) Exp. 1b Experimental condition 1 FC(2,36) < 1 FC(2,36) < 1 Errors of..."
+
+'p = .11' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 18. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 15
+
+Reported: `p = .02`
+
+Sentence: "...mmission 41.29 (19.85) 40.46 (23.51) Mean RT 403.96 (79.27) 416.62 (93.00) Exp. 1b Experimental condition 1 FC(2,36) < 1 FC(2,36) < 1 Errors of commission 38.40 (18.96) 40.10 (22.72) FT(1,36) = 5.70, p = .02, ηp2 = .14 FT(1,36) < 1 Mean RT 418.18 (83.89) 431.92 (88.18) FI(2,36) = 1.19, p = .31, ηp2 = .06 FI(2,36) = 2.54, p = .09, ηp2 = .12 Experimental condition 2 Errors of commission 37.55 (25.82..."
+
+'p = .02' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 19. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 15
+
+Reported: `p = .31`
+
+Sentence: "...rimental condition 1 FC(2,36) < 1 FC(2,36) < 1 Errors of commission 38.40 (18.96) 40.10 (22.72) FT(1,36) = 5.70, p = .02, ηp2 = .14 FT(1,36) < 1 Mean RT 418.18 (83.89) 431.92 (88.18) FI(2,36) = 1.19, p = .31, ηp2 = .06 FI(2,36) = 2.54, p = .09, ηp2 = .12 Experimental condition 2 Errors of commission 37.55 (25.82) 41.78 (29.69) Mean RT 457.81 (83.82) 450.33 (78.86) Neutral control condition Errors..."
+
+'p = .31' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 20. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 15
+
+Reported: `p = .09`
+
+Sentence: "...(2,36) < 1 Errors of commission 38.40 (18.96) 40.10 (22.72) FT(1,36) = 5.70, p = .02, ηp2 = .14 FT(1,36) < 1 Mean RT 418.18 (83.89) 431.92 (88.18) FI(2,36) = 1.19, p = .31, ηp2 = .06 FI(2,36) = 2.54, p = .09, ηp2 = .12 Experimental condition 2 Errors of commission 37.55 (25.82) 41.78 (29.69) Mean RT 457.81 (83.82) 450.33 (78.86) Neutral control condition Errors of commission 36.00 (18.93) 45.00 (2..."
+
+'p = .09' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 21. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 15
+
+Reported: `p = .15`
+
+Sentence: "...l condition Errors of commission 36.00 (18.93) 45.00 (21.44) Mean RT 426.93 (129.35) 394.32 (97.62) Exp. 1c* Experimental condition 1 Errors of commission 47.68 (22.02) 48.21 (22.24) FC(2,50) = 1.93, p = .15, ηp2 = .07 FT(1,50) = 4.41, p = .04, ηp2 = .08 FI(2,50) < 1 FC(2,50) < 1 FT(1,50) = 2.86, p = .10, ηp2 = .05 FI(2,50) < 1 Mean RT 387.54 (64.44) 382.34 (67.93) Experimental condition 2 Errors..."
+
+'p = .15' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 22. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 15
+
+Reported: `p = .04`
+
+Sentence: "...00 (18.93) 45.00 (21.44) Mean RT 426.93 (129.35) 394.32 (97.62) Exp. 1c* Experimental condition 1 Errors of commission 47.68 (22.02) 48.21 (22.24) FC(2,50) = 1.93, p = .15, ηp2 = .07 FT(1,50) = 4.41, p = .04, ηp2 = .08 FI(2,50) < 1 FC(2,50) < 1 FT(1,50) = 2.86, p = .10, ηp2 = .05 FI(2,50) < 1 Mean RT 387.54 (64.44) 382.34 (67.93) Experimental condition 2 Errors of commission 34.50 (17.30) 40.12 (1..."
+
+'p = .04' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 23. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 15
+
+Reported: `p = .10`
+
+Sentence: "...) Exp. 1c* Experimental condition 1 Errors of commission 47.68 (22.02) 48.21 (22.24) FC(2,50) = 1.93, p = .15, ηp2 = .07 FT(1,50) = 4.41, p = .04, ηp2 = .08 FI(2,50) < 1 FC(2,50) < 1 FT(1,50) = 2.86, p = .10, ηp2 = .05 FI(2,50) < 1 Mean RT 387.54 (64.44) 382.34 (67.93) Experimental condition 2 Errors of commission 34.50 (17.30) 40.12 (17.52) Mean RT 411.36 (57.24) 402.46 (67.18) Neutral control co..."
+
+'p = .10' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 24. [INFO] GRIM (means of integer data), page 21
 
 Reported: `24.28 (SD = 5.70)`
 
 Sentence: "The mean age was 24.28 (SD = 5.70)."
 
 GRIM: a mean of 24.28 with n = 2 (N taken from the nearest preceding N on the page) is not possible if each score is a whole number (for example a single Likert item or a count). The nearest possible means are 24.50, 24.00. This only matters if the measure is integer-valued; averaged multi-item scales or continuous measures make GRIM inapplicable.
+
+### 25. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 24
+
+Reported: `F(1,201) < 1`
+
+Sentence: "The effect for time was not significant, F(1,201) < 1."
+
+'F(1,201) < 1' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 0.3185.
+
+### 26. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 25
+
+Reported: `F(1,201) < 1`
+
+Sentence: "The effect for time was not significant, F(1,201) < 1."
+
+'F(1,201) < 1' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 0.3185.
+
+### 27. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 26
+
+Reported: `p = .02`
+
+Sentence: "Block 1 Block 2 Results F-statistic M (SD) M (SD) Errors of commission Mean RT Experimental condition 1 FC(3,187) = 3.30, p = .02, ηp2 = .05 FT(1,187) = 7.36, p < .01, ηp2 = .04 FI(3,187) = 2.04, p = .11, ηp2 = .03 FC(3,187) < 1 FT(1,187) = 6.26, p = .01, ηp2 = .03 FI(3,187) < 1 Errors of commission 51.48 (17.08) 58.96 (22.27) Mean RT 377.35 (71.88) 390.32 (94.19) Experimental condition 2 Errors o..."
+
+'p = .02' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 28. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 26
+
+Reported: `p < .01`
+
+Sentence: "Block 1 Block 2 Results F-statistic M (SD) M (SD) Errors of commission Mean RT Experimental condition 1 FC(3,187) = 3.30, p = .02, ηp2 = .05 FT(1,187) = 7.36, p < .01, ηp2 = .04 FI(3,187) = 2.04, p = .11, ηp2 = .03 FC(3,187) < 1 FT(1,187) = 6.26, p = .01, ηp2 = .03 FI(3,187) < 1 Errors of commission 51.48 (17.08) 58.96 (22.27) Mean RT 377.35 (71.88) 390.32 (94.19) Experimental condition 2 Errors o..."
+
+'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 29. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 26
+
+Reported: `p = .11`
+
+Sentence: "Block 1 Block 2 Results F-statistic M (SD) M (SD) Errors of commission Mean RT Experimental condition 1 FC(3,187) = 3.30, p = .02, ηp2 = .05 FT(1,187) = 7.36, p < .01, ηp2 = .04 FI(3,187) = 2.04, p = .11, ηp2 = .03 FC(3,187) < 1 FT(1,187) = 6.26, p = .01, ηp2 = .03 FI(3,187) < 1 Errors of commission 51.48 (17.08) 58.96 (22.27) Mean RT 377.35 (71.88) 390.32 (94.19) Experimental condition 2 Errors o..."
+
+'p = .11' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 30. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 26
+
+Reported: `p = .01`
+
+Sentence: "...D) Errors of commission Mean RT Experimental condition 1 FC(3,187) = 3.30, p = .02, ηp2 = .05 FT(1,187) = 7.36, p < .01, ηp2 = .04 FI(3,187) = 2.04, p = .11, ηp2 = .03 FC(3,187) < 1 FT(1,187) = 6.26, p = .01, ηp2 = .03 FI(3,187) < 1 Errors of commission 51.48 (17.08) 58.96 (22.27) Mean RT 377.35 (71.88) 390.32 (94.19) Experimental condition 2 Errors of commission 46.42 (21.29) 47.28 (22.32) Mean R..."
+
+'p = .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
 
 ## All extracted test statistics
 

@@ -9,40 +9,19 @@ Generated 2026-11-08 with papercheck 0.1.0. 34 pages, 28 test statistics with p 
 | p value recomputation (statcheck style) | 28 | 0 | 1 | 0 |
 | GRIM (means of integer data) | 7 | 0 | 0 | 0 |
 | GRIMMER (SDs of integer data) | 7 | 0 | 0 | 0 |
-| Degrees of freedom vs reported N | 28 | 0 | 3 | 0 |
+| Degrees of freedom vs reported N | 28 | 0 | 0 | 3 |
 | Duplicated statistics | 28 | 0 | 0 | 0 |
+| Unverifiable statements (ps < .05, statistics without p, p without statistic) | 16 | 0 | 0 | 16 |
+| 95% CI vs point estimate | 0 | 0 | 0 | 0 |
+| Regression coefficient vs SE and p | 0 | 0 | 0 | 0 |
 
-Total flags: 4 (errors 0, warnings 4, info 0).
+Total flags: 20 (errors 0, warnings 1, info 19).
 
 Severity: an error is a reported vs recomputed p value on different sides of .05 (the conclusion about significance would change). A warning is a numeric inconsistency that does not change the decision, or a GRIM failure. Info items are worth a look but have common benign explanations.
 
 ## Flagged items
 
-### 1. [WARNING] Degrees of freedom vs reported N, page 9
-
-Reported: `F(6, 1156) = 22.09, p < .001`
-
-Sentence: "Using Wilks' lambda, there was a significant effect of historical representation condition, λ = 0.81, F(6, 1156) = 22.09, p < .001, ηp 2 = .102."
-
-The degrees of freedom in F(6, 1156) = 22.09 imply at least 1163 participants under the usual design, but the largest sample size mentioned in the paper is 950. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.
-
-### 2. [WARNING] Degrees of freedom vs reported N, page 10
-
-Reported: `F(4, 1186) = 0.42, p = .792`
-
-Sentence: "Using Wilks' lambda, there was a non-significant effect of historical representation, λ = 0.98, F(4, 1186) = 0.42, p = .792, ηp 2 = .001."
-
-The degrees of freedom in F(4, 1186) = 0.42 imply at least 1191 participants under the usual design, but the largest sample size mentioned in the paper is 950. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.
-
-### 3. [WARNING] Degrees of freedom vs reported N, page 11
-
-Reported: `F(6, 1158) = 1.55, p = .157`
-
-Sentence: "Using Wilks' lambda, there was a non-significant effect of historical representation on group-based action, λ = 0.98, F(6, 1158) = 1.55, p = .157, ηp 2 = .008."
-
-The degrees of freedom in F(6, 1158) = 1.55 imply at least 1165 participants under the usual design, but the largest sample size mentioned in the paper is 950. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.
-
-### 4. [WARNING] p value recomputation (statcheck style), page 24
+### 1. [WARNING] p value recomputation (statcheck style), page 24
 
 Reported: `F(3, 240) = 0.08, p = .974`
 
@@ -51,6 +30,158 @@ Sentence: "up ANOVA main effects of consciousness-raising and collective politic
 Reported F(3, 240) = 0.08, p = .974. Recomputed p = 0.9708 (range 0.9682 to 0.9734 given rounding of the test statistic) does not match the reported p. The significance decision is unchanged.
 
 Recomputed p = 0.970822 (interval [0.968187, 0.973395]); consistent if one-tailed: False; decision error: False.
+
+### 2. [INFO] Degrees of freedom vs reported N, page 9
+
+Reported: `F(6, 1156) = 22.09, p < .001`
+
+Sentence: "Using Wilks' lambda, there was a significant effect of historical representation condition, λ = 0.81, F(6, 1156) = 22.09, p < .001, ηp 2 = .102."
+
+The degrees of freedom in F(6, 1156) = 22.09 imply at least 1163 participants under the usual design, but the largest sample size mentioned in the paper is 950. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.
+
+### 3. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 9
+
+Reported: `p < .001`
+
+Sentence: "Pairwise comparisons between the two historical representation conditions showed that positive precolonial history led to higher scores (i.e., significant mean difference; MD) on appraisals of the valence of African history in comparison to negative precolonial history (MD = 1.21, SE = 0.15, p < .001)."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 4. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 9
+
+Reported: `p = .190`
+
+Sentence: "However, pairwise comparisons between the two historical representation conditions showed that positive precolonial history did not lead to significantly higher scores on appraisals of the subjective importance of African history in comparison to the negative precolonial history (MD = -0.17, SE = 0.13, p = .190)."
+
+'p = .190' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 5. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 9
+
+Reported: `p < .01`
+
+Sentence: "COLACT .11** .14** .06.35** .20** .19** .65** Notes. * p a< .05 ** p < .01 1."
+
+'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 6. [INFO] Degrees of freedom vs reported N, page 10
+
+Reported: `F(4, 1186) = 0.42, p = .792`
+
+Sentence: "Using Wilks' lambda, there was a non-significant effect of historical representation, λ = 0.98, F(4, 1186) = 0.42, p = .792, ηp 2 = .001."
+
+The degrees of freedom in F(4, 1186) = 0.42 imply at least 1191 participants under the usual design, but the largest sample size mentioned in the paper is 950. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.
+
+### 7. [INFO] Degrees of freedom vs reported N, page 11
+
+Reported: `F(6, 1158) = 1.55, p = .157`
+
+Sentence: "Using Wilks' lambda, there was a non-significant effect of historical representation on group-based action, λ = 0.98, F(6, 1158) = 1.55, p = .157, ηp 2 = .008."
+
+The degrees of freedom in F(6, 1158) = 1.55 imply at least 1165 participants under the usual design, but the largest sample size mentioned in the paper is 950. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.
+
+### 8. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 13
+
+Reported: `p < .01`
+
+Sentence: "Group based action .15** .06.37** 1 Notes. ** p < .01 https://doi.org/10.1371/journal.pone.0308727.t005 Fig 2."
+
+'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 9. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 13
+
+Reported: `p < .001`
+
+Sentence: "Path entries are unstandardized coefficients. *** p < .001. https://doi.org/10.1371/journal.pone.0308727.g002 PLOS ONE Appraisals of in-group's collective history PLOS ONE | https://doi.org/10.1371/journal.pone.0308727 September 6, 2024 13 / 34"
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 10. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 14
+
+Reported: `p < .001`
+
+Sentence: "Path entries are unstandardized coefficients. *** p < .001. https://doi.org/10.1371/journal.pone.0308727.g003 PLOS ONE Appraisals of in-group's collective history PLOS ONE | https://doi.org/10.1371/journal.pone.0308727 September 6, 2024 14 / 34"
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 11. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 21
+
+Reported: `p < .01`
+
+Sentence: "Social competition .30** .08.32** .21** .21** Notes. ** p < .01 https://doi.org/10.1371/journal.pone.0308727.t006 Table 7."
+
+'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 12. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 21
+
+Reported: `p < .05`
+
+Sentence: "Social competition .08.05.16* .24** .22** Notes. * p < .05 ** p < .01 https://doi.org/10.1371/journal.pone.0308727.t007 PLOS ONE Appraisals of in-group's collective history PLOS ONE | https://doi.org/10.1371/journal.pone.0308727 September 6, 2024 21 / 34"
+
+'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 13. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 21
+
+Reported: `p < .01`
+
+Sentence: "Social competition .08.05.16* .24** .22** Notes. * p < .05 ** p < .01 https://doi.org/10.1371/journal.pone.0308727.t007 PLOS ONE Appraisals of in-group's collective history PLOS ONE | https://doi.org/10.1371/journal.pone.0308727 September 6, 2024 21 / 34"
+
+'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 14. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 22
+
+Reported: `F(1, 252) < 1`
+
+Sentence: "The interaction effect was not significant, F(1, 252) < 1."
+
+'F(1, 252) < 1' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 0.3183.
+
+### 15. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 22
+
+Reported: `F(1, 265) < 1`
+
+Sentence: "Furthermore, as expected there were null results for the (1) main effect of the manipulation of the subjective importance of African history on participants' appraised valence of African history, F(1, 265) < 1; and (2) interaction effect, F(1, 265) < 1."
+
+'F(1, 265) < 1' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 0.3182.
+
+### 16. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 22
+
+Reported: `F(1, 265) < 1`
+
+Sentence: "Furthermore, as expected there were null results for the (1) main effect of the manipulation of the subjective importance of African history on participants' appraised valence of African history, F(1, 265) < 1; and (2) interaction effect, F(1, 265) < 1."
+
+'F(1, 265) < 1' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 0.3182.
+
+### 17. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 22
+
+Reported: `F(1, 249) < 1`
+
+Sentence: "Furthermore, as expected there were null results for the (1) main effect of the manipulation of the subjective importance of African history on participants' appraised valence of African history, F(1, 249) < 1; and (2) interaction effect, F(1, 249) < 1."
+
+'F(1, 249) < 1' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 0.3183.
+
+### 18. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 22
+
+Reported: `F(1, 249) < 1`
+
+Sentence: "Furthermore, as expected there were null results for the (1) main effect of the manipulation of the subjective importance of African history on participants' appraised valence of African history, F(1, 249) < 1; and (2) interaction effect, F(1, 249) < 1."
+
+'F(1, 249) < 1' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 0.3183.
+
+### 19. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 23
+
+Reported: `F(1, 253) < 1`
+
+Sentence: "All other effects were null, these include (1) the main effect of historical representations, F(1, 253) < 1; and (2) the interaction effect of the subjective importance of African history and historical representations, F(1, 253) < 1."
+
+'F(1, 253) < 1' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 0.3183.
+
+### 20. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 23
+
+Reported: `F(1, 253) < 1`
+
+Sentence: "All other effects were null, these include (1) the main effect of historical representations, F(1, 253) < 1; and (2) the interaction effect of the subjective importance of African history and historical representations, F(1, 253) < 1."
+
+'F(1, 253) < 1' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 0.3183.
 
 ## All extracted test statistics
 

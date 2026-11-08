@@ -7,20 +7,25 @@
     "statistics_extracted": 25,
     "means_extracted": 18,
     "means_with_n": 0,
-    "flags_total": 7,
+    "flags_total": 8,
     "flags_by_severity": {
-      "warning": 7
+      "warning": 6,
+      "info": 2
     },
     "flags_by_check": {
-      "p_recompute": 6,
-      "df_vs_n": 1
+      "p_recompute": 5,
+      "df_vs_n": 1,
+      "unverifiable": 2
     },
     "examined": {
       "p_recompute": 25,
       "grim": 0,
       "grimmer": 0,
       "df_vs_n": 25,
-      "duplicate": 25
+      "duplicate": 25,
+      "unverifiable": 2,
+      "ci_symmetry": 0,
+      "regression": 0
     }
   },
   "flags": [
@@ -108,26 +113,6 @@
       "check": "p_recompute",
       "severity": "warning",
       "page": 9,
-      "sentence": "Similar results could be overserved the for more-severe situation (not responsible: M = 6.02, SD = 1.00; responsible: M = 6.02, SD = 1.12, t(334) < 0.01, p = .999).",
-      "raw": "t(334) < 0.01, p = .999",
-      "explanation": "Reported t(334) < 0.01, p = .999. Recomputed p = 0.9920 (range 0.9880 to 0.9960 given rounding of the test statistic) does not match the reported p. The significance decision is unchanged.",
-      "details": {
-        "stat": "t(334) < 0.01",
-        "p_reported": 0.999,
-        "p_comparator": "=",
-        "p_recomputed": 0.992027,
-        "p_recomputed_interval": [
-          0.988041,
-          0.996014
-        ],
-        "consistent_if_one_tailed": false,
-        "decision_error": false
-      }
-    },
-    {
-      "check": "p_recompute",
-      "severity": "warning",
-      "page": 9,
       "sentence": "Neither the Severity by Kinship interaction, F(1, 334) = 0.85, p = .427, nor the Responsibility by Kinship interaction, F(1, 334) = 1.01, p = .316, was significant.",
       "raw": "F(1, 334) = 0.85, p = .427",
       "explanation": "Reported F(1, 334) = 0.85, p = .427. Recomputed p = 0.3572 (range 0.3558 to 0.3586 given rounding of the test statistic) does not match the reported p. The significance decision is unchanged.",
@@ -157,6 +142,32 @@
           636
         ],
         "max_reported_n": 346
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 11,
+      "sentence": "PC = perceived costs for intervening, D1 = difference between the less-severe and moral courage situation; D2 = difference between less-severe and more-severe situation, WTI = willingness to intervene. *p < .05 **p < .001. https://doi.org/10.1371/journal.pone.0307740.g003 PLOS ONE Standing-up against moral violations PLOS ONE | https://doi.org/10.1371/journal.pone.0307740 August 12, 2024 11 / 17",
+      "raw": "p < .05",
+      "explanation": "'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 11,
+      "sentence": "PC = perceived costs for intervening, D1 = difference between the less-severe and moral courage situation; D2 = difference between less-severe and more-severe situation, WTI = willingness to intervene. *p < .05 **p < .001. https://doi.org/10.1371/journal.pone.0307740.g003 PLOS ONE Standing-up against moral violations PLOS ONE | https://doi.org/10.1371/journal.pone.0307740 August 12, 2024 11 / 17",
+      "raw": "p < .001",
+      "explanation": "'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
       }
     }
   ],
@@ -883,18 +894,6 @@
       "page": 8,
       "raw": "two",
       "kind": "spelled out"
-    },
-    {
-      "n": 2,
-      "page": 11,
-      "raw": "2 revealed that people",
-      "kind": "count noun"
-    },
-    {
-      "n": 2,
-      "page": 12,
-      "raw": "2 revealed that people",
-      "kind": "count noun"
     }
   ],
   "disclaimer": "This report lists places where a value reported in the paper differs from the value recomputed from other reported numbers. A difference is not evidence of misconduct. Common benign causes are rounding, typos, one-tailed tests, corrections for multiple comparisons, adjusted degrees of freedom, non-integer scales (which make GRIM and GRIMMER inapplicable) and PDF text-extraction errors. Each flag should be read in the paper before drawing any conclusion."

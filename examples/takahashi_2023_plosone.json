@@ -5,22 +5,27 @@
   "date": "2026-11-08",
   "summary": {
     "statistics_extracted": 23,
-    "means_extracted": 2,
+    "means_extracted": 35,
     "means_with_n": 0,
-    "flags_total": 5,
+    "flags_total": 8,
     "flags_by_severity": {
-      "warning": 5
+      "warning": 4,
+      "info": 4
     },
     "flags_by_check": {
       "p_recompute": 2,
-      "df_vs_n": 3
+      "df_vs_n": 3,
+      "unverifiable": 3
     },
     "examined": {
       "p_recompute": 23,
       "grim": 0,
       "grimmer": 0,
       "df_vs_n": 23,
-      "duplicate": 23
+      "duplicate": 23,
+      "unverifiable": 3,
+      "ci_symmetry": 0,
+      "regression": 0
     }
   },
   "flags": [
@@ -68,20 +73,6 @@
       "check": "df_vs_n",
       "severity": "warning",
       "page": 10,
-      "sentence": "When the new data were combined with the original Study 2 data, there was no significant effect of the four conditions (i.e., original \"calculation\" control, new \"no task\" control, literary fiction, and nonfiction conditions) on ΔRMET: F(3, 400) = 1.02, p = .382, η2 = .008.",
-      "raw": "F(3, 400) = 1.02, p = .382",
-      "explanation": "The degrees of freedom in F(3, 400) = 1.02 imply at least 404 participants under the usual design, but the largest sample size mentioned in the paper is 338. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
-      "details": {
-        "implied_n": [
-          404
-        ],
-        "max_reported_n": 338
-      }
-    },
-    {
-      "check": "df_vs_n",
-      "severity": "warning",
-      "page": 10,
       "sentence": "Even FS was not significantly correlated with fiction reading time, r(378) = .09, p = .094.",
       "raw": "r(378) = .09, p = .094",
       "explanation": "The degrees of freedom in r(378) = 0.09 imply at least 380 participants under the usual design, but the largest sample size mentioned in the paper is 338. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
@@ -104,6 +95,62 @@
           380
         ],
         "max_reported_n": 338
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "info",
+      "page": 10,
+      "sentence": "When the new data were combined with the original Study 2 data, there was no significant effect of the four conditions (i.e., original \"calculation\" control, new \"no task\" control, literary fiction, and nonfiction conditions) on ΔRMET: F(3, 400) = 1.02, p = .382, η2 = .008.",
+      "raw": "F(3, 400) = 1.02, p = .382",
+      "explanation": "The degrees of freedom in F(3, 400) = 1.02 imply at least 404 participants under the usual design, but the largest sample size mentioned in the paper is 338. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          404
+        ],
+        "max_reported_n": 338
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 10,
+      "sentence": "Fiction reading time was not significantly correlated with the three variants of the RMET score: r(378) = .003, .006, and .006 for the RMET-A, RMET-B, and total RMET (i.e., RMET-A + RMET-B) scores, respectively (all ps > .40).",
+      "raw": "all ps > .40",
+      "explanation": "'all ps > .40' is a blanket p statement covering several tests at once. It cannot be checked against a specific test statistic.",
+      "details": {
+        "kind": "blanket_p",
+        "p_comparator": ">",
+        "p": 0.4
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "In fact, the correlation between RMET-A and RMET-B was low: r(402) = .30.",
+      "raw": "r(402) = .30",
+      "explanation": "'r(402) = .30' is reported without a p value in the same sentence, so it cannot be verified. The statistic implies a two-tailed p = 7.58e-10.",
+      "details": {
+        "kind": "stat_without_p",
+        "stat": "r",
+        "value": 0.3,
+        "df1": 402.0,
+        "df2": null,
+        "p_implied": 0.0
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "Moreover, RMET performance is known to be positively associated with vocabulary (our measure of vocabulary was also significantly, but weakly, correlated with RMET score: r402 = .098, p = .049).",
+      "raw": "p = .049",
+      "explanation": "'p = .049' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.049
       }
     }
   ],
@@ -524,6 +571,402 @@
       "page": 10,
       "sentence": "...ain hypothesis (i.e., exposure to literary fiction increases the RMET score) using the RMET-B score instead of ΔRMET. However, the RMET-B score did not significantly vary across the three conditions: 12.50 (SD = 2.19), 12.67 (2.02), and 12.91 (2.18) in the control, fiction, and nonfiction conditions, respectively, F(2, 301) = 0.93, p = 0.398, η2 = .006....",
       "pos": 1379
+    },
+    {
+      "mean": 6.66,
+      "mean_text": "6.66",
+      "sd": 11.5,
+      "sd_text": "11.50",
+      "n": null,
+      "n_source": "",
+      "raw": "6.66 (11.50)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Fition Reing Time'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 1.4,
+      "mean_text": "1.40",
+      "sd": 4.0,
+      "sd_text": "4.00",
+      "n": null,
+      "n_source": "",
+      "raw": "1.40 (4.00)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Nonfition Reing Time'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 14.33,
+      "mean_text": "14.33",
+      "sd": 18.07,
+      "sd_text": "18.07",
+      "n": null,
+      "n_source": "",
+      "raw": "14.33 (18.07)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Sports Time'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 39.02,
+      "mean_text": "39.02",
+      "sd": 55.3,
+      "sd_text": "55.3",
+      "n": null,
+      "n_source": "",
+      "raw": "39.02 (55.3)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Time Vieogme'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 8.81,
+      "mean_text": "8.81",
+      "sd": 19.62,
+      "sd_text": "19.62",
+      "n": null,
+      "n_source": "",
+      "raw": "8.81 (19.62)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Reing Time Mng'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 10.27,
+      "mean_text": "10.27",
+      "sd": 14.66,
+      "sd_text": "14.66",
+      "n": null,
+      "n_source": "",
+      "raw": "10.27 (14.66)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Films per Yer'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 2.34,
+      "mean_text": "2.34",
+      "sd": 2.31,
+      "sd_text": "2.31",
+      "n": null,
+      "n_source": "",
+      "raw": "2.34 (2.31)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Dy) SNS Time (per'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 25.49,
+      "mean_text": "25.49",
+      "sd": 3.42,
+      "sd_text": "3.42",
+      "n": null,
+      "n_source": "",
+      "raw": "25.49 (3.42)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'RMET'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 3.06,
+      "mean_text": "3.06",
+      "sd": 0.64,
+      "sd_text": "0.64",
+      "n": null,
+      "n_source": "",
+      "raw": "3.06 (0.64)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Perspetive Tking'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 3.26,
+      "mean_text": "3.26",
+      "sd": 0.68,
+      "sd_text": "0.68",
+      "n": null,
+      "n_source": "",
+      "raw": "3.26 (0.68)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Personl Distress'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 3.46,
+      "mean_text": "3.46",
+      "sd": 0.68,
+      "sd_text": "0.68",
+      "n": null,
+      "n_source": "",
+      "raw": "3.46 (0.68)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Empthi Conern'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 3.57,
+      "mean_text": "3.57",
+      "sd": 0.81,
+      "sd_text": "0.81",
+      "n": null,
+      "n_source": "",
+      "raw": "3.57 (0.81)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Fntsy'; column 'M'",
+      "pos": 0
+    },
+    {
+      "mean": 0.11,
+      "mean_text": ".11",
+      "sd": 0.052,
+      "sd_text": ".052",
+      "n": null,
+      "n_source": "",
+      "raw": ".11 (.052)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'RMET'; column 'Log10 Trnsforme Sore'",
+      "pos": 0
+    },
+    {
+      "mean": 0.02,
+      "mean_text": ".02",
+      "sd": 0.661,
+      "sd_text": ".661",
+      "n": null,
+      "n_source": "",
+      "raw": ".02 (.661)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'RMET'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.08,
+      "mean_text": ".08",
+      "sd": 0.14,
+      "sd_text": ".140",
+      "n": null,
+      "n_source": "",
+      "raw": ".08 (.140)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'RMET'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.07,
+      "mean_text": ".07",
+      "sd": 0.172,
+      "sd_text": ".172",
+      "n": null,
+      "n_source": "",
+      "raw": ".07 (.172)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'RMET'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.09,
+      "mean_text": ".09",
+      "sd": 0.109,
+      "sd_text": ".109",
+      "n": null,
+      "n_source": "",
+      "raw": ".09 (.109)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'RMET'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.01,
+      "mean_text": ".01",
+      "sd": 0.919,
+      "sd_text": ".919",
+      "n": null,
+      "n_source": "",
+      "raw": ".01 (.919)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'RMET'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.1,
+      "mean_text": ".10",
+      "sd": 0.089,
+      "sd_text": ".089",
+      "n": null,
+      "n_source": "",
+      "raw": ".10 (.089)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Perspetive Tking'; column 'Log10 Trnsforme Sore'",
+      "pos": 0
+    },
+    {
+      "mean": 0.01,
+      "mean_text": ".01",
+      "sd": 0.88,
+      "sd_text": ".880",
+      "n": null,
+      "n_source": "",
+      "raw": ".01 (.880)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Perspetive Tking'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.03,
+      "mean_text": ".03",
+      "sd": 0.533,
+      "sd_text": ".533",
+      "n": null,
+      "n_source": "",
+      "raw": ".03 (.533)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Perspetive Tking'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.01,
+      "mean_text": ".01",
+      "sd": 0.867,
+      "sd_text": ".867",
+      "n": null,
+      "n_source": "",
+      "raw": ".01 (.867)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Perspetive Tking'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.01,
+      "mean_text": ".01",
+      "sd": 0.886,
+      "sd_text": ".886",
+      "n": null,
+      "n_source": "",
+      "raw": ".01 (.886)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Perspetive Tking'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.02,
+      "mean_text": ".02",
+      "sd": 0.668,
+      "sd_text": ".668",
+      "n": null,
+      "n_source": "",
+      "raw": ".02 (.668)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Perspetive Tking'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.04,
+      "mean_text": ".04",
+      "sd": 0.5,
+      "sd_text": ".500",
+      "n": null,
+      "n_source": "",
+      "raw": ".04 (.500)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Personl Distress'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.11,
+      "mean_text": ".11",
+      "sd": 0.042,
+      "sd_text": ".042",
+      "n": null,
+      "n_source": "",
+      "raw": ".11 (.042)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Personl Distress'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.07,
+      "mean_text": ".07",
+      "sd": 0.202,
+      "sd_text": ".202",
+      "n": null,
+      "n_source": "",
+      "raw": ".07 (.202)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Empthi Conern'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.03,
+      "mean_text": ".03",
+      "sd": 0.553,
+      "sd_text": ".553",
+      "n": null,
+      "n_source": "",
+      "raw": ".03 (.553)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Empthi Conern'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.03,
+      "mean_text": ".03",
+      "sd": 0.305,
+      "sd_text": ".305",
+      "n": null,
+      "n_source": "",
+      "raw": ".03 (.305)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Fntsy'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.03,
+      "mean_text": ".03",
+      "sd": 0.635,
+      "sd_text": ".635",
+      "n": null,
+      "n_source": "",
+      "raw": ".03 (.635)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Fntsy'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.03,
+      "mean_text": ".03",
+      "sd": 0.642,
+      "sd_text": ".642",
+      "n": null,
+      "n_source": "",
+      "raw": ".03 (.642)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Fntsy'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.15,
+      "mean_text": ".15",
+      "sd": 0.006,
+      "sd_text": ".006",
+      "n": null,
+      "n_source": "",
+      "raw": ".15 (.006)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Fntsy'; column ''",
+      "pos": 0
+    },
+    {
+      "mean": 0.14,
+      "mean_text": ".14",
+      "sd": 0.012,
+      "sd_text": ".012",
+      "n": null,
+      "n_source": "",
+      "raw": ".14 (.012)",
+      "page": 5,
+      "sentence": "Table 1. Descriptive statistics of the variables of interest (Study 1).; row 'Fntsy'; column ''",
+      "pos": 0
     }
   ],
   "sample_sizes": [
@@ -597,12 +1040,6 @@
       "n": 148,
       "page": 7,
       "raw": "148 men",
-      "kind": "count noun"
-    },
-    {
-      "n": 2,
-      "page": 8,
-      "raw": "2 participants",
       "kind": "count noun"
     },
     {

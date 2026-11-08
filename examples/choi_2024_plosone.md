@@ -11,14 +11,41 @@ Generated 2026-11-08 with papercheck 0.1.0. 21 pages, 33 test statistics with p 
 | GRIMMER (SDs of integer data) | 0 | 0 | 0 | 0 |
 | Degrees of freedom vs reported N | 33 | 0 | 0 | 0 |
 | Duplicated statistics | 33 | 0 | 0 | 0 |
+| Unverifiable statements (ps < .05, statistics without p, p without statistic) | 17 | 0 | 0 | 17 |
+| 95% CI vs point estimate | 4 | 0 | 4 | 0 |
+| Regression coefficient vs SE and p | 0 | 0 | 0 | 0 |
 
-Total flags: 1 (errors 0, warnings 1, info 0).
+Total flags: 22 (errors 0, warnings 5, info 17).
 
 Severity: an error is a reported vs recomputed p value on different sides of .05 (the conclusion about significance would change). A warning is a numeric inconsistency that does not change the decision, or a GRIM failure. Info items are worth a look but have common benign explanations.
 
 ## Flagged items
 
-### 1. [WARNING] p value recomputation (statcheck style), page 15
+### 1. [WARNING] 95% CI vs point estimate, page 9
+
+Reported: `effect of -.1044 (95% CI:-.1718, -.0496`
+
+Sentence: "Competence also had a significant indirect effect of -.1044 (95% CI:-.1718, -.0496)."
+
+Reported effect = -.1044 with CI [-.1718, -.0496]. For a symmetric interval the point estimate should be at the midpoint (-.1718 + -.0496) / 2 = -0.1107, but the reported value is 0.0063 away. The interval may belong to a different estimate, be a bootstrap or otherwise asymmetric interval, or contain a typo.
+
+### 2. [WARNING] 95% CI vs point estimate, page 12
+
+Reported: `effect of -.3862 (95% CI:-.4915, -.2970`
+
+Sentence: "This analysis revealed an indirect effect of -.3862 (95% CI:-.4915, -.2970) for prosociality, indicating a significant indirect effect."
+
+Reported effect = -.3862 with CI [-.4915, -.2970]. For a symmetric interval the point estimate should be at the midpoint (-.4915 + -.2970) / 2 = -0.3942, but the reported value is 0.0081 away. The interval may belong to a different estimate, be a bootstrap or otherwise asymmetric interval, or contain a typo.
+
+### 3. [WARNING] 95% CI vs point estimate, page 12
+
+Reported: `effect of -.0803 (95% CI:-.1314, -.0345`
+
+Sentence: "Competence also had a significant indirect effect of -.0803 (95% CI:-.1314, -.0345)."
+
+Reported effect = -.0803 with CI [-.1314, -.0345]. For a symmetric interval the point estimate should be at the midpoint (-.1314 + -.0345) / 2 = -0.0829, but the reported value is 0.0026 away. The interval may belong to a different estimate, be a bootstrap or otherwise asymmetric interval, or contain a typo.
+
+### 4. [WARNING] p value recomputation (statcheck style), page 15
 
 Reported: `t(184.671) = 2.781, p = .036`
 
@@ -27,6 +54,150 @@ Sentence: "However, among targets described as being highly prosocial, while tar
 Reported t(184.671) = 2.781, p = .036. Recomputed p = 0.0060 (range 0.0060 to 0.0060 given rounding of the test statistic) does not match the reported p. The significance decision is unchanged.
 
 Recomputed p = 0.005981 (interval [0.005972, 0.00599]); consistent if one-tailed: False; decision error: False.
+
+### 5. [WARNING] 95% CI vs point estimate, page 16
+
+Reported: `effect of -.1275 (95% CI:-.1974, -.0657`
+
+Sentence: "Perceived competence also had a significant indirect effect of -.1275 (95% CI:-.1974, -.0657)."
+
+Reported effect = -.1275 with CI [-.1974, -.0657]. For a symmetric interval the point estimate should be at the midpoint (-.1974 + -.0657) / 2 = -0.1316, but the reported value is 0.0040 away. The interval may belong to a different estimate, be a bootstrap or otherwise asymmetric interval, or contain a typo.
+
+### 6. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 5
+
+Reported: `p = .016`
+
+Sentence: "In one-way ANOVAs, we found coworkers with the highest perceived desire for status were afforded significantly less status (M = 4.46, 95% CI = [4.20, 4.72]) than coworkers with a moderate desire for status (M = 4.92, 95% CI = [4.67, 5.17], p = .016), and coworkers with the lowest desire for status (M = 4.93, 95% CI = [4.70, 5.16], p = .007)."
+
+'p = .016' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 7. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 5
+
+Reported: `p = .007`
+
+Sentence: "In one-way ANOVAs, we found coworkers with the highest perceived desire for status were afforded significantly less status (M = 4.46, 95% CI = [4.20, 4.72]) than coworkers with a moderate desire for status (M = 4.92, 95% CI = [4.67, 5.17], p = .016), and coworkers with the lowest desire for status (M = 4.93, 95% CI = [4.70, 5.16], p = .007)."
+
+'p = .007' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 8. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 5
+
+Reported: `p = .999`
+
+Sentence: "There were no significant differences between coworkers in the lowest third and the coworkers in the middle third, p = .999."
+
+'p = .999' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 9. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 8
+
+Reported: `p < .001`
+
+Sentence: "Participants rated targets described as high in the desire for status (M = 4.29, 95% CI [4.15, 4.42]) as less prosocial than targets described as high in the desire for achievement (M = 5.22, 95% CI [5.09, 5.35], p < .001), and control targets (M = 5.63, 95% CI [5.50, 5.76], p < .001)."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 10. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 8
+
+Reported: `p < .001`
+
+Sentence: "Participants rated targets described as high in the desire for status (M = 4.29, 95% CI [4.15, 4.42]) as less prosocial than targets described as high in the desire for achievement (M = 5.22, 95% CI [5.09, 5.35], p < .001), and control targets (M = 5.63, 95% CI [5.50, 5.76], p < .001)."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 11. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 9
+
+Reported: `p < .001`
+
+Sentence: "Participants rated targets described as high in the desire for status (M = 5.87, 95% CI [5.81, 5.92]) as less competent than targets described as high in the desire for achievement (M = 6.28, 95% CI [6.23, 6.33], p < .001), and control targets (M = 6.19, 95% CI [6.14, 6.24], p < .001)."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 12. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 9
+
+Reported: `p < .001`
+
+Sentence: "Participants rated targets described as high in the desire for status (M = 5.87, 95% CI [5.81, 5.92]) as less competent than targets described as high in the desire for achievement (M = 6.28, 95% CI [6.23, 6.33], p < .001), and control targets (M = 6.19, 95% CI [6.14, 6.24], p < .001)."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 13. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 12
+
+Reported: `p < .001`
+
+Sentence: "Targets described as desiring status for selfish reasons (M = 3.61, 95% CI [3.41, 3.80]) were seen as being significantly less prosocial than targets described as desiring status for prosocial reasons (M = 4.38, 95% CI [4.19, 4.58], p < .001), or the control targets (M = 5.13, 95% CI [4.94, 5.33], p < .001)."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 14. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 12
+
+Reported: `p < .001`
+
+Sentence: "Targets described as desiring status for selfish reasons (M = 3.61, 95% CI [3.41, 3.80]) were seen as being significantly less prosocial than targets described as desiring status for prosocial reasons (M = 4.38, 95% CI [4.19, 4.58], p < .001), or the control targets (M = 5.13, 95% CI [4.94, 5.33], p < .001)."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 15. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 12
+
+Reported: `p < .001`
+
+Sentence: "The difference between the targets desiring status for prosocial reasons and the control targets was also significant, p < .001."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 16. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 12
+
+Reported: `p < .001`
+
+Sentence: "Targets described as desiring status for selfish reasons (M = 5.36, 95% CI [5.16, 5.56]) were seen as being significantly less competent when compared to targets in the control condition (M = 5.89, 95% CI [5.69, 6.10], p < .001)."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 17. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 12
+
+Reported: `p = .074`
+
+Sentence: "However, targets described as desiring status for selfish reasons and targets described as desiring status for prosocial reasons (M = 5.62, 95% CI [5.42, 5.82]) were not significantly different in their competence ratings, p = .074."
+
+'p = .074' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 18. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 12
+
+Reported: `p = .063`
+
+Sentence: "The competence ratings for the targets desiring status for prosocial reasons and the control condition did not significantly differ either, p = .063."
+
+'p = .063' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 19. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 16
+
+Reported: `p < .001`
+
+Sentence: "Replicating the negative effect of desire for status on prosociality perceptions, targets described as having a strong desire for status (M = 4.23, 95% CI [4.10, 4.36]) were seen as significantly less prosocial than targets described as having a weak desire for status (M = 5.34, 95% CI [5.21, 5.47], p < .001)."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 20. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 16
+
+Reported: `p < .001`
+
+Sentence: "As expected and serving as a manipulation check, targets described as being highly prosocial (M = 5.07, 95% CI [4.94, 5.20]) were seen as being significantly more prosocial than targets who were not (M = 4.50, 95% CI [4.37, 4.63], p < .001)."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 21. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 16
+
+Reported: `p < .001`
+
+Sentence: "Similarly, targets described as having a strong desire for status (M = 5.48, 95% CI [5.36, 5.60]) were seen as significantly less competent than targets described as having a weak desire for status (M = 5.85, 95% CI [5.72, 5.97], p < .001)."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 22. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 16
+
+Reported: `p < .001`
+
+Sentence: "Targets described as being highly prosocial (M = 5.87, 95% CI [5.75, 6.00]) were seen as being significantly more competent than targets who were not (M = 5.45, 95% CI [5.33, 5.57], p < .001)."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
 
 ## All extracted test statistics
 

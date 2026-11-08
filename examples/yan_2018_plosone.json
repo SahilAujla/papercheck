@@ -7,13 +7,14 @@
     "statistics_extracted": 30,
     "means_extracted": 59,
     "means_with_n": 11,
-    "flags_total": 5,
+    "flags_total": 42,
     "flags_by_severity": {
       "warning": 1,
-      "info": 4
+      "info": 41
     },
     "flags_by_check": {
       "p_recompute": 1,
+      "unverifiable": 37,
       "grim": 4
     },
     "examined": {
@@ -21,7 +22,10 @@
       "grim": 11,
       "grimmer": 11,
       "df_vs_n": 30,
-      "duplicate": 30
+      "duplicate": 30,
+      "unverifiable": 37,
+      "ci_symmetry": 0,
+      "regression": 0
     }
   },
   "flags": [
@@ -43,6 +47,383 @@
         ],
         "consistent_if_one_tailed": false,
         "decision_error": false
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 8,
+      "sentence": "The average effort and task difficulty for the mindset-switching group (M = 4.52, SD = 1.27) is significantly greater than that of the non-switching group (M = 3.77, SD = 1.23, p = 0.005).",
+      "raw": "p = 0.005",
+      "explanation": "'p = 0.005' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.005
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 8,
+      "sentence": "Post hoc comparisons using the Tukey HSD test indicate that the individualist group (M = 3.86, SD = 1.21) and the collectivist group (M = 3.67, SD = 1.28) have no significant difference (p = 0.842).",
+      "raw": "p = 0.842",
+      "explanation": "'p = 0.842' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.842
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 8,
+      "sentence": "The intention of the mindsetswitching group (M = 5.49, SD = 1.31) is significantly greater than that of the overall nonswitching group (M = 4.74, SD = 1.63, p = 0.019).",
+      "raw": "p = 0.019",
+      "explanation": "'p = 0.019' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.019
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 8,
+      "sentence": "Tukey HSD comparisons indicate that the individualist group (M = 5.04, SD = 1.49) and the collectivist group (M = 4.46, SD = 1.73) have no significant difference (p = 0.355).",
+      "raw": "p = 0.355",
+      "explanation": "'p = 0.355' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.355
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 8,
+      "sentence": "The SMW score of the mindset-switching group (M = -1.59, SD = 2.60) was significantly lower than that of the overall non-mindset switching group (M = -0.28, SD = 2.38, p = 0.014).",
+      "raw": "p = 0.014",
+      "explanation": "'p = 0.014' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.014
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 8,
+      "sentence": "Tukey HSD comparisons showed that the individualist group (M = -0.87, SD = 2.33) and the collectivist group (M = 0.27, SD = 2.34) had no significant difference (p = 0.233).",
+      "raw": "p = 0.233",
+      "explanation": "'p = 0.233' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.233
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 9,
+      "sentence": "...2 (Age) f2 -0.03 0.07 g2 0.00 0.11 g'2 0.01 0.12 C3 (Gender) f3 -0.13 0.29 g3 -2.10\u0003\u0003 0.52 g'3 -2.05\u0003\u0003 0.52 Constant i1 4.58\u0003\u0003 1.52 i2 -2.88 2.73 i3 1.29 2.84 R2 0.09# 0.24\u0003\u0003 0.27\u0003\u0003 F 2.17 6.67 6.14 #p < .10 \u0003p < .05 \u0003\u0003p < .01 https://doi.org/10.1371/journal.pone.0196269.t002 Mindset switching increases the appeal of wants over shoulds PLOS ONE | https://doi.org/10.1371/journal.pone.0196269 April...",
+      "raw": "p < .10",
+      "explanation": "'p < .10' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.1
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 9,
+      "sentence": "...2 -0.03 0.07 g2 0.00 0.11 g'2 0.01 0.12 C3 (Gender) f3 -0.13 0.29 g3 -2.10\u0003\u0003 0.52 g'3 -2.05\u0003\u0003 0.52 Constant i1 4.58\u0003\u0003 1.52 i2 -2.88 2.73 i3 1.29 2.84 R2 0.09# 0.24\u0003\u0003 0.27\u0003\u0003 F 2.17 6.67 6.14 #p < .10 \u0003p < .05 \u0003\u0003p < .01 https://doi.org/10.1371/journal.pone.0196269.t002 Mindset switching increases the appeal of wants over shoulds PLOS ONE | https://doi.org/10.1371/journal.pone.0196269 April 30, 2018...",
+      "raw": "p < .05",
+      "explanation": "'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 9,
+      "sentence": "...07 g2 0.00 0.11 g'2 0.01 0.12 C3 (Gender) f3 -0.13 0.29 g3 -2.10\u0003\u0003 0.52 g'3 -2.05\u0003\u0003 0.52 Constant i1 4.58\u0003\u0003 1.52 i2 -2.88 2.73 i3 1.29 2.84 R2 0.09# 0.24\u0003\u0003 0.27\u0003\u0003 F 2.17 6.67 6.14 #p < .10 \u0003p < .05 \u0003\u0003p < .01 https://doi.org/10.1371/journal.pone.0196269.t002 Mindset switching increases the appeal of wants over shoulds PLOS ONE | https://doi.org/10.1371/journal.pone.0196269 April 30, 2018 9 / 24...",
+      "raw": "p < .01",
+      "explanation": "'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.01
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 11,
+      "sentence": "The average for the ego depletion items for the mindset-switching group (M = 5.22, SD = 1.33) was significantly higher than that of the two non-switching conditions (M = 4.50, SD = 1.34, p = 0.002).",
+      "raw": "p = 0.002",
+      "explanation": "'p = 0.002' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.002
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 11,
+      "sentence": "Post hoc comparisons using the Tukey HSD test indicated that the concrete mindset group (M = 4.58, SD = 1.58) and the abstract mindset group (M = 4.43, SD = 1.08) had no significant difference in scores (p = 0.874).",
+      "raw": "p = 0.874",
+      "explanation": "'p = 0.874' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.874
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 11,
+      "sentence": "The should intention of the mindset-switching group (M = 2.53, SD = 1.33) was significantly lower than that of the overall non-switching group (M = 3.48, SD = 1.74, p = 0.001).",
+      "raw": "p = 0.001",
+      "explanation": "'p = 0.001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 11,
+      "sentence": "Post hoc comparisons using Tukey HSD indicated that the abstract mindset group (M = 3.14, SD = 1.35) and the concrete mindset group (M = 3.84, SD = 2.03) had no significant difference (p = 0.109).",
+      "raw": "p = 0.109",
+      "explanation": "'p = 0.109' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.109
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "group (M = 4.31, SD = 1.74, p = 0.011).",
+      "raw": "p = 0.011",
+      "explanation": "'p = 0.011' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.011
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "The Tukey HSD comparison showed that the abstract mindset group (M = 4.20, SD = 1.38) and the concrete mindset group (M = 4.42, SD = 1.30) had no significant difference (p = 0.778).",
+      "raw": "p = 0.778",
+      "explanation": "'p = 0.778' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.778
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "The SMW score of the mindset-switching group (M = -2.45, SD = 1.84) was significantly lower than that of the overall non-switching group (M = -0.82, SD = 2.45, p < 0.001).",
+      "raw": "p < 0.001",
+      "explanation": "'p < 0.001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.001
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "A Tukey HSD comparison showed that the abstract mindset group (M = -1.06, SD = 1.91) and the concrete mindset group (M = -0.59, SD = 2.91) had no significant difference (p = 0.596).",
+      "raw": "p = 0.596",
+      "explanation": "'p = 0.596' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.596
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "...0.48 C2 (Age) f2 -0.04 0.05 g2 0.00 0.09 g'2 -0.01 0.09 C3 (Gender) f3 0.13 0.23 g3 0.07 0.38 g'3 0.07 0.37 Constant i1 5.19\u0003\u0003 1.12 i2 -1.15 1.87 i3 1.25 1.94 R2 0.07\u0003 0.12\u0003\u0003 0.19\u0003\u0003 F 2.58 4.66 6.24 \u0003p < .05 \u0003\u0003p < .01 https://doi.org/10.1371/journal.pone.0196269.t003 Mindset switching increases the appeal of wants over shoulds PLOS ONE | https://doi.org/10.1371/journal.pone.0196269 April 30, 2018...",
+      "raw": "p < .05",
+      "explanation": "'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 12,
+      "sentence": "...ge) f2 -0.04 0.05 g2 0.00 0.09 g'2 -0.01 0.09 C3 (Gender) f3 0.13 0.23 g3 0.07 0.38 g'3 0.07 0.37 Constant i1 5.19\u0003\u0003 1.12 i2 -1.15 1.87 i3 1.25 1.94 R2 0.07\u0003 0.12\u0003\u0003 0.19\u0003\u0003 F 2.58 4.66 6.24 \u0003p < .05 \u0003\u0003p < .01 https://doi.org/10.1371/journal.pone.0196269.t003 Mindset switching increases the appeal of wants over shoulds PLOS ONE | https://doi.org/10.1371/journal.pone.0196269 April 30, 2018 12 / 24...",
+      "raw": "p < .01",
+      "explanation": "'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.01
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 15,
+      "sentence": "of ego depletion was significantly higher in the language-switching group (M = 5.53, SD = 1.11) than that of the two non-switching groups (M = 4.70, SD = 1.59, p = 0.006).",
+      "raw": "p = 0.006",
+      "explanation": "'p = 0.006' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.006
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 15,
+      "sentence": "The Tukey HSD test indicated that the Chinese-writing group (M = 4.54, SD = 1.77) and the English-writing group (M = 4.87, SD = 1.39) had no significant difference (p = 0.614).",
+      "raw": "p = 0.614",
+      "explanation": "'p = 0.614' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.614
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 15,
+      "sentence": "The intention of the language-switching group (M = 6.00, SD = 0.82) was significantly higher than that of the two non-switching groups (M = 5.37, SD = 1.37, p = 0.012).",
+      "raw": "p = 0.012",
+      "explanation": "'p = 0.012' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.012
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 15,
+      "sentence": "Multiple comparisons using the Tukey HSD test showed that the Chinese-writing group (M = 5.58, SD = 1.23) and the English-writing group (M = 5.15, SD = 1.50) had no significant difference (p = 0.288).",
+      "raw": "p = 0.288",
+      "explanation": "'p = 0.288' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.288
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 15,
+      "sentence": "The SMW score of the switching group (M = -2.57, SD = 1.83) was significantly lower than that of the overall non-switching group (M = -1.43, SD = 2.52, p = 0.017).",
+      "raw": "p = 0.017",
+      "explanation": "'p = 0.017' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.017
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 15,
+      "sentence": "The Tukey HSD test indicated that the Chinese-writing group (M = -1.72, SD = 2.36) and the English-writing group (M = -1.12, SD = 2.68) had no significant difference (p = 0.519).",
+      "raw": "p = 0.519",
+      "explanation": "'p = 0.519' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.519
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 15,
+      "sentence": "...3 0.62# 0.36 g3 -0.72 0.56 g'3 -0.17 0.47 C4 (Need for Cognition) f4 -0.02 0.22 g4 0.79\u0003 0.35 g'4 0.77\u0003\u0003 0.28 Constant i1 2.69 1.63 i2 -1.77 2.56 i3 0.66 2.12 R2 0.11\u0003 0.13\u0003 0.42\u0003\u0003 F 2.47 2.99 11.96 #p < .10 \u0003p < .05 \u0003\u0003p < .01 https://doi.org/10.1371/journal.pone.0196269.t004 Mindset switching increases the appeal of wants over shoulds PLOS ONE | https://doi.org/10.1371/journal.pone.0196269 April...",
+      "raw": "p < .10",
+      "explanation": "'p < .10' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.1
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 15,
+      "sentence": "....36 g3 -0.72 0.56 g'3 -0.17 0.47 C4 (Need for Cognition) f4 -0.02 0.22 g4 0.79\u0003 0.35 g'4 0.77\u0003\u0003 0.28 Constant i1 2.69 1.63 i2 -1.77 2.56 i3 0.66 2.12 R2 0.11\u0003 0.13\u0003 0.42\u0003\u0003 F 2.47 2.99 11.96 #p < .10 \u0003p < .05 \u0003\u0003p < .01 https://doi.org/10.1371/journal.pone.0196269.t004 Mindset switching increases the appeal of wants over shoulds PLOS ONE | https://doi.org/10.1371/journal.pone.0196269 April 30, 2018...",
+      "raw": "p < .05",
+      "explanation": "'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 15,
+      "sentence": "...72 0.56 g'3 -0.17 0.47 C4 (Need for Cognition) f4 -0.02 0.22 g4 0.79\u0003 0.35 g'4 0.77\u0003\u0003 0.28 Constant i1 2.69 1.63 i2 -1.77 2.56 i3 0.66 2.12 R2 0.11\u0003 0.13\u0003 0.42\u0003\u0003 F 2.47 2.99 11.96 #p < .10 \u0003p < .05 \u0003\u0003p < .01 https://doi.org/10.1371/journal.pone.0196269.t004 Mindset switching increases the appeal of wants over shoulds PLOS ONE | https://doi.org/10.1371/journal.pone.0196269 April 30, 2018 15 / 24...",
+      "raw": "p < .01",
+      "explanation": "'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.01
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 17,
+      "sentence": "The average for the switching group (M = 5.04, SD = 1.47) was significantly higher than that of the overall nonswitching group (M = 4.05, SD = 1.49, p = 0.003).",
+      "raw": "p = 0.003",
+      "explanation": "'p = 0.003' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.003
       }
     },
     {
@@ -115,6 +496,110 @@
           -0.67
         ],
         "n_source": "nearest preceding N on the page"
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 18,
+      "sentence": "test indicated that the Chinese group (M = 3.87, SD = 1.53) and English group (M = 4.23, SD = 1.45) had no significant difference (p = 0.640).",
+      "raw": "p = 0.640",
+      "explanation": "'p = 0.640' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.64
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 18,
+      "sentence": "The intention of the switching group (M = 4.00, SD = 1.92) was significantly lower than that of the non-switching groups (M = 5.16, SD = 1.62, p = 0.003).",
+      "raw": "p = 0.003",
+      "explanation": "'p = 0.003' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.003
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 18,
+      "sentence": "The Tukey HSD test indicates that the Chinese group (M = 5.36, SD = 1.57) and the English group (M = 4.96, SD = 1.67) had no significant difference on their choice of M&Ms, the want behavior (p = 0.675).",
+      "raw": "p = 0.675",
+      "explanation": "'p = 0.675' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.675
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 18,
+      "sentence": "The SMW score of the language switching group (M = -2.06, SD = 2.54) is significantly lower than that of the non-switching group (M = -0.50, SD = 2.41, p = 0.005).",
+      "raw": "p = 0.005",
+      "explanation": "'p = 0.005' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.005
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 18,
+      "sentence": "A Tukey HSD test indicates that the Chinese-language group (M = -0.32, SD = 2.34) and the English group (M = -0.68, SD = 2.51) had no significant difference (p = 0.852).",
+      "raw": "p = 0.852",
+      "explanation": "'p = 0.852' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "=",
+        "p": 0.852
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 18,
+      "sentence": "...2 C2 (Age) f2 0.02 0.09 g2 0.23 0.15 g'2 0.24 0.15 C3 (Gender) f3 0.79 0.50 g3 -1.39# 0.83 g'3 -0.90 0.79 Constant i1 2.31\u0003\u0003 2.16 i2 -2.80 3.57 i3 -1.39 3.37 R2 0.13\u0003 0.14 \u0003\u0003 0.25\u0003\u0003 F 3.21 3.31 5.66 #p < .10 \u0003p < .05 \u0003\u0003p < .01 https://doi.org/10.1371/journal.pone.0196269.t005 Mindset switching increases the appeal of wants over shoulds PLOS ONE | https://doi.org/10.1371/journal.pone.0196269 April...",
+      "raw": "p < .10",
+      "explanation": "'p < .10' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.1
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 18,
+      "sentence": "...) f2 0.02 0.09 g2 0.23 0.15 g'2 0.24 0.15 C3 (Gender) f3 0.79 0.50 g3 -1.39# 0.83 g'3 -0.90 0.79 Constant i1 2.31\u0003\u0003 2.16 i2 -2.80 3.57 i3 -1.39 3.37 R2 0.13\u0003 0.14 \u0003\u0003 0.25\u0003\u0003 F 3.21 3.31 5.66 #p < .10 \u0003p < .05 \u0003\u0003p < .01 https://doi.org/10.1371/journal.pone.0196269.t005 Mindset switching increases the appeal of wants over shoulds PLOS ONE | https://doi.org/10.1371/journal.pone.0196269 April 30, 2018...",
+      "raw": "p < .05",
+      "explanation": "'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.05
+      }
+    },
+    {
+      "check": "unverifiable",
+      "severity": "info",
+      "page": 18,
+      "sentence": "...0.09 g2 0.23 0.15 g'2 0.24 0.15 C3 (Gender) f3 0.79 0.50 g3 -1.39# 0.83 g'3 -0.90 0.79 Constant i1 2.31\u0003\u0003 2.16 i2 -2.80 3.57 i3 -1.39 3.37 R2 0.13\u0003 0.14 \u0003\u0003 0.25\u0003\u0003 F 3.21 3.31 5.66 #p < .10 \u0003p < .05 \u0003\u0003p < .01 https://doi.org/10.1371/journal.pone.0196269.t005 Mindset switching increases the appeal of wants over shoulds PLOS ONE | https://doi.org/10.1371/journal.pone.0196269 April 30, 2018 18 / 24...",
+      "raw": "p < .01",
+      "explanation": "'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.",
+      "details": {
+        "kind": "p_without_stat",
+        "p_comparator": "<",
+        "p": 0.01
       }
     }
   ],

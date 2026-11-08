@@ -49,7 +49,8 @@ WORDNUM_RE = re.compile(r"\b(?P<w>" + _WORDNUM + r")(?=\s*(?:\(|participants|stu
 CELL_RE = re.compile(r"(?<![\d.\-])(?P<mean>\d{1,3}\.\d{1,2})\s*\(\s*(?P<sd>\d{1,3}\.\d{1,2})\s*\)(?![\d.%])")
 N_RE = re.compile(r"\b[nN]\s*=\s*(?P<n>\d[\d,]*)")
 SAMPLE_RE = re.compile(
-    r"\b(?P<n>\d{1,3}(?:,\d{3})*|\d+)\s+(?:(?:[A-Za-z-]+\s+){0,2})?"
+    r"(?<![\d.,])(?<!Study )(?<!Experiment )(?<!Table )(?<!Fig )(?<!Figure )"
+    r"\b(?P<n>\d{1,3}(?:,\d{3})*|\d+)\s+(?:(?!(?:with|of|and|revealed|showed|that|in|for|to|from|the)\s)(?:[A-Za-z-]+\s+)){0,2}"
     r"(?:participants|students|respondents|subjects|undergraduates|adults|children|individuals|"
     r"people|volunteers|patients|women|men|infants|workers|employees)\b", re.IGNORECASE)
 
@@ -153,7 +154,7 @@ def extract_means(pages: Iterable[Page]) -> list[MeanSD]:
         if re.search(r"\bM\s*\(\s*SD\s*\)|Mean\s*\(\s*SD\s*\)|\bSD\s*in parentheses", page.text):
             for m in CELL_RE.finditer(page.text):
                 sent = sentence_at(page.text, m.start())
-                n, n_source = _n_in_sentence(sent)
+                n, n_source = _n_in_sentence(sent)   # table text often lists several n; only a unique one counts
                 out.append(MeanSD(mean=_num(m["mean"]), mean_text=m["mean"], sd=_num(m["sd"]),
                                   sd_text=m["sd"], n=n, n_source=n_source,
                                   raw=m.group(0), page=page.number, sentence=sent, pos=m.start()))

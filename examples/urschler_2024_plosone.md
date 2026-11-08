@@ -6,13 +6,16 @@ Generated 2026-11-08 with papercheck 0.1.0. 17 pages, 25 test statistics with p 
 
 | Check | Items examined | Errors | Warnings | Info |
 |---|---:|---:|---:|---:|
-| p value recomputation (statcheck style) | 25 | 0 | 6 | 0 |
+| p value recomputation (statcheck style) | 25 | 0 | 5 | 0 |
 | GRIM (means of integer data) | 0 | 0 | 0 | 0 |
 | GRIMMER (SDs of integer data) | 0 | 0 | 0 | 0 |
 | Degrees of freedom vs reported N | 25 | 0 | 1 | 0 |
 | Duplicated statistics | 25 | 0 | 0 | 0 |
+| Unverifiable statements (ps < .05, statistics without p, p without statistic) | 2 | 0 | 0 | 2 |
+| 95% CI vs point estimate | 0 | 0 | 0 | 0 |
+| Regression coefficient vs SE and p | 0 | 0 | 0 | 0 |
 
-Total flags: 7 (errors 0, warnings 7, info 0).
+Total flags: 8 (errors 0, warnings 6, info 2).
 
 Severity: an error is a reported vs recomputed p value on different sides of .05 (the conclusion about significance would change). A warning is a numeric inconsistency that does not change the decision, or a GRIM failure. Info items are worth a look but have common benign explanations.
 
@@ -60,16 +63,6 @@ Recomputed p = 0.148426 (interval [0.147946, 0.148908]); consistent if one-taile
 
 ### 5. [WARNING] p value recomputation (statcheck style), page 9
 
-Reported: `t(334) < 0.01, p = .999`
-
-Sentence: "Similar results could be overserved the for more-severe situation (not responsible: M = 6.02, SD = 1.00; responsible: M = 6.02, SD = 1.12, t(334) < 0.01, p = .999)."
-
-Reported t(334) < 0.01, p = .999. Recomputed p = 0.9920 (range 0.9880 to 0.9960 given rounding of the test statistic) does not match the reported p. The significance decision is unchanged.
-
-Recomputed p = 0.992027 (interval [0.988041, 0.996014]); consistent if one-tailed: False; decision error: False.
-
-### 6. [WARNING] p value recomputation (statcheck style), page 9
-
 Reported: `F(1, 334) = 0.85, p = .427`
 
 Sentence: "Neither the Severity by Kinship interaction, F(1, 334) = 0.85, p = .427, nor the Responsibility by Kinship interaction, F(1, 334) = 1.01, p = .316, was significant."
@@ -78,13 +71,29 @@ Reported F(1, 334) = 0.85, p = .427. Recomputed p = 0.3572 (range 0.3558 to 0.35
 
 Recomputed p = 0.357218 (interval [0.355809, 0.358634]); consistent if one-tailed: False; decision error: False.
 
-### 7. [WARNING] Degrees of freedom vs reported N, page 14
+### 6. [WARNING] Degrees of freedom vs reported N, page 14
 
 Reported: `t(634) = 1.08, p = .282`
 
 Sentence: "to intervene, t(634) = 1.08, p = .282, d = 0.09, 95% CI [-0.07, 0.24]."
 
 The degrees of freedom in t(634) = 1.08 imply at least 635 participants under the usual design, but the largest sample size mentioned in the paper is 346. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.
+
+### 7. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 11
+
+Reported: `p < .05`
+
+Sentence: "PC = perceived costs for intervening, D1 = difference between the less-severe and moral courage situation; D2 = difference between less-severe and more-severe situation, WTI = willingness to intervene. *p < .05 **p < .001. https://doi.org/10.1371/journal.pone.0307740.g003 PLOS ONE Standing-up against moral violations PLOS ONE | https://doi.org/10.1371/journal.pone.0307740 August 12, 2024 11 / 17"
+
+'p < .05' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 8. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 11
+
+Reported: `p < .001`
+
+Sentence: "PC = perceived costs for intervening, D1 = difference between the less-severe and moral courage situation; D2 = difference between less-severe and more-severe situation, WTI = willingness to intervene. *p < .05 **p < .001. https://doi.org/10.1371/journal.pone.0307740.g003 PLOS ONE Standing-up against moral violations PLOS ONE | https://doi.org/10.1371/journal.pone.0307740 August 12, 2024 11 / 17"
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
 
 ## All extracted test statistics
 
@@ -110,7 +119,7 @@ The degrees of freedom in t(634) = 1.08 imply at least 635 participants under th
 | 9 | F(2, 334) = 5.84 | p = 0.003 | 0.003214 | ok |
 | 9 | t(334) = 3.45 | p < 0.001 | 0.000632 | ok |
 | 9 | t(334) = -1.21 | p = 0.227 | 0.227135 | ok |
-| 9 | t(334) < 0.01 | p = 0.999 | 0.992027 | flagged |
+| 9 | t(334) < 0.01 | p = 0.999 | 0.992027 | ok |
 | 9 | F(1, 334) = 0.85 | p = 0.427 | 0.357218 | flagged |
 | 9 | F(1, 334) = 1.01 | p = 0.316 | 0.31563 | ok |
 | 10 | F(2, 334) = 1.49 | p = 0.227 | 0.226867 | ok |

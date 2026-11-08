@@ -11,14 +11,48 @@ Generated 2026-11-08 with papercheck 0.1.0. 24 pages, 27 test statistics with p 
 | GRIMMER (SDs of integer data) | 0 | 0 | 0 | 0 |
 | Degrees of freedom vs reported N | 27 | 0 | 0 | 0 |
 | Duplicated statistics | 27 | 0 | 0 | 0 |
+| Unverifiable statements (ps < .05, statistics without p, p without statistic) | 4 | 0 | 0 | 4 |
+| 95% CI vs point estimate | 0 | 0 | 0 | 0 |
+| Regression coefficient vs SE and p | 0 | 0 | 0 | 0 |
 
-Total flags: 0 (errors 0, warnings 0, info 0).
+Total flags: 4 (errors 0, warnings 0, info 4).
 
 Severity: an error is a reported vs recomputed p value on different sides of .05 (the conclusion about significance would change). A warning is a numeric inconsistency that does not change the decision, or a GRIM failure. Info items are worth a look but have common benign explanations.
 
 ## Flagged items
 
-No inconsistencies found by the automated checks.
+### 1. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 9
+
+Reported: `p < .001`
+
+Sentence: "Suicide ideation -.43** -.01.23** .37** .37** - Mean 37.99 36.72 28.65 32.18 7.04 1.99 Standard Deviation 9.15 8.01 7.44 9.90 5.32 2.70 Hopelessness = BHS total, Suicide ideation = HDSQ-SS total. **p < .001. https://doi.org/10.1371/journal.pone.0295995.t003 PLOS ONE Humour styles as a moderator between hopelessness and suicide ideation PLOS ONE | https://doi.org/10.1371/journal.pone.0295995 Decemb..."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 2. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 10
+
+Reported: `p < .01`
+
+Sentence: "Suicide ideation .00 -.19.12.39** .54** - Mean 44.48 33.65 25.64 30.15 5.64 1.18 Standard Deviation 6.96 8.13 6.42 9.91 4.61 1.97 Hopelessness = BHS total, Suicide ideation = HDSQ-SS total. *p < .01. **p < .001. https://doi.org/10.1371/journal.pone.0295995.t004 PLOS ONE Humour styles as a moderator between hopelessness and suicide ideation PLOS ONE | https://doi.org/10.1371/journal.pone.0295995 De..."
+
+'p < .01' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 3. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 10
+
+Reported: `p < .001`
+
+Sentence: "...icide ideation .00 -.19.12.39** .54** - Mean 44.48 33.65 25.64 30.15 5.64 1.18 Standard Deviation 6.96 8.13 6.42 9.91 4.61 1.97 Hopelessness = BHS total, Suicide ideation = HDSQ-SS total. *p < .01. **p < .001. https://doi.org/10.1371/journal.pone.0295995.t004 PLOS ONE Humour styles as a moderator between hopelessness and suicide ideation PLOS ONE | https://doi.org/10.1371/journal.pone.0295995 Dece..."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
+### 4. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 18
+
+Reported: `p = .050`
+
+Sentence: "We noted that although this moderation effect was not statistically significant (p = .050) in the community sample (despite the larger sample size), the trend in the data was identical, which could indicate that these associations are present but weaker."
+
+'p = .050' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
 ## All extracted test statistics
 
 | Page | Statistic | Reported p | Recomputed p | Status |

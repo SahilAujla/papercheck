@@ -11,14 +11,24 @@ Generated 2026-11-08 with papercheck 0.1.0. 16 pages, 26 test statistics with p 
 | GRIMMER (SDs of integer data) | 11 | 0 | 0 | 0 |
 | Degrees of freedom vs reported N | 26 | 0 | 0 | 0 |
 | Duplicated statistics | 26 | 0 | 0 | 0 |
+| Unverifiable statements (ps < .05, statistics without p, p without statistic) | 1 | 0 | 0 | 1 |
+| 95% CI vs point estimate | 0 | 0 | 0 | 0 |
+| Regression coefficient vs SE and p | 0 | 0 | 0 | 0 |
 
-Total flags: 0 (errors 0, warnings 0, info 0).
+Total flags: 1 (errors 0, warnings 0, info 1).
 
 Severity: an error is a reported vs recomputed p value on different sides of .05 (the conclusion about significance would change). A warning is a numeric inconsistency that does not change the decision, or a GRIM failure. Info items are worth a look but have common benign explanations.
 
 ## Flagged items
 
-No inconsistencies found by the automated checks.
+### 1. [INFO] Unverifiable statements (ps < .05, statistics without p, p without statistic), page 7
+
+Reported: `p < .001`
+
+Sentence: "Conversely, losers reported negative emotion on each of the three scales (p < .001)."
+
+'p < .001' is a p value without a test statistic in the same sentence, so it cannot be recomputed.
+
 ## All extracted test statistics
 
 | Page | Statistic | Reported p | Recomputed p | Status |
