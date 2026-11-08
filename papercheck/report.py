@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from collections import Counter
 from datetime import date
 from typing import Any
@@ -117,3 +118,64 @@ def _label(st: dict) -> str:
 
 def to_json(payload: dict[str, Any]) -> str:
     return json.dumps(payload, indent=2, ensure_ascii=False)
+
+
+# ---------------------------------------------------------------- HTML (same content as the Markdown)
+
+_HTML_HEAD = """<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title}</title>
+<style>
+:root {{ --fg: #1b1b1b; --bg: #ffffff; --muted: #5a5a5a; --line: #d9d9d9; --err: #a4262c; --warn: #8a5a00; --info: #2a5d8f; }}
+@media (prefers-color-scheme: dark) {{ :root {{ --fg: #e6e6e6; --bg: #141414; --muted: #a0a0a0; --line: #333; --err: #ff8a8a; --warn: #f0c060; --info: #8ab8ff; }} }}
+body {{ font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: var(--fg); background: var(--bg); max-width: 60rem; margin: 0 auto; padding: 1rem 16px; }}
+table {{ border-collapse: collapse; width: 100%; margin: 0.75rem 0; display: block; overflow-x: auto; }}
+th, td {{ border: 1px solid var(--line); padding: 0.3rem 0.6rem; text-align: left; vertical-align: top; }}
+th {{ background: rgba(127,127,127,0.08); }}
+code {{ font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; }}
+h1, h2, h3 {{ line-height: 1.25; }} h3 {{ margin-top: 1.5rem; }}
+.sev-error {{ color: var(--err); }} .sev-warning {{ color: var(--warn); }} .sev-info {{ color: var(--info); }}
+p.muted {{ color: var(--muted); }}
+</style></head><body>
+"""
+
+
+def _esc(s: str) -> str:
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def _inline(s: str) -> str:
+    s = _esc(s)
+    s = re.sub(r"`([^`]+)`", r"<code>\1</code>", s)
+    s = re.sub(r"\[(ERROR|WARNING|INFO)\]", lambda m: f'<span class="sev-{m.group(1).lower()}">[{m.group(1)}]</span>', s)
+    return s
+
+
+def to_html(payload: dict[str, Any]) -> str:
+    """Render the Markdown report as a standalone HTML page (headings, tables, paragraphs, code spans)."""
+    md = to_markdown(payload)
+    out = [_HTML_HEAD.format(title=_esc(f"papercheck report: {payload['paper']}"))]
+    lines = md.split("\n")
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if line.startswith("|"):
+            rows = []
+            while i < len(lines) and lines[i].startswith("|"):
+                rows.append([c.strip() for c in lines[i].strip().strip("|").split("|")])
+                i += 1
+            rows = [r for r in rows if not all(re.fullmatch(r":?-+:?", c) for c in r)]
+            out.append("<table>")
+            for r_i, r in enumerate(rows):
+                tag = "th" if r_i == 0 else "td"
+                out.append("<tr>" + "".join(f"<{tag}>{_inline(c)}</{tag}>" for c in r) + "</tr>")
+            out.append("</table>")
+            continue
+        m = re.match(r"^(#{1,3}) (.*)$", line)
+        if m:
+            out.append(f"<h{len(m.group(1))}>{_inline(m.group(2))}</h{len(m.group(1))}>")
+        elif line.strip():
+            out.append(f"<p>{_inline(line)}</p>")
+        i += 1
+    out.append("</body></html>\n")
+    return "\n".join(out)

@@ -12,7 +12,7 @@ No API keys, no network access at run time. Python 3.10+, PyMuPDF, SciPy.
 | Check | What it does | Severity |
 |---|---|---|
 | p value recomputation | For `t(df) = x, p = y`, `F(df1, df2) = x`, `chi2(df, N = n) = x`, `r(df) = x` and `z = x`, recompute the two-tailed p from the statistic and compare it with the reported p, allowing for rounding of both numbers (statcheck's rule). | warning; **error** when reported and recomputed p sit on opposite sides of .05; info when a one-tailed p would be consistent |
-| GRIM | For a reported mean with decimals and a sample size, test whether any whole-number data set of that size can produce that mean. | warning when N comes from the same sentence; info when N is the nearest preceding N on the page |
+| GRIM | For a reported mean with decimals and a sample size, test whether any whole-number data set of that size can produce that mean. Means come from the running text and from tables (M, SD, n columns; `M (SD)` cells under `Group (n = 23)` headers; an n row). | warning when N comes from the same sentence or the table; info when N is the nearest preceding N on the page |
 | GRIMMER | For a mean that passes GRIM, test whether the reported SD is possible for whole-number data (Allard's parity refinement included). | info |
 | df vs N | Flag tests whose degrees of freedom imply more participants than the paper mentions anywhere; flag a chi-square N that appears nowhere else. | warning / info |
 | Duplicates | The same statistic with the same p value reported more than once. | info |
@@ -30,6 +30,7 @@ uv pip install --python .venv/bin/python -e ".[dev]"   # or: .venv/bin/pip insta
 .venv/bin/papercheck path/to/paper.pdf --out reports/
 .venv/bin/papercheck data/*.pdf --out reports/            # several papers at once
 .venv/bin/papercheck paper.pdf --items 3                  # GRIM for 3-item averaged scales
+.venv/bin/papercheck paper.pdf --html                     # also write a standalone HTML report
 .venv/bin/python -m pytest -q                             # 55 tests
 ```
 
@@ -55,11 +56,19 @@ papercheck/pdf.py      PDF text (PyMuPDF), normalization, sentence lookup
 papercheck/extract.py  regexes for t, F, chi2, r, z with p; means with SD and N; sample sizes
 papercheck/checks.py   p recomputation, GRIM/GRIMMER drivers, df vs N, duplicates
 papercheck/grim.py     GRIM and GRIMMER (exact rational arithmetic, stdlib only)
-papercheck/report.py   Markdown and JSON output
+papercheck/tables.py   PyMuPDF find_tables with word-based cell text; means, SDs and group n from tables
+papercheck/report.py   Markdown, JSON and HTML output
 papercheck/cli.py      command line
 tests/                 pytest suite
 docs/outreach.md       ERROR project eligibility, draft email, other outlets
+docs/findings/         hand-verified write-ups of individual flags (reported vs recomputed register)
 ```
+
+## Worked finding
+
+`docs/findings/yan-2018.md` hand-verifies the one warning in the first three papers: the 2 x 2 table rebuilt from
+the paper's public S1 Data gives a Pearson chi-square of 5.00 with p = 0.0253 and a Fisher exact p = 0.0423, so the
+sentence pairs the Pearson statistic with the Fisher p. Significance at .05 holds under every test.
 
 ## Known false-positive sources
 

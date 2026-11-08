@@ -8,7 +8,7 @@ from pathlib import Path
 from .checks import run_all
 from .extract import extract_means, extract_sample_sizes, extract_stats
 from .pdf import load_pdf, load_text
-from .report import build_payload, to_json, to_markdown
+from .report import build_payload, to_html, to_json, to_markdown
 from .tables import load_tables, means_from_tables
 
 
@@ -31,6 +31,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("paths", nargs="+", help="PDF files (or .txt files with extracted text)")
     ap.add_argument("--out", default="reports", help="output directory (default: reports/)")
     ap.add_argument("--items", type=int, default=1, help="items per scale for GRIM (default 1)")
+    ap.add_argument("--html", action="store_true", help="also write an HTML version of each report")
     ap.add_argument("--quiet", action="store_true")
     args = ap.parse_args(argv)
     out = Path(args.out)
@@ -46,6 +47,8 @@ def main(argv: list[str] | None = None) -> int:
         stem = Path(path).stem
         (out / f"{stem}.md").write_text(to_markdown(payload), encoding="utf-8")
         (out / f"{stem}.json").write_text(to_json(payload), encoding="utf-8")
+        if args.html:
+            (out / f"{stem}.html").write_text(to_html(payload), encoding="utf-8")
         s = payload["summary"]
         if not args.quiet:
             sev = s["flags_by_severity"]
