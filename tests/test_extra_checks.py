@@ -163,3 +163,15 @@ def test_regression_small_df_changes_p():
     assert check_regression(load_text("The slope, b = 0.21, SE = 0.10, t(5) = 2.10, p = .09, was positive.")) == []
     flags = check_regression(load_text("The slope, b = 0.21, SE = 0.10, z = 2.10, p = .09, was positive."))
     assert [f.details["kind"] for f in flags] == ["p_vs_b_over_se"]
+
+
+def test_ci_symmetry_bootstrap_interval_is_info():
+    from papercheck.extra_checks import check_ci_symmetry
+    from papercheck.pdf import load_text
+    # choi_2024 p9: a bootstrapped indirect effect has an asymmetric interval by construction
+    txt = ("The bootstrap analysis showed a significant indirect effect of -.1044 (95% CI: -.1718, -.0496) "
+           "on the outcome.")
+    flags = check_ci_symmetry(load_text(txt))
+    assert len(flags) == 1 and flags[0].severity == "info" and flags[0].details.get("asymmetric_by_design") is True
+    plain = check_ci_symmetry(load_text("The effect was d = 0.45, 95% CI [0.30, 0.50]."))
+    assert len(plain) == 1 and plain[0].severity == "warning"

@@ -34,7 +34,7 @@ uv pip install --python .venv/bin/python -e ".[dev]"   # or: .venv/bin/pip insta
 .venv/bin/papercheck data/*.pdf --out reports/            # several papers at once
 .venv/bin/papercheck paper.pdf --items 3                  # GRIM for 3-item averaged scales
 .venv/bin/papercheck paper.pdf --html                     # also write a standalone HTML report
-.venv/bin/python -m pytest -q                             # 55 tests
+.venv/bin/python -m pytest -q                             # 88 tests
 ```
 
 `.txt` files are accepted as well as PDFs (handy for tests and for text you have cleaned by hand).
@@ -67,8 +67,8 @@ docs/outreach.md       ERROR project eligibility, draft email, other outlets
 docs/findings/         hand-verified write-ups of individual flags (reported vs recomputed register)
 ```
 
-`examples/SUMMARY.md` tabulates 13 papers (296 pages, 418 test statistics): zero error-level flags, 36 warnings,
-169 info items, with a triage of every p-recomputation warning into true inconsistency, likely benign cause or
+`examples/SUMMARY.md` tabulates 13 papers (296 pages, 418 test statistics): zero error-level flags, 32 warnings,
+173 info items, with a triage of every p-recomputation warning into true inconsistency, likely benign cause or
 extraction mistake and the resulting false-positive estimate.
 
 ## Worked finding

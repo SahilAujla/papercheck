@@ -9,13 +9,13 @@
     "means_with_n": 0,
     "flags_total": 22,
     "flags_by_severity": {
-      "warning": 5,
-      "info": 17
+      "warning": 1,
+      "info": 21
     },
     "flags_by_check": {
-      "ci_symmetry": 4,
       "p_recompute": 1,
-      "unverifiable": 17
+      "unverifiable": 17,
+      "ci_symmetry": 4
     },
     "examined": {
       "p_recompute": 33,
@@ -29,66 +29,6 @@
     }
   },
   "flags": [
-    {
-      "check": "ci_symmetry",
-      "severity": "warning",
-      "page": 9,
-      "sentence": "Competence also had a significant indirect effect of -.1044 (95% CI:-.1718, -.0496).",
-      "raw": "effect of -.1044 (95% CI:-.1718, -.0496",
-      "explanation": "Reported effect = -.1044 with CI [-.1718, -.0496]. For a symmetric interval the point estimate should be at the midpoint (-.1718 + -.0496) / 2 = -0.1107, but the reported value is 0.0063 away. The interval may belong to a different estimate, be a bootstrap or otherwise asymmetric interval, or contain a typo.",
-      "details": {
-        "estimate": "effect",
-        "point": -0.1044,
-        "ci": [
-          -0.1718,
-          -0.0496
-        ],
-        "ratio_scale": false,
-        "midpoint": -0.1107,
-        "difference": 0.0063,
-        "kind": "asymmetric"
-      }
-    },
-    {
-      "check": "ci_symmetry",
-      "severity": "warning",
-      "page": 12,
-      "sentence": "This analysis revealed an indirect effect of -.3862 (95% CI:-.4915, -.2970) for prosociality, indicating a significant indirect effect.",
-      "raw": "effect of -.3862 (95% CI:-.4915, -.2970",
-      "explanation": "Reported effect = -.3862 with CI [-.4915, -.2970]. For a symmetric interval the point estimate should be at the midpoint (-.4915 + -.2970) / 2 = -0.3942, but the reported value is 0.0081 away. The interval may belong to a different estimate, be a bootstrap or otherwise asymmetric interval, or contain a typo.",
-      "details": {
-        "estimate": "effect",
-        "point": -0.3862,
-        "ci": [
-          -0.4915,
-          -0.297
-        ],
-        "ratio_scale": false,
-        "midpoint": -0.39425,
-        "difference": 0.00805,
-        "kind": "asymmetric"
-      }
-    },
-    {
-      "check": "ci_symmetry",
-      "severity": "warning",
-      "page": 12,
-      "sentence": "Competence also had a significant indirect effect of -.0803 (95% CI:-.1314, -.0345).",
-      "raw": "effect of -.0803 (95% CI:-.1314, -.0345",
-      "explanation": "Reported effect = -.0803 with CI [-.1314, -.0345]. For a symmetric interval the point estimate should be at the midpoint (-.1314 + -.0345) / 2 = -0.0829, but the reported value is 0.0026 away. The interval may belong to a different estimate, be a bootstrap or otherwise asymmetric interval, or contain a typo.",
-      "details": {
-        "estimate": "effect",
-        "point": -0.0803,
-        "ci": [
-          -0.1314,
-          -0.0345
-        ],
-        "ratio_scale": false,
-        "midpoint": -0.08295,
-        "difference": 0.00265,
-        "kind": "asymmetric"
-      }
-    },
     {
       "check": "p_recompute",
       "severity": "warning",
@@ -107,26 +47,6 @@
         ],
         "consistent_if_one_tailed": false,
         "decision_error": false
-      }
-    },
-    {
-      "check": "ci_symmetry",
-      "severity": "warning",
-      "page": 16,
-      "sentence": "Perceived competence also had a significant indirect effect of -.1275 (95% CI:-.1974, -.0657).",
-      "raw": "effect of -.1275 (95% CI:-.1974, -.0657",
-      "explanation": "Reported effect = -.1275 with CI [-.1974, -.0657]. For a symmetric interval the point estimate should be at the midpoint (-.1974 + -.0657) / 2 = -0.1316, but the reported value is 0.0040 away. The interval may belong to a different estimate, be a bootstrap or otherwise asymmetric interval, or contain a typo.",
-      "details": {
-        "estimate": "effect",
-        "point": -0.1275,
-        "ci": [
-          -0.1974,
-          -0.0657
-        ],
-        "ratio_scale": false,
-        "midpoint": -0.13155,
-        "difference": 0.00405,
-        "kind": "asymmetric"
       }
     },
     {
@@ -221,6 +141,27 @@
       }
     },
     {
+      "check": "ci_symmetry",
+      "severity": "info",
+      "page": 9,
+      "sentence": "Competence also had a significant indirect effect of -.1044 (95% CI:-.1718, -.0496).",
+      "raw": "effect of -.1044 (95% CI:-.1718, -.0496",
+      "explanation": "Reported effect = -.1044 with CI [-.1718, -.0496]. For a symmetric interval the point estimate should be at the midpoint (-.1718 + -.0496) / 2 = -0.1107, but the reported value is 0.0063 away. The interval may belong to a different estimate, be a bootstrap or otherwise asymmetric interval, or contain a typo. The sentence describes a bootstrap, percentile or mediation interval, which is asymmetric by design.",
+      "details": {
+        "estimate": "effect",
+        "point": -0.1044,
+        "ci": [
+          -0.1718,
+          -0.0496
+        ],
+        "ratio_scale": false,
+        "midpoint": -0.1107,
+        "difference": 0.0063,
+        "kind": "asymmetric",
+        "asymmetric_by_design": true
+      }
+    },
+    {
       "check": "unverifiable",
       "severity": "info",
       "page": 12,
@@ -299,6 +240,48 @@
       }
     },
     {
+      "check": "ci_symmetry",
+      "severity": "info",
+      "page": 12,
+      "sentence": "This analysis revealed an indirect effect of -.3862 (95% CI:-.4915, -.2970) for prosociality, indicating a significant indirect effect.",
+      "raw": "effect of -.3862 (95% CI:-.4915, -.2970",
+      "explanation": "Reported effect = -.3862 with CI [-.4915, -.2970]. For a symmetric interval the point estimate should be at the midpoint (-.4915 + -.2970) / 2 = -0.3942, but the reported value is 0.0081 away. The interval may belong to a different estimate, be a bootstrap or otherwise asymmetric interval, or contain a typo. The sentence describes a bootstrap, percentile or mediation interval, which is asymmetric by design.",
+      "details": {
+        "estimate": "effect",
+        "point": -0.3862,
+        "ci": [
+          -0.4915,
+          -0.297
+        ],
+        "ratio_scale": false,
+        "midpoint": -0.39425,
+        "difference": 0.00805,
+        "kind": "asymmetric",
+        "asymmetric_by_design": true
+      }
+    },
+    {
+      "check": "ci_symmetry",
+      "severity": "info",
+      "page": 12,
+      "sentence": "Competence also had a significant indirect effect of -.0803 (95% CI:-.1314, -.0345).",
+      "raw": "effect of -.0803 (95% CI:-.1314, -.0345",
+      "explanation": "Reported effect = -.0803 with CI [-.1314, -.0345]. For a symmetric interval the point estimate should be at the midpoint (-.1314 + -.0345) / 2 = -0.0829, but the reported value is 0.0026 away. The interval may belong to a different estimate, be a bootstrap or otherwise asymmetric interval, or contain a typo. The sentence describes a bootstrap, percentile or mediation interval, which is asymmetric by design.",
+      "details": {
+        "estimate": "effect",
+        "point": -0.0803,
+        "ci": [
+          -0.1314,
+          -0.0345
+        ],
+        "ratio_scale": false,
+        "midpoint": -0.08295,
+        "difference": 0.00265,
+        "kind": "asymmetric",
+        "asymmetric_by_design": true
+      }
+    },
+    {
       "check": "unverifiable",
       "severity": "info",
       "page": 16,
@@ -348,6 +331,27 @@
         "kind": "p_without_stat",
         "p_comparator": "<",
         "p": 0.001
+      }
+    },
+    {
+      "check": "ci_symmetry",
+      "severity": "info",
+      "page": 16,
+      "sentence": "Perceived competence also had a significant indirect effect of -.1275 (95% CI:-.1974, -.0657).",
+      "raw": "effect of -.1275 (95% CI:-.1974, -.0657",
+      "explanation": "Reported effect = -.1275 with CI [-.1974, -.0657]. For a symmetric interval the point estimate should be at the midpoint (-.1974 + -.0657) / 2 = -0.1316, but the reported value is 0.0040 away. The interval may belong to a different estimate, be a bootstrap or otherwise asymmetric interval, or contain a typo. The sentence describes a bootstrap, percentile or mediation interval, which is asymmetric by design.",
+      "details": {
+        "estimate": "effect",
+        "point": -0.1275,
+        "ci": [
+          -0.1974,
+          -0.0657
+        ],
+        "ratio_scale": false,
+        "midpoint": -0.13155,
+        "difference": 0.00405,
+        "kind": "asymmetric",
+        "asymmetric_by_design": true
       }
     }
   ],

@@ -264,7 +264,14 @@ def check_ci_symmetry(pages: Iterable[Page]) -> list[Flag]:
                 if name == "r":
                     expl += " Correlation intervals from the Fisher z transform are asymmetric for large |r|."
             details.update({"midpoint": round(mid, 6), "difference": round(abs(val - mid), 6), "kind": "asymmetric"})
-            flags.append(Flag(check="ci_symmetry", severity="warning", page=page.number, sentence=sent, raw=raw,
+            # bootstrap, percentile and Fisher-z intervals are asymmetric by construction
+            asym_by_design = re.search(r"bootstrap|percentile|bias[- ]corrected|BCa|Fisher|indirect effect|mediat",
+                                       sent, re.IGNORECASE) is not None
+            if asym_by_design:
+                expl += " The sentence describes a bootstrap, percentile or mediation interval, which is asymmetric by design."
+                details["asymmetric_by_design"] = True
+            flags.append(Flag(check="ci_symmetry", severity="info" if asym_by_design else "warning",
+                              page=page.number, sentence=sent, raw=raw,
                               explanation=expl, details=details))
     return flags
 

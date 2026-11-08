@@ -58,18 +58,16 @@ Working notes for the papercheck build (2026-11-08, 03:42 to 04:35 EST session).
   chi-squares in the paper reproduce exactly.
 - New checks (`papercheck/extra_checks.py`, 21 tests): unverifiable statements (blanket ps, statistics without p, p
   without statistic, capped at 40), 95% CI symmetry (additive and ratio scales), regression b/SE/p consistency.
-  On the 13 papers: 5 CI warnings (one `r = .23 ... CI95 = [.14, .21]` where the point lies outside its own interval;
-  four `effect of -.1044 (95% CI: -.1718, -.0496)` bootstrap intervals, which are legitimately asymmetric), 0 regression
-  flags, 149 unverifiable info items.
+  On the 13 papers: 1 CI warning (`r = .23, SE = .05, CI95 = [.14, .21]`, buchanan 2023 page 12, where the point lies
+  outside its own interval) plus four bootstrap mediation intervals downgraded to info because such intervals are
+  asymmetric by design; 0 regression flags; 149 unverifiable info items.
 - HTML report (`--html`): static page rendered from the Markdown, no scripts, system font, light and dark.
-- 87 tests pass.
+- 88 tests pass.
 
 ## Left after phase 2
 
 - df vs N still warns 14 times, mostly takayama 2023 (29 participants x 3 days, design wording not in the sentence);
   the downgrade should also look at the page or the Methods section, or detect df2 as a multiple of N - 1.
-- The CI check should treat bootstrap and Fisher-z intervals as asymmetric by design (downgrade to info when the
-  sentence says bootstrap or percentile).
 - The unverifiable list is long; group it per page in the report or make it opt-in (`--unverifiable`).
 - Regression check has no real-paper hit yet; needs a paper with `b = x, SE = y, p = z` text to validate.
 - The 10 new reports were triaged by a sub-agent from the pre-fix output; the 8 "true inconsistency" items deserve the
