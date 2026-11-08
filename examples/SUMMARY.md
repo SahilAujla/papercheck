@@ -11,10 +11,10 @@ the GRIM and GRIMMER checks could use.
 | buchanan_2023 | 26 | 35 | 0 (0) | 0 | 1 | 3 | pending |
 | choi_2024 | 21 | 33 | 68 (0) | 0 | 1 | 21 | pending |
 | drake_2023 | 24 | 27 | 6 (2) | 0 | 0 | 4 | pending |
-| gill_2023 | 22 | 48 | 9 (0) | 0 | 3 | 10 | pending |
+| gill_2023 | 22 | 48 | 9 (0) | 0 | 3 | 10 | yes, docs/findings/gill_2023_plosone.md: item 2 confirmed (t(92.83) = 2.77, p = .001 vs recomputed .0068; no correction or one-tailed test stated), conclusion unchanged |
 | maj_2024 | 19 | 23 | 168 (7) | 0 | 0 | 6 | pending |
 | makanju_2024 | 34 | 28 | 31 (7) | 0 | 1 | 19 | pending |
-| michelkrohler_2023 | 34 | 86 | 458 (7) | 0 | 6 | 24 | pending |
+| michelkrohler_2023 | 34 | 86 | 458 (7) | 0 | 6 | 24 | yes, docs/findings/michelkrohler_2023_plosone.md and -item7.md: items 4, 5, 7 confirmed as one-unit-in-the-last-place differences (.12 vs .126, .03 vs .035, .11 vs .102), consistent with truncation; conclusions unchanged |
 | moyal_2020 | 16 | 26 | 22 (11) | 0 | 0 | 1 | pending |
 | takahashi_2023 | 16 | 23 | 35 (0) | 0 | 4 | 4 | pending |
 | takayama_2023 | 22 | 18 | 52 (0) | 0 | 9 | 27 | pending |
