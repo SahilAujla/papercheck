@@ -4,7 +4,7 @@ Research date: 2026-11-08 (all URLs below were loaded on that date unless marked
 Audience: Sahil, before contacting the ERROR team and the other outlets.
 Wording rule for all correspondence and reports: describe discrepancies as "reported vs recomputed", never as misconduct.
 
-Repo state at hand-off (2026-11-08, 04:00 EST): the three example reports exist under `examples/` (Yan 2018, Bernstein 2018, Moyal 2020) and the repo has local commits only. It is not yet on GitHub, so the email below cannot be sent until the repo is pushed and the links are filled in.
+Repo state (2026-11-08, 04:20 EST): pushed to https://github.com/SahilAujla/papercheck (origin main). The repository is private until Sahil makes it public; the email below links to it, so make it public before sending.
 
 ## 1. What ERROR says about reviewers
 
@@ -77,7 +77,7 @@ I am a software developer, not an academic, and I would like to join your databa
 
 What I can offer on a paper that has agreed to be checked: recomputing p values from the reported test statistics and degrees of freedom, checking degrees of freedom against the reported sample sizes, GRIM and GRIMMER checks on reported means and standard deviations, flagging duplicated statistics across tables, and rerunning the authors' analysis code against their data to confirm that the reported numbers reproduce. Every discrepancy is reported as "reported vs recomputed", with the inputs and code that produced it.
 
-I have built an open-source Python pipeline for the first part, papercheck (https://github.com/SahilAujla/papercheck). The repository includes three example reports on published papers so you can judge the format and the care taken.
+I have built an open-source Python pipeline for the first part, papercheck (https://github.com/SahilAujla/papercheck). The repository includes thirteen example reports and hand-verified write-ups under docs/findings/ on published papers so you can judge the format and the care taken.
 
 I do not have domain expertise in psychology, so I would be glad to pair with a domain expert, handling the statistical and computational checks while they judge measurement, design and interpretation. Could you tell me what you would accept from a non-academic reviewer, and whether such a pairing fits your process?
 
@@ -117,7 +117,7 @@ https://github.com/SahilAujla
 
 ## 4. Next actions
 
-- [ ] Finish three example reports on real published papers and commit them to `examples/` with the PDFs' DOIs, the recomputation inputs and the exact command used; push the repo public at https://github.com/SahilAujla/papercheck.
+- [x] Example reports exist (13 papers under `examples/`, hand-verified write-ups under `docs/findings/`), pushed to https://github.com/SahilAujla/papercheck as a private repo. Remaining: make the repo public before sending the email.
 - [ ] Read two completed ERROR reports on https://error.reviews/reviews-completed/ and format the example reports with "Error checking" and "Other critique" sections.
 - [ ] Post each example report as a PubPeer comment under a signed account, using "reported vs recomputed" wording and no interpretation of motive.
 - [ ] Fill in https://errorsignup.formr.org/ (topic expertise: statistics recomputation, computational reproducibility, R and Python code re-execution).

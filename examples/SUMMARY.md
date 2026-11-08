@@ -5,22 +5,22 @@ recomputed from other reported numbers. A difference is not evidence of miscondu
 slug. "Means (with usable N)" is the number of M (SD) pairs extracted and, in parentheses, how many had a sample size
 the GRIM and GRIMMER checks could use.
 
-| Paper | Pages | Test statistics | Means (usable N) | Errors | Warnings | Info |
-|---|---:|---:|---:|---:|---:|---:|
-| bernstein_2018 | 21 | 16 | 35 (0) | 0 | 0 | 11 |
-| buchanan_2023 | 26 | 35 | 0 (0) | 0 | 1 | 3 |
-| choi_2024 | 21 | 33 | 68 (0) | 0 | 1 | 21 |
-| drake_2023 | 24 | 27 | 6 (2) | 0 | 0 | 4 |
-| gill_2023 | 22 | 48 | 9 (0) | 0 | 3 | 10 |
-| maj_2024 | 19 | 23 | 168 (7) | 0 | 0 | 6 |
-| makanju_2024 | 34 | 28 | 31 (7) | 0 | 1 | 19 |
-| michelkrohler_2023 | 34 | 86 | 458 (7) | 0 | 6 | 24 |
-| moyal_2020 | 16 | 26 | 22 (11) | 0 | 0 | 1 |
-| takahashi_2023 | 16 | 23 | 35 (0) | 0 | 4 | 4 |
-| takayama_2023 | 22 | 18 | 52 (0) | 0 | 9 | 27 |
-| urschler_2024 | 17 | 25 | 18 (0) | 0 | 6 | 2 |
-| yan_2018 | 24 | 30 | 59 (11) | 0 | 1 | 41 |
-| Total (13 papers) | 296 | 418 | 961 (45) | 0 | 32 | 173 |
+| Paper | Pages | Test statistics | Means (usable N) | Errors | Warnings | Info | Hand-verified |
+|---|---:|---:|---:|---:|---:|---:|---|
+| bernstein_2018 | 21 | 16 | 35 (0) | 0 | 0 | 11 | pending |
+| buchanan_2023 | 26 | 35 | 0 (0) | 0 | 1 | 3 | pending |
+| choi_2024 | 21 | 33 | 68 (0) | 0 | 1 | 21 | pending |
+| drake_2023 | 24 | 27 | 6 (2) | 0 | 0 | 4 | pending |
+| gill_2023 | 22 | 48 | 9 (0) | 0 | 3 | 10 | pending |
+| maj_2024 | 19 | 23 | 168 (7) | 0 | 0 | 6 | pending |
+| makanju_2024 | 34 | 28 | 31 (7) | 0 | 1 | 19 | pending |
+| michelkrohler_2023 | 34 | 86 | 458 (7) | 0 | 6 | 24 | pending |
+| moyal_2020 | 16 | 26 | 22 (11) | 0 | 0 | 1 | pending |
+| takahashi_2023 | 16 | 23 | 35 (0) | 0 | 4 | 4 | pending |
+| takayama_2023 | 22 | 18 | 52 (0) | 0 | 9 | 27 | pending |
+| urschler_2024 | 17 | 25 | 18 (0) | 0 | 6 | 2 | pending |
+| yan_2018 | 24 | 30 | 59 (11) | 0 | 1 | 41 | yes, docs/findings/yan-2018.md |
+| Total (13 papers) | 296 | 418 | 961 (45) | 0 | 32 | 173 | n/a |
 
 Counts regenerated at 04:05 EST after the phase 2 fixes (value comparator bounds, table-cell n, df vs N design wording, sample-size regex) and after the unverifiable, CI symmetry and regression checks were added. Warnings by check: ci_symmetry 1 (four bootstrap mediation intervals downgraded to info at 04:08), df_vs_n 14, grim 1, p_recompute 16. Info by check: df_vs_n 8, duplicate 2, grim 9, grimmer 1, unverifiable 149. The triage below was written against the pre-fix reports; the flags it names as extraction mistakes (urschler t(334) < 0.01; michelkrohler 9.42 (3.02)) and the 22 df vs N warnings are the ones the fixes removed or downgraded.
 
