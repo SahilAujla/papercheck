@@ -1,6 +1,6 @@
 # papercheck report: moyal_2020_plosone.pdf
 
-Generated 2026-11-08 with papercheck 0.1.0. 16 pages, 26 test statistics with p values, 22 reported means (11 with an N in the same sentence).
+Generated 2026-11-08 with papercheck 0.1.0. 16 pages, 26 test statistics with p values, 22 reported means (11 with a usable N for GRIM).
 
 ## Summary
 

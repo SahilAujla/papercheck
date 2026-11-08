@@ -31,7 +31,7 @@
       "page": 18,
       "sentence": "The effect of mindset switching was significant, χ2(1, N = 89) = 5.00, p = 0.042.",
       "raw": "χ2(1, N = 89) = 5.00, p = 0.042",
-      "explanation": "Reported χ2(1, N = 89) = 5.00, p = 0.042. Recomputed p = 0.0253 (range 0.0253 to 0.0254 given rounding of the test statistic) does not match the reported p. The significance decision is unchanged.",
+      "explanation": "Reported χ2(1, N = 89) = 5.00, p = 0.042. Recomputed p = 0.0253 (range 0.0253 to 0.0254 given rounding of the test statistic) does not match the reported p. The significance decision is unchanged. For a 2 x 2 table, a continuity-corrected chi-square or Fisher's exact test gives a different p from the uncorrected statistic, which is a common benign explanation.",
       "details": {
         "stat": "chi2(1, N = 89) = 5.0",
         "p_reported": 0.042,

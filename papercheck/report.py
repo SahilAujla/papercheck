@@ -58,7 +58,7 @@ def to_markdown(payload: dict[str, Any]) -> str:
     lines = [f"# papercheck report: {payload['paper']}", "",
              f"Generated {payload['date']} with papercheck {payload['papercheck_version']}. "
              f"{payload['pages']} pages, {s['statistics_extracted']} test statistics with p values, "
-             f"{s['means_extracted']} reported means ({s['means_with_n']} with an N in the same sentence).", "",
+             f"{s['means_extracted']} reported means ({s['means_with_n']} with a usable N for GRIM).", "",
              "## Summary", "", "| Check | Items examined | Errors | Warnings | Info |", "|---|---:|---:|---:|---:|"]
     flags = payload["flags"]
     for key, name in CHECK_NAMES.items():

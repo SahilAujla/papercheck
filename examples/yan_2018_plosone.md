@@ -1,6 +1,6 @@
 # papercheck report: yan_2018_plosone.pdf
 
-Generated 2026-11-08 with papercheck 0.1.0. 24 pages, 30 test statistics with p values, 59 reported means (11 with an N in the same sentence).
+Generated 2026-11-08 with papercheck 0.1.0. 24 pages, 30 test statistics with p values, 59 reported means (11 with a usable N for GRIM).
 
 ## Summary
 
@@ -24,7 +24,7 @@ Reported: `χ2(1, N = 89) = 5.00, p = 0.042`
 
 Sentence: "The effect of mindset switching was significant, χ2(1, N = 89) = 5.00, p = 0.042."
 
-Reported χ2(1, N = 89) = 5.00, p = 0.042. Recomputed p = 0.0253 (range 0.0253 to 0.0254 given rounding of the test statistic) does not match the reported p. The significance decision is unchanged.
+Reported χ2(1, N = 89) = 5.00, p = 0.042. Recomputed p = 0.0253 (range 0.0253 to 0.0254 given rounding of the test statistic) does not match the reported p. The significance decision is unchanged. For a 2 x 2 table, a continuity-corrected chi-square or Fisher's exact test gives a different p from the uncorrected statistic, which is a common benign explanation.
 
 Recomputed p = 0.025347 (interval [0.025274, 0.025421]); consistent if one-tailed: False; decision error: False.
 

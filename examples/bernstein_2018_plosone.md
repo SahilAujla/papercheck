@@ -1,6 +1,6 @@
 # papercheck report: bernstein_2018_plosone.pdf
 
-Generated 2026-11-08 with papercheck 0.1.0. 21 pages, 16 test statistics with p values, 35 reported means (0 with an N in the same sentence).
+Generated 2026-11-08 with papercheck 0.1.0. 21 pages, 16 test statistics with p values, 35 reported means (0 with a usable N for GRIM).
 
 ## Summary
 

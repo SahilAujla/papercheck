@@ -120,6 +120,9 @@ def check_p_values(stat: Stat) -> Optional[Flag]:
         sev = "warning"
         text = (f"Reported {stat.raw}. Recomputed p = {_fp(p_point)} (range {_fp(p_lo)} to {_fp(p_hi)} given rounding of "
                 f"the test statistic) does not match the reported p. The significance decision is unchanged.")
+    if stat.kind == "chi2" and stat.df1 == 1:
+        text += (" For a 2 x 2 table, a continuity-corrected chi-square or Fisher's exact test gives a different p from "
+                 "the uncorrected statistic, which is a common benign explanation.")
     return Flag(check="p_recompute", severity=sev, page=stat.page, sentence=stat.sentence, raw=stat.raw,
                 explanation=text, details=details)
 
