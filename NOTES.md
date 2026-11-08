@@ -28,7 +28,7 @@ Working notes for the papercheck build (2026-11-08, 03:42 to 04:35 EST session).
 - CLI: `papercheck paper.pdf --out reports/` (also `.txt` input, `--items`, `--quiet`).
 - 55 pytest tests passed at the end of phase 1 (87 after phase 2) (`.venv/bin/python -m pytest -q`).
 - Three real runs, reports committed under `examples/` (PDFs in gitignored `data/`, citations in `examples/SOURCES.md`):
-  - Yan, Zhang and Xu 2018 (PLOS ONE): 30 statistics, 59 means, 5 flags. 1 warning: reported χ2(1, N = 89) = 5.00,
+  - Yan, Zhang and Xu 2018 (PLOS ONE): 30 statistics, 59 means, 5 flags at phase 1 (42 after the phase 2 unverifiable-statement check, which adds info items; still 1 warning). 1 warning: reported χ2(1, N = 89) = 5.00,
     p = 0.042 vs recomputed p = 0.025 (significance decision unchanged). 4 info GRIM flags on page 18 that use the
     study N = 89 for subgroup means, so they are expected false positives.
   - Bernstein et al. 2018 (PLOS ONE): 16 statistics, 35 means, 0 flags. All 16 reported p values match recomputation.
