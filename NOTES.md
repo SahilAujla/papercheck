@@ -1,3 +1,13 @@
+# Start here (verified cold on Nov 8 2026 4:31 AM by a fresh agent)
+papercheck extracts statistics (t, F, chi-square, r, z, means) from psychology-paper PDFs and flags reported-vs-recomputed
+p values, GRIM and GRIMMER failures, CI and regression inconsistencies, and df-vs-N mismatches. Run everything from
+`~/code/papercheck` using `.venv/bin/...`; if `.venv` is missing, run `uv venv && uv pip install -e .`. Smoke test:
+`.venv/bin/papercheck data/yan_2018_plosone.pdf --out reports/ --html` takes about 26 s. Running all 14 PDFs takes about
+2 minutes, so use a long timeout or run it in the background; `reports/` and `data/` are gitignored, so runs change nothing
+tracked. The PDFs in `data/` are open-access PLOS ONE papers listed with URLs in `examples/SOURCES.md`; refetch from there
+if `data/` is empty. Expected: 88 passing tests and an empty diff in the yan_2018 regression check. The "Left after phase 2"
+and "Half done" sections below are partly stale; the round 3 section and docs/findings/ are current.
+
 # NOTES
 
 Working notes for the papercheck build (2026-11-08, 03:42 to 04:35 EST session).
