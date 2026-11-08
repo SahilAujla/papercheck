@@ -1,0 +1,658 @@
+{
+  "paper": "takayama_2023_plosone.pdf",
+  "pages": 22,
+  "papercheck_version": "0.1.0",
+  "date": "2026-11-08",
+  "summary": {
+    "statistics_extracted": 18,
+    "means_extracted": 4,
+    "means_with_n": 0,
+    "flags_total": 13,
+    "flags_by_severity": {
+      "warning": 13
+    },
+    "flags_by_check": {
+      "df_vs_n": 13
+    },
+    "examined": {
+      "p_recompute": 18,
+      "grim": 0,
+      "grimmer": 0,
+      "df_vs_n": 18,
+      "duplicate": 18
+    }
+  },
+  "flags": [
+    {
+      "check": "df_vs_n",
+      "severity": "warning",
+      "page": 6,
+      "sentence": "There were no significant main effects of experimental days on arousal and valence (arousal: F (2, 56) = 1.84, p = .17, ηp 2 = .06; valence: F (2, 56) = 1.91, p = .16, ηp 2 = .06).",
+      "raw": "F (2, 56) = 1.84, p = .17",
+      "explanation": "The degrees of freedom in F(2, 56) = 1.84 imply at least 59 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          59
+        ],
+        "max_reported_n": 29
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "warning",
+      "page": 6,
+      "sentence": "There were no significant main effects of experimental days on arousal and valence (arousal: F (2, 56) = 1.84, p = .17, ηp 2 = .06; valence: F (2, 56) = 1.91, p = .16, ηp 2 = .06).",
+      "raw": "F (2, 56) = 1.91, p = .16",
+      "explanation": "The degrees of freedom in F(2, 56) = 1.91 imply at least 59 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          59
+        ],
+        "max_reported_n": 29
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "warning",
+      "page": 6,
+      "sentence": "However, there was a significant main effect of experimental days on HR (F (2, 56) = 4.71, p = .01, ηp 2 = .14), and it was lower on day 1 than on days 2 and 3.",
+      "raw": "F (2, 56) = 4.71, p = .01",
+      "explanation": "The degrees of freedom in F(2, 56) = 4.71 imply at least 59 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          59
+        ],
+        "max_reported_n": 29
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "warning",
+      "page": 6,
+      "sentence": "The one-sample t-test on arousal and valence in the seated upright posture showed significantly smaller values for arousal (M = -3.15, SD = 4.91, t (86) = 5.99, p < .001, d = .64) and significantly larger values for valence (M = 4.69, SD = 3.56, t (86) = 12.23, p < .001, d = 1.31).",
+      "raw": "t (86) = 5.99, p < .001",
+      "explanation": "The degrees of freedom in t(86) = 5.99 imply at least 87 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          87,
+          88
+        ],
+        "max_reported_n": 29
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "warning",
+      "page": 6,
+      "sentence": "The one-sample t-test on arousal and valence in the seated upright posture showed significantly smaller values for arousal (M = -3.15, SD = 4.91, t (86) = 5.99, p < .001, d = .64) and significantly larger values for valence (M = 4.69, SD = 3.56, t (86) = 12.23, p < .001, d = 1.31).",
+      "raw": "t (86) = 12.23, p < .001",
+      "explanation": "The degrees of freedom in t(86) = 12.23 imply at least 87 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          87,
+          88
+        ],
+        "max_reported_n": 29
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "warning",
+      "page": 10,
+      "sentence": "A MANOVA of posture (12) was performed on the arousal and valence scores of the TDMS. Posture had a significant main effect (F (11, 18) = 16.77, p < .001, ηp 2 = .91).",
+      "raw": "F (11, 18) = 16.77, p < .001",
+      "explanation": "The degrees of freedom in F(11, 18) = 16.77 imply at least 30 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          30
+        ],
+        "max_reported_n": 29
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "warning",
+      "page": 10,
+      "sentence": "Significant main effects were observed for arousal and valence (arousal: F (6.57, 34.15) = 35.09, p < .001, ηp 2 = .56; valence: F (5.85, 17.83) = 13.21, p < .001, ηp 2 = .32).",
+      "raw": "F (6.57, 34.15) = 35.09, p < .001",
+      "explanation": "The degrees of freedom in F(6.57, 34.15) = 35.09 imply at least 41 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          41
+        ],
+        "max_reported_n": 29
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "warning",
+      "page": 11,
+      "sentence": "The ANCOVA revealed a significant main effect (F (11, 335) = 3.14, p < .001, ηp 2 = .09).",
+      "raw": "F (11, 335) = 3.14, p < .001",
+      "explanation": "The degrees of freedom in F(11, 335) = 3.14 imply at least 347 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          347
+        ],
+        "max_reported_n": 29
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "warning",
+      "page": 14,
+      "sentence": "The one-sample t-test on arousal and valence in the seated upright posture showed significantly smaller and larger values than the criterion of 0 for arousal (M = -4.78, SD = 4.99, t (49) = 6.77, p < .001, d = 0.96) and valence (M = 4.90, SD = 4.41, t (49) = 7.86, p < .001, d = 1.11), respectively, despite the exclusion of the phrase \"medically correct posture\" in the cover story.",
+      "raw": "t (49) = 6.77, p < .001",
+      "explanation": "The degrees of freedom in t(49) = 6.77 imply at least 50 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          50,
+          51
+        ],
+        "max_reported_n": 29
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "warning",
+      "page": 14,
+      "sentence": "The one-sample t-test on arousal and valence in the seated upright posture showed significantly smaller and larger values than the criterion of 0 for arousal (M = -4.78, SD = 4.99, t (49) = 6.77, p < .001, d = 0.96) and valence (M = 4.90, SD = 4.41, t (49) = 7.86, p < .001, d = 1.11), respectively, despite the exclusion of the phrase \"medically correct posture\" in the cover story.",
+      "raw": "t (49) = 7.86, p < .001",
+      "explanation": "The degrees of freedom in t(49) = 7.86 imply at least 50 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          50,
+          51
+        ],
+        "max_reported_n": 29
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "warning",
+      "page": 17,
+      "sentence": "valence (arousal: F (5.85, 140.51) = 816.13, p < .001, ηp 2 = .50; valence: F (5.78, 158.98) = 6.86, p < .001, ηp 2 = .22).",
+      "raw": "F (5.85, 140.51) = 816.13, p < .001",
+      "explanation": "The degrees of freedom in F(5.85, 140.51) = 816.13 imply at least 146 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          146
+        ],
+        "max_reported_n": 29
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "warning",
+      "page": 17,
+      "sentence": "valence (arousal: F (5.85, 140.51) = 816.13, p < .001, ηp 2 = .50; valence: F (5.78, 158.98) = 6.86, p < .001, ηp 2 = .22).",
+      "raw": "F (5.78, 158.98) = 6.86, p < .001",
+      "explanation": "The degrees of freedom in F(5.78, 158.98) = 6.86 imply at least 164 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          164
+        ],
+        "max_reported_n": 29
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "warning",
+      "page": 17,
+      "sentence": "ANOVA revealed a significant main effect (F (6.13, 146.94) = 13.30, p < .001, ηp 2 = .36).",
+      "raw": "F (6.13, 146.94) = 13.30, p < .001",
+      "explanation": "The degrees of freedom in F(6.13, 146.94) = 13.3 imply at least 153 participants under the usual design, but the largest sample size mentioned in the paper is 29. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          153
+        ],
+        "max_reported_n": 29
+      }
+    }
+  ],
+  "statistics": [
+    {
+      "kind": "F",
+      "value": 1.84,
+      "value_decimals": 2,
+      "df1": 2.0,
+      "df2": 56.0,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.17,
+      "p_comparator": "=",
+      "p_decimals": 2,
+      "raw": "F (2, 56) = 1.84, p = .17",
+      "page": 6,
+      "sentence": "There were no significant main effects of experimental days on arousal and valence (arousal: F (2, 56) = 1.84, p = .17, ηp 2 = .06; valence: F (2, 56) = 1.91, p = .16, ηp 2 = .06).",
+      "pos": 2518,
+      "p_recomputed": 0.16829
+    },
+    {
+      "kind": "F",
+      "value": 1.91,
+      "value_decimals": 2,
+      "df1": 2.0,
+      "df2": 56.0,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.16,
+      "p_comparator": "=",
+      "p_decimals": 2,
+      "raw": "F (2, 56) = 1.91, p = .16",
+      "page": 6,
+      "sentence": "There were no significant main effects of experimental days on arousal and valence (arousal: F (2, 56) = 1.84, p = .17, ηp 2 = .06; valence: F (2, 56) = 1.91, p = .16, ηp 2 = .06).",
+      "pos": 2566,
+      "p_recomputed": 0.157603
+    },
+    {
+      "kind": "F",
+      "value": 4.71,
+      "value_decimals": 2,
+      "df1": 2.0,
+      "df2": 56.0,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.01,
+      "p_comparator": "=",
+      "p_decimals": 2,
+      "raw": "F (2, 56) = 4.71, p = .01",
+      "page": 6,
+      "sentence": "However, there was a significant main effect of experimental days on HR (F (2, 56) = 4.71, p = .01, ηp 2 = .14), and it was lower on day 1 than on days 2 and 3.",
+      "pos": 2679,
+      "p_recomputed": 0.012864
+    },
+    {
+      "kind": "t",
+      "value": 5.99,
+      "value_decimals": 2,
+      "df1": 86.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.001,
+      "p_comparator": "<",
+      "p_decimals": 3,
+      "raw": "t (86) = 5.99, p < .001",
+      "page": 6,
+      "sentence": "The one-sample t-test on arousal and valence in the seated upright posture showed significantly smaller values for arousal (M = -3.15, SD = 4.91, t (86) = 5.99, p < .001, d = .64) and significantly larger values for valence (M = 4.69, SD = 3.56, t (86) = 12.23, p < .001, d = 1.31).",
+      "pos": 2913,
+      "p_recomputed": 0.0
+    },
+    {
+      "kind": "t",
+      "value": 12.23,
+      "value_decimals": 2,
+      "df1": 86.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.001,
+      "p_comparator": "<",
+      "p_decimals": 3,
+      "raw": "t (86) = 12.23, p < .001",
+      "page": 6,
+      "sentence": "The one-sample t-test on arousal and valence in the seated upright posture showed significantly smaller values for arousal (M = -3.15, SD = 4.91, t (86) = 5.99, p < .001, d = .64) and significantly larger values for valence (M = 4.69, SD = 3.56, t (86) = 12.23, p < .001, d = 1.31).",
+      "pos": 3013,
+      "p_recomputed": 0.0
+    },
+    {
+      "kind": "F",
+      "value": 16.77,
+      "value_decimals": 2,
+      "df1": 11.0,
+      "df2": 18.0,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.001,
+      "p_comparator": "<",
+      "p_decimals": 3,
+      "raw": "F (11, 18) = 16.77, p < .001",
+      "page": 10,
+      "sentence": "A MANOVA of posture (12) was performed on the arousal and valence scores of the TDMS. Posture had a significant main effect (F (11, 18) = 16.77, p < .001, ηp 2 = .91).",
+      "pos": 1246,
+      "p_recomputed": 0.0
+    },
+    {
+      "kind": "F",
+      "value": 35.09,
+      "value_decimals": 2,
+      "df1": 6.57,
+      "df2": 34.15,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.001,
+      "p_comparator": "<",
+      "p_decimals": 3,
+      "raw": "F (6.57, 34.15) = 35.09, p < .001",
+      "page": 10,
+      "sentence": "Significant main effects were observed for arousal and valence (arousal: F (6.57, 34.15) = 35.09, p < .001, ηp 2 = .56; valence: F (5.85, 17.83) = 13.21, p < .001, ηp 2 = .32).",
+      "pos": 1444,
+      "p_recomputed": 0.0
+    },
+    {
+      "kind": "F",
+      "value": 13.21,
+      "value_decimals": 2,
+      "df1": 5.85,
+      "df2": 17.83,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.001,
+      "p_comparator": "<",
+      "p_decimals": 3,
+      "raw": "F (5.85, 17.83) = 13.21, p < .001",
+      "page": 10,
+      "sentence": "Significant main effects were observed for arousal and valence (arousal: F (6.57, 34.15) = 35.09, p < .001, ηp 2 = .56; valence: F (5.85, 17.83) = 13.21, p < .001, ηp 2 = .32).",
+      "pos": 1500,
+      "p_recomputed": 1.1e-05
+    },
+    {
+      "kind": "F",
+      "value": 3.14,
+      "value_decimals": 2,
+      "df1": 11.0,
+      "df2": 335.0,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.001,
+      "p_comparator": "<",
+      "p_decimals": 3,
+      "raw": "F (11, 335) = 3.14, p < .001",
+      "page": 11,
+      "sentence": "The ANCOVA revealed a significant main effect (F (11, 335) = 3.14, p < .001, ηp 2 = .09).",
+      "pos": 615,
+      "p_recomputed": 0.000469
+    },
+    {
+      "kind": "t",
+      "value": 1.12,
+      "value_decimals": 2,
+      "df1": 24.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.28,
+      "p_comparator": "=",
+      "p_decimals": 2,
+      "raw": "t (24) = 1.12, p = .28",
+      "page": 14,
+      "sentence": "There were no significant differences between the experimental days for all measurements (arousal: t (24) = 1.12, p = .28. d = 0.22; valence: t (24) = 0.42, p = .68, d = .08; HR: t (24) = 0.15, p = .88, d = 0.31), indicating that the seated upright posture at the beginning of each experimental day was controlled for over two days.",
+      "pos": 882,
+      "p_recomputed": 0.273797
+    },
+    {
+      "kind": "t",
+      "value": 0.42,
+      "value_decimals": 2,
+      "df1": 24.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.68,
+      "p_comparator": "=",
+      "p_decimals": 2,
+      "raw": "t (24) = 0.42, p = .68",
+      "page": 14,
+      "sentence": "There were no significant differences between the experimental days for all measurements (arousal: t (24) = 1.12, p = .28. d = 0.22; valence: t (24) = 0.42, p = .68, d = .08; HR: t (24) = 0.15, p = .88, d = 0.31), indicating that the seated upright posture at the beginning of each experimental day was controlled for over two days.",
+      "pos": 925,
+      "p_recomputed": 0.678222
+    },
+    {
+      "kind": "t",
+      "value": 0.15,
+      "value_decimals": 2,
+      "df1": 24.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.88,
+      "p_comparator": "=",
+      "p_decimals": 2,
+      "raw": "t (24) = 0.15, p = .88",
+      "page": 14,
+      "sentence": "There were no significant differences between the experimental days for all measurements (arousal: t (24) = 1.12, p = .28. d = 0.22; valence: t (24) = 0.42, p = .68, d = .08; HR: t (24) = 0.15, p = .88, d = 0.31), indicating that the seated upright posture at the beginning of each experimental day was controlled for over two days.",
+      "pos": 962,
+      "p_recomputed": 0.882018
+    },
+    {
+      "kind": "t",
+      "value": 6.77,
+      "value_decimals": 2,
+      "df1": 49.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.001,
+      "p_comparator": "<",
+      "p_decimals": 3,
+      "raw": "t (49) = 6.77, p < .001",
+      "page": 14,
+      "sentence": "The one-sample t-test on arousal and valence in the seated upright posture showed significantly smaller and larger values than the criterion of 0 for arousal (M = -4.78, SD = 4.99, t (49) = 6.77, p < .001, d = 0.96) and valence (M = 4.90, SD = 4.41, t (49) = 7.86, p < .001, d = 1.11), respectively, despite the exclusion of the phrase \"medically correct posture\" in the cover story.",
+      "pos": 1297,
+      "p_recomputed": 0.0
+    },
+    {
+      "kind": "t",
+      "value": 7.86,
+      "value_decimals": 2,
+      "df1": 49.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.001,
+      "p_comparator": "<",
+      "p_decimals": 3,
+      "raw": "t (49) = 7.86, p < .001",
+      "page": 14,
+      "sentence": "The one-sample t-test on arousal and valence in the seated upright posture showed significantly smaller and larger values than the criterion of 0 for arousal (M = -4.78, SD = 4.99, t (49) = 6.77, p < .001, d = 0.96) and valence (M = 4.90, SD = 4.41, t (49) = 7.86, p < .001, d = 1.11), respectively, despite the exclusion of the phrase \"medically correct posture\" in the cover story.",
+      "pos": 1366,
+      "p_recomputed": 0.0
+    },
+    {
+      "kind": "F",
+      "value": 5.97,
+      "value_decimals": 2,
+      "df1": 11.0,
+      "df2": 14.0,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.001,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "F (11, 14) = 5.97, p = .001",
+      "page": 16,
+      "sentence": "A MANOVA of posture (12) was conducted on the arousal and valence scores of the TDMS. There was a significant main effect of posture (F (11, 14) = 5.97, p = .001, ηp 2 = .82).",
+      "pos": 1023,
+      "p_recomputed": 0.001272
+    },
+    {
+      "kind": "F",
+      "value": 816.13,
+      "value_decimals": 2,
+      "df1": 5.85,
+      "df2": 140.51,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.001,
+      "p_comparator": "<",
+      "p_decimals": 3,
+      "raw": "F (5.85, 140.51) = 816.13, p < .001",
+      "page": 17,
+      "sentence": "valence (arousal: F (5.85, 140.51) = 816.13, p < .001, ηp 2 = .50; valence: F (5.78, 158.98) = 6.86, p < .001, ηp 2 = .22).",
+      "pos": 18,
+      "p_recomputed": 0.0
+    },
+    {
+      "kind": "F",
+      "value": 6.86,
+      "value_decimals": 2,
+      "df1": 5.78,
+      "df2": 158.98,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.001,
+      "p_comparator": "<",
+      "p_decimals": 3,
+      "raw": "F (5.78, 158.98) = 6.86, p < .001",
+      "page": 17,
+      "sentence": "valence (arousal: F (5.85, 140.51) = 816.13, p < .001, ηp 2 = .50; valence: F (5.78, 158.98) = 6.86, p < .001, ηp 2 = .22).",
+      "pos": 76,
+      "p_recomputed": 2e-06
+    },
+    {
+      "kind": "F",
+      "value": 13.3,
+      "value_decimals": 2,
+      "df1": 6.13,
+      "df2": 146.94,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.001,
+      "p_comparator": "<",
+      "p_decimals": 3,
+      "raw": "F (6.13, 146.94) = 13.30, p < .001",
+      "page": 17,
+      "sentence": "ANOVA revealed a significant main effect (F (6.13, 146.94) = 13.30, p < .001, ηp 2 = .36).",
+      "pos": 2551,
+      "p_recomputed": 0.0
+    }
+  ],
+  "means": [
+    {
+      "mean": -3.15,
+      "mean_text": "-3.15",
+      "sd": 4.91,
+      "sd_text": "4.91",
+      "n": null,
+      "n_source": "",
+      "raw": "M = -3.15, SD = 4.91",
+      "page": 6,
+      "sentence": "The one-sample t-test on arousal and valence in the seated upright posture showed significantly smaller values for arousal (M = -3.15, SD = 4.91, t (86) = 5.99, p < .001, d = .64) and significantly larger values for valence (M = 4.69, SD = 3.56, t (86) = 12.23, p < .001, d = 1.31).",
+      "pos": 2891
+    },
+    {
+      "mean": 4.69,
+      "mean_text": "4.69",
+      "sd": 3.56,
+      "sd_text": "3.56",
+      "n": null,
+      "n_source": "",
+      "raw": "M = 4.69, SD = 3.56",
+      "page": 6,
+      "sentence": "The one-sample t-test on arousal and valence in the seated upright posture showed significantly smaller values for arousal (M = -3.15, SD = 4.91, t (86) = 5.99, p < .001, d = .64) and significantly larger values for valence (M = 4.69, SD = 3.56, t (86) = 12.23, p < .001, d = 1.31).",
+      "pos": 2992
+    },
+    {
+      "mean": -4.78,
+      "mean_text": "-4.78",
+      "sd": 4.99,
+      "sd_text": "4.99",
+      "n": null,
+      "n_source": "",
+      "raw": "M = -4.78, SD = 4.99",
+      "page": 14,
+      "sentence": "The one-sample t-test on arousal and valence in the seated upright posture showed significantly smaller and larger values than the criterion of 0 for arousal (M = -4.78, SD = 4.99, t (49) = 6.77, p < .001, d = 0.96) and valence (M = 4.90, SD = 4.41, t (49) = 7.86, p < .001, d = 1.11), respectively, despite the exclusion of the phrase \"medically correct posture\" in the cover story.",
+      "pos": 1275
+    },
+    {
+      "mean": 4.9,
+      "mean_text": "4.90",
+      "sd": 4.41,
+      "sd_text": "4.41",
+      "n": null,
+      "n_source": "",
+      "raw": "M = 4.90, SD = 4.41",
+      "page": 14,
+      "sentence": "The one-sample t-test on arousal and valence in the seated upright posture showed significantly smaller and larger values than the criterion of 0 for arousal (M = -4.78, SD = 4.99, t (49) = 6.77, p < .001, d = 0.96) and valence (M = 4.90, SD = 4.41, t (49) = 7.86, p < .001, d = 1.11), respectively, despite the exclusion of the phrase \"medically correct posture\" in the cover story.",
+      "pos": 1345
+    }
+  ],
+  "sample_sizes": [
+    {
+      "n": 29,
+      "page": 1,
+      "raw": "29 participants",
+      "kind": "count noun"
+    },
+    {
+      "n": 13,
+      "page": 1,
+      "raw": "13 men",
+      "kind": "count noun"
+    },
+    {
+      "n": 16,
+      "page": 1,
+      "raw": "16 women",
+      "kind": "count noun"
+    },
+    {
+      "n": 25,
+      "page": 1,
+      "raw": "25 participants",
+      "kind": "count noun"
+    },
+    {
+      "n": 13,
+      "page": 1,
+      "raw": "13 men",
+      "kind": "count noun"
+    },
+    {
+      "n": 12,
+      "page": 1,
+      "raw": "12 women",
+      "kind": "count noun"
+    },
+    {
+      "n": 29,
+      "page": 3,
+      "raw": "29 participants",
+      "kind": "count noun"
+    },
+    {
+      "n": 13,
+      "page": 3,
+      "raw": "13 men",
+      "kind": "count noun"
+    },
+    {
+      "n": 16,
+      "page": 3,
+      "raw": "16 women",
+      "kind": "count noun"
+    },
+    {
+      "n": 29,
+      "page": 3,
+      "raw": "29 participants",
+      "kind": "count noun"
+    },
+    {
+      "n": 29,
+      "page": 3,
+      "raw": "Twenty-nine",
+      "kind": "spelled out"
+    },
+    {
+      "n": 13,
+      "page": 12,
+      "raw": "13 men",
+      "kind": "count noun"
+    },
+    {
+      "n": 12,
+      "page": 12,
+      "raw": "12 women",
+      "kind": "count noun"
+    },
+    {
+      "n": 16,
+      "page": 12,
+      "raw": "Sixteen",
+      "kind": "spelled out"
+    }
+  ],
+  "disclaimer": "This report lists places where a value reported in the paper differs from the value recomputed from other reported numbers. A difference is not evidence of misconduct. Common benign causes are rounding, typos, one-tailed tests, corrections for multiple comparisons, adjusted degrees of freedom, non-integer scales (which make GRIM and GRIMMER inapplicable) and PDF text-extraction errors. Each flag should be read in the paper before drawing any conclusion."
+}

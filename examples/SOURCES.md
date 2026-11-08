@@ -66,3 +66,79 @@ numbers. None of them is evidence of misconduct; the benign explanations listed 
   against a largest reported N of 146; the paper gives its Study 4 sample as "Two-hundred and thirty-five", which is
   now parsed, and the flags were withdrawn.
 - Moyal 2020: all 26 p values match; 11 means with SDs pass GRIM and GRIMMER with the stated group or study Ns.
+
+## Ten additional papers (added 2026-11-08)
+
+Selected with the PLOS search API (journal PLOS ONE, subject Psychology, research articles, 2015 to 2024, body containing `SD =` and a second study or experiment),
+downloaded from the printable endpoint, kept when the PDF was over 100 KB and the first verification count was at least 15, and the article page
+linked the CC BY 4.0 licence. Reports for these ten are in this directory and were produced by the same papercheck 0.1.0 run.
+
+## 4. michelkrohler_2023_plosone.pdf
+
+- Citation: Michel-Kröhler, A., Wessa, M., and Berti, S. (2023). Experimental induction of state rumination: A study evaluating the efficacy of goal-cueing task in different experimental settings. PLOS ONE, 18(11), e0288450.
+- DOI URL: https://doi.org/10.1371/journal.pone.0288450 (checked 2026-11-08)
+- Licence: CC BY 4.0 (article page links creativecommons.org/licenses/by/4.0/; no CC0 or public-domain statement)
+- Verification counts: 110 test statistics, 19 `SD =` occurrences; 34 pages, 930 KB
+
+## 5. gill_2023_plosone.pdf
+
+- Citation: Gill, M. J., and Zungu, S. P. (2023). What do other people think he deserves? Social influence on utilization of mitigating information regarding a violent offender's unfortunate life history. PLOS ONE, 18(11), e0291729.
+- DOI URL: https://doi.org/10.1371/journal.pone.0291729 (checked 2026-11-08)
+- Licence: CC BY 4.0 (article page links creativecommons.org/licenses/by/4.0/; no CC0 or public-domain statement)
+- Verification counts: 47 test statistics, 9 `SD =` occurrences; 22 pages, 1092 KB
+
+## 6. makanju_2024_plosone.pdf
+
+- Citation: Makanju, D., Livingstone, A. G., Sweetman, J., Okafor, C. O., and Attoh, F. (2024). How appraisals of an in-group's collective history shape collective identity and action: Evidence in relation to African identity. PLOS ONE, 19(9), e0308727.
+- DOI URL: https://doi.org/10.1371/journal.pone.0308727 (checked 2026-11-08)
+- Licence: CC BY 4.0 (article page links creativecommons.org/licenses/by/4.0/; no CC0 or public-domain statement)
+- Verification counts: 39 test statistics, 31 `SD =` occurrences; 34 pages, 1335 KB
+
+## 7. choi_2024_plosone.pdf
+
+- Citation: Choi, A. L., and Anderson, C. (2024). Be careful what you wish for: Individuals perceived to desire status are afforded less status. PLOS ONE, 19(6), e0304727.
+- DOI URL: https://doi.org/10.1371/journal.pone.0304727 (checked 2026-11-08)
+- Licence: CC BY 4.0 (article page links creativecommons.org/licenses/by/4.0/; no CC0 or public-domain statement)
+- Verification counts: 36 test statistics, 6 `SD =` occurrences; 21 pages, 1287 KB
+
+## 8. buchanan_2023_plosone.pdf
+
+- Citation: Buchanan, K., and Sandstrom, G. M. (2023). Buffering the effects of bad news: Exposure to others' kindness alleviates the aversive effects of viewing others' acts of immorality. PLOS ONE, 18(5), e0284438.
+- DOI URL: https://doi.org/10.1371/journal.pone.0284438 (checked 2026-11-08)
+- Licence: CC BY 4.0 (article page links creativecommons.org/licenses/by/4.0/; no CC0 or public-domain statement)
+- Verification counts: 29 test statistics, 10 `SD =` occurrences; 26 pages, 1043 KB
+
+## 9. maj_2024_plosone.pdf
+
+- Citation: Maj, A., Matynia, M., Michalak, N., Bis, A., and Andersson, G. (2024). New in Town: An internet-based self-efficacy intervention for internal migrants: A randomized controlled trial. PLOS ONE, 19(3), e0299638.
+- DOI URL: https://doi.org/10.1371/journal.pone.0299638 (checked 2026-11-08)
+- Licence: CC BY 4.0 (article page links creativecommons.org/licenses/by/4.0/; no CC0 or public-domain statement)
+- Verification counts: 26 test statistics, 16 `SD =` occurrences; 19 pages, 797 KB
+
+## 10. takahashi_2023_plosone.pdf
+
+- Citation: Takahashi, Y., Himichi, T., Masuchi, A., Nakanishi, D., and Ohtsubo, Y. (2023). Is reading fiction associated with a higher mind-reading ability? Two conceptual replication studies in Japan. PLOS ONE, 18(6), e0287542.
+- DOI URL: https://doi.org/10.1371/journal.pone.0287542 (checked 2026-11-08)
+- Licence: CC BY 4.0 (article page links creativecommons.org/licenses/by/4.0/; no CC0 or public-domain statement)
+- Verification counts: 26 test statistics, 4 `SD =` occurrences; 16 pages, 937 KB
+
+## 11. urschler_2024_plosone.pdf
+
+- Citation: Urschler, D. F., Fischer, P., and Kessler, T. (2024). Standing-up against moral violations: The predicting role of attribution, kinship, and severity. PLOS ONE, 19(8), e0307740.
+- DOI URL: https://doi.org/10.1371/journal.pone.0307740 (checked 2026-11-08)
+- Licence: CC BY 4.0 (article page links creativecommons.org/licenses/by/4.0/; no CC0 or public-domain statement)
+- Verification counts: 25 test statistics, 18 `SD =` occurrences; 17 pages, 1030 KB
+
+## 12. drake_2023_plosone.pdf
+
+- Citation: Drake, A. C., and Sears, C. R. (2023). Do humour styles moderate the association between hopelessness and suicide ideation? A comparison of student and community samples. PLOS ONE, 18(12), e0295995.
+- DOI URL: https://doi.org/10.1371/journal.pone.0295995 (checked 2026-11-08)
+- Licence: CC BY 4.0 (article page links creativecommons.org/licenses/by/4.0/; no CC0 or public-domain statement)
+- Verification counts: 23 test statistics, 2 `SD =` occurrences; 24 pages, 1019 KB
+
+## 13. takayama_2023_plosone.pdf
+
+- Citation: Takayama, A., and Sekiya, H. (2023). Effects of various sitting and standing postures on arousal and valence. PLOS ONE, 18(6), e0286720.
+- DOI URL: https://doi.org/10.1371/journal.pone.0286720 (checked 2026-11-08)
+- Licence: CC BY 4.0 (article page links creativecommons.org/licenses/by/4.0/; no CC0 or public-domain statement)
+- Verification counts: 21 test statistics, 4 `SD =` occurrences; 22 pages, 2414 KB

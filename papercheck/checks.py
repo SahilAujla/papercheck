@@ -158,7 +158,8 @@ def check_grim(m: MeanSD, items: int = 1) -> list[Flag]:
     g = grim_test(m.mean, m.n, dec, items=items)
     if g.note:
         return flags
-    strong_n = m.n_source in ("same parenthesis", "same sentence")
+    strong_n = m.n_source in ("same parenthesis", "same sentence", "table n column", "table column header",
+                              "table n row")
     if not g.consistent:
         near = ", ".join(f"{x:.{dec}f}" for x in g.nearest_possible)
         flags.append(Flag(

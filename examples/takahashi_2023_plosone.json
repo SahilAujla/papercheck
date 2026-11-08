@@ -1,0 +1,634 @@
+{
+  "paper": "takahashi_2023_plosone.pdf",
+  "pages": 16,
+  "papercheck_version": "0.1.0",
+  "date": "2026-11-08",
+  "summary": {
+    "statistics_extracted": 23,
+    "means_extracted": 2,
+    "means_with_n": 0,
+    "flags_total": 5,
+    "flags_by_severity": {
+      "warning": 5
+    },
+    "flags_by_check": {
+      "p_recompute": 2,
+      "df_vs_n": 3
+    },
+    "examined": {
+      "p_recompute": 23,
+      "grim": 0,
+      "grimmer": 0,
+      "df_vs_n": 23,
+      "duplicate": 23
+    }
+  },
+  "flags": [
+    {
+      "check": "p_recompute",
+      "severity": "warning",
+      "page": 9,
+      "sentence": "Although the effect of gender was not significant, F(1, 296) = 0.001, p = .977, ηp 2 < .001, we found an unexpected condition × gender interaction effect, F(2, 296) = 5.12, p = .004, ηp 2 = .036.",
+      "raw": "F(2, 296) = 5.12, p = .004",
+      "explanation": "Reported F(2, 296) = 5.12, p = .004. Recomputed p = 0.0065 (range 0.0065 to 0.0065 given rounding of the test statistic) does not match the reported p. The significance decision is unchanged.",
+      "details": {
+        "stat": "F(2, 296) = 5.12",
+        "p_reported": 0.004,
+        "p_comparator": "=",
+        "p_recomputed": 0.006516,
+        "p_recomputed_interval": [
+          0.006485,
+          0.006548
+        ],
+        "consistent_if_one_tailed": false,
+        "decision_error": false
+      }
+    },
+    {
+      "check": "p_recompute",
+      "severity": "warning",
+      "page": 10,
+      "sentence": "...ified as \"fiction.\" Although this is mere speculation, it should be noted that once the literary fiction condition was removed, the correlation between fiction reading time and FS became significant, r(286) = .15, p = .037....",
+      "raw": "r(286) = .15, p = .037",
+      "explanation": "Reported r(286) = .15, p = .037. Recomputed p = 0.0108 (range 0.0084 to 0.0138 given rounding of the test statistic) does not match the reported p. The significance decision is unchanged.",
+      "details": {
+        "stat": "r(286) = 0.15",
+        "p_reported": 0.037,
+        "p_comparator": "=",
+        "p_recomputed": 0.010805,
+        "p_recomputed_interval": [
+          0.008415,
+          0.013776
+        ],
+        "consistent_if_one_tailed": false,
+        "decision_error": false
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "warning",
+      "page": 10,
+      "sentence": "When the new data were combined with the original Study 2 data, there was no significant effect of the four conditions (i.e., original \"calculation\" control, new \"no task\" control, literary fiction, and nonfiction conditions) on ΔRMET: F(3, 400) = 1.02, p = .382, η2 = .008.",
+      "raw": "F(3, 400) = 1.02, p = .382",
+      "explanation": "The degrees of freedom in F(3, 400) = 1.02 imply at least 404 participants under the usual design, but the largest sample size mentioned in the paper is 338. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          404
+        ],
+        "max_reported_n": 338
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "warning",
+      "page": 10,
+      "sentence": "Even FS was not significantly correlated with fiction reading time, r(378) = .09, p = .094.",
+      "raw": "r(378) = .09, p = .094",
+      "explanation": "The degrees of freedom in r(378) = 0.09 imply at least 380 participants under the usual design, but the largest sample size mentioned in the paper is 338. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          380
+        ],
+        "max_reported_n": 338
+      }
+    },
+    {
+      "check": "df_vs_n",
+      "severity": "warning",
+      "page": 11,
+      "sentence": "We included a vocabulary test in Study 2 and found that fiction reading time was significantly correlated with the vocabulary test score, r(378) = .16, p = .002.",
+      "raw": "r(378) = .16, p = .002",
+      "explanation": "The degrees of freedom in r(378) = 0.16 imply at least 380 participants under the usual design, but the largest sample size mentioned in the paper is 338. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
+      "details": {
+        "implied_n": [
+          380
+        ],
+        "max_reported_n": 338
+      }
+    }
+  ],
+  "statistics": [
+    {
+      "kind": "r",
+      "value": 0.21,
+      "value_decimals": 2,
+      "df1": 315.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.001,
+      "p_comparator": "<",
+      "p_decimals": 3,
+      "raw": "r(315) = .21, p < .001",
+      "page": 4,
+      "sentence": "Confirming the previous results [15], fiction reading time was significantly correlated with FS: r(315) = .21, p < .001 (Fig 1B).",
+      "pos": 2847,
+      "p_recomputed": 0.000166
+    },
+    {
+      "kind": "r",
+      "value": 0.11,
+      "value_decimals": 2,
+      "df1": 315.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.052,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "r(315) = .11, p = .052",
+      "page": 4,
+      "sentence": "However, the correlation between fiction reading time and RMET score failed to reach the conventional significance level: r(315) = .11, p = .052 (Fig 1A).",
+      "pos": 3002,
+      "p_recomputed": 0.050383
+    },
+    {
+      "kind": "t",
+      "value": 4.25,
+      "value_decimals": 2,
+      "df1": 337.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.001,
+      "p_comparator": "<",
+      "p_decimals": 3,
+      "raw": "t(337) = 4.25, p < .001",
+      "page": 5,
+      "sentence": "A one-sample t-test against the criterion of .73 indicated the difference was significant, t(337) = 4.25, p < .001. https://doi.org/10.1371/journal.pone.0287542.t001 Table 2.",
+      "pos": 2200,
+      "p_recomputed": 2.8e-05
+    },
+    {
+      "kind": "r",
+      "value": 0.11,
+      "value_decimals": 2,
+      "df1": 335.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.042,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "r(335) = .11, p = .042",
+      "page": 6,
+      "sentence": "Personal distress was positively correlated with the use of social networking services (SNS), r(335) = .11, p = .042.",
+      "pos": 514,
+      "p_recomputed": 0.043596
+    },
+    {
+      "kind": "r",
+      "value": -0.12,
+      "value_decimals": 2,
+      "df1": 336.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.032,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "r(336) = -.12, p = .032",
+      "page": 6,
+      "sentence": "Empathic concern was negatively correlated with the time spent reading manga, r(336) = -.12, p = .032.",
+      "pos": 616,
+      "p_recomputed": 0.027386
+    },
+    {
+      "kind": "r",
+      "value": 0.15,
+      "value_decimals": 2,
+      "df1": 336.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.006,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "r(336) = .15, p = .006",
+      "page": 6,
+      "sentence": "More importantly, fantasy was positively correlated with time spent on manga (r(336) = .15, p = .006), film (r (336) = .19, p < .001), and SNS (r(335) = .14, p = .012).",
+      "pos": 719,
+      "p_recomputed": 0.005725
+    },
+    {
+      "kind": "r",
+      "value": 0.19,
+      "value_decimals": 2,
+      "df1": 336.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.001,
+      "p_comparator": "<",
+      "p_decimals": 3,
+      "raw": "r (336) = .19, p < .001",
+      "page": 6,
+      "sentence": "More importantly, fantasy was positively correlated with time spent on manga (r(336) = .15, p = .006), film (r (336) = .19, p < .001), and SNS (r(335) = .14, p = .012).",
+      "pos": 750,
+      "p_recomputed": 0.000444
+    },
+    {
+      "kind": "r",
+      "value": 0.14,
+      "value_decimals": 2,
+      "df1": 335.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.012,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "r(335) = .14, p = .012",
+      "page": 6,
+      "sentence": "More importantly, fantasy was positively correlated with time spent on manga (r(336) = .15, p = .006), film (r (336) = .19, p < .001), and SNS (r(335) = .14, p = .012).",
+      "pos": 785,
+      "p_recomputed": 0.010076
+    },
+    {
+      "kind": "t",
+      "value": 0.34,
+      "value_decimals": 2,
+      "df1": 337.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": null,
+      "p_comparator": "ns",
+      "p_decimals": 2,
+      "raw": "t(337) = 0.34, ns",
+      "page": 7,
+      "sentence": "The mean (SD) RMET-A and RMET-B scores in Study 1 were 12.77 (2.04) and 12.72 (2.15), t(337) = 0.34, ns.",
+      "pos": 3876,
+      "p_recomputed": 0.734068
+    },
+    {
+      "kind": "F",
+      "value": 1.05,
+      "value_decimals": 2,
+      "df1": 2.0,
+      "df2": 301.0,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.353,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "F(2, 301) = 1.05, p = 0.353",
+      "page": 9,
+      "sentence": "13.15 (SD = 2.07), 13.53 (1.89), and 13.20 (2.16) in the control, fiction, and nonfiction conditions, respectively, F(2, 301) = 1.05, p = 0.353, η2 = .007.",
+      "pos": 116,
+      "p_recomputed": 0.351216
+    },
+    {
+      "kind": "F",
+      "value": 1.43,
+      "value_decimals": 2,
+      "df1": 2.0,
+      "df2": 301.0,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.242,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "F(2, 301) = 1.43, p = .242",
+      "page": 9,
+      "sentence": "A oneway analysis of variance (ANOVA) revealed a nonsignificant difference in ΔRMET: mean ΔRMET (SD) was -0.65 (2.34), -0.86 (2.40), and -0.30 (2.49) in the control, literary fiction, and nonfiction conditions, respectively, F(2, 301) = 1.43, p = .242, η2 = .009.",
+      "pos": 631,
+      "p_recomputed": 0.24093
+    },
+    {
+      "kind": "F",
+      "value": 1.47,
+      "value_decimals": 2,
+      "df1": 2.0,
+      "df2": 296.0,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.232,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "F(2, 296) = 1.47, p = .232",
+      "page": 9,
+      "sentence": "This 3 (condition) × 2 (gender) ANOVA with ΔRMET as the dependent variable again revealed a nonsignificant effect of condition, F(2, 296) = 1.47, p = .232, ηp 2 = .010.",
+      "pos": 1407,
+      "p_recomputed": 0.231599
+    },
+    {
+      "kind": "F",
+      "value": 0.001,
+      "value_decimals": 3,
+      "df1": 1.0,
+      "df2": 296.0,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.977,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "F(1, 296) = 0.001, p = .977",
+      "page": 9,
+      "sentence": "Although the effect of gender was not significant, F(1, 296) = 0.001, p = .977, ηp 2 < .001, we found an unexpected condition × gender interaction effect, F(2, 296) = 5.12, p = .004, ηp 2 = .036.",
+      "pos": 1499,
+      "p_recomputed": 0.974794
+    },
+    {
+      "kind": "F",
+      "value": 5.12,
+      "value_decimals": 2,
+      "df1": 2.0,
+      "df2": 296.0,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.004,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "F(2, 296) = 5.12, p = .004",
+      "page": 9,
+      "sentence": "Although the effect of gender was not significant, F(1, 296) = 0.001, p = .977, ηp 2 < .001, we found an unexpected condition × gender interaction effect, F(2, 296) = 5.12, p = .004, ηp 2 = .036.",
+      "pos": 1603,
+      "p_recomputed": 0.006516
+    },
+    {
+      "kind": "t",
+      "value": -2.8,
+      "value_decimals": 2,
+      "df1": 100.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.006,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "t(100) = -2.80, p = .006",
+      "page": 10,
+      "sentence": "A series of one-sample t-tests indicated that ΔRMET was significantly lower than zero in the control and literary fiction conditions: t(100) = -2.80, p = .006 and -0.86 (2.40), t(101) = -3.62, p < .001 in the control and literary fiction conditions, respectively; ΔRMET was also negative but not significantly different from zero in the nonfiction condition: t(100) = -1.20, p = .234.",
+      "pos": 867,
+      "p_recomputed": 0.006134
+    },
+    {
+      "kind": "t",
+      "value": -3.62,
+      "value_decimals": 2,
+      "df1": 101.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.001,
+      "p_comparator": "<",
+      "p_decimals": 3,
+      "raw": "t(101) = -3.62, p < .001",
+      "page": 10,
+      "sentence": "A series of one-sample t-tests indicated that ΔRMET was significantly lower than zero in the control and literary fiction conditions: t(100) = -2.80, p = .006 and -0.86 (2.40), t(101) = -3.62, p < .001 in the control and literary fiction conditions, respectively; ΔRMET was also negative but not significantly different from zero in the nonfiction condition: t(100) = -1.20, p = .234.",
+      "pos": 910,
+      "p_recomputed": 0.000462
+    },
+    {
+      "kind": "t",
+      "value": -1.2,
+      "value_decimals": 2,
+      "df1": 100.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.234,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "t(100) = -1.20, p = .234",
+      "page": 10,
+      "sentence": "A series of one-sample t-tests indicated that ΔRMET was significantly lower than zero in the control and literary fiction conditions: t(100) = -2.80, p = .006 and -0.86 (2.40), t(101) = -3.62, p < .001 in the control and literary fiction conditions, respectively; ΔRMET was also negative but not significantly different from zero in the nonfiction condition: t(100) = -1.20, p = .234.",
+      "pos": 1092,
+      "p_recomputed": 0.232975
+    },
+    {
+      "kind": "F",
+      "value": 0.93,
+      "value_decimals": 2,
+      "df1": 2.0,
+      "df2": 301.0,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.398,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "F(2, 301) = 0.93, p = 0.398",
+      "page": 10,
+      "sentence": ".... However, the RMET-B score did not significantly vary across the three conditions: 12.50 (SD = 2.19), 12.67 (2.02), and 12.91 (2.18) in the control, fiction, and nonfiction conditions, respectively, F(2, 301) = 0.93, p = 0.398, η2 = .006....",
+      "pos": 1495,
+      "p_recomputed": 0.395684
+    },
+    {
+      "kind": "t",
+      "value": -2.36,
+      "value_decimals": 2,
+      "df1": 99.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.02,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "t(99) = -2.36, p = .020",
+      "page": 10,
+      "sentence": "This new data, collected in 2019, showed a significant decrease in the RMET score even though there was no reading or calculation task between RMET-A and RMET-B: mean ΔRMET (SD) was -0.52 (2.20), t(99) = -2.36, p = .020.",
+      "pos": 2113,
+      "p_recomputed": 0.020236
+    },
+    {
+      "kind": "F",
+      "value": 1.02,
+      "value_decimals": 2,
+      "df1": 3.0,
+      "df2": 400.0,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.382,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "F(3, 400) = 1.02, p = .382",
+      "page": 10,
+      "sentence": "When the new data were combined with the original Study 2 data, there was no significant effect of the four conditions (i.e., original \"calculation\" control, new \"no task\" control, literary fiction, and nonfiction conditions) on ΔRMET: F(3, 400) = 1.02, p = .382, η2 = .008.",
+      "pos": 2374,
+      "p_recomputed": 0.383653
+    },
+    {
+      "kind": "r",
+      "value": 0.09,
+      "value_decimals": 2,
+      "df1": 378.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.094,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "r(378) = .09, p = .094",
+      "page": 10,
+      "sentence": "Even FS was not significantly correlated with fiction reading time, r(378) = .09, p = .094.",
+      "pos": 3091,
+      "p_recomputed": 0.079739
+    },
+    {
+      "kind": "r",
+      "value": 0.15,
+      "value_decimals": 2,
+      "df1": 286.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.037,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "r(286) = .15, p = .037",
+      "page": 10,
+      "sentence": "...ified as \"fiction.\" Although this is mere speculation, it should be noted that once the literary fiction condition was removed, the correlation between fiction reading time and FS became significant, r(286) = .15, p = .037....",
+      "pos": 3620,
+      "p_recomputed": 0.010805
+    },
+    {
+      "kind": "r",
+      "value": 0.16,
+      "value_decimals": 2,
+      "df1": 378.0,
+      "df2": null,
+      "n": null,
+      "value_comparator": "=",
+      "p_reported": 0.002,
+      "p_comparator": "=",
+      "p_decimals": 3,
+      "raw": "r(378) = .16, p = .002",
+      "page": 11,
+      "sentence": "We included a vocabulary test in Study 2 and found that fiction reading time was significantly correlated with the vocabulary test score, r(378) = .16, p = .002.",
+      "pos": 463,
+      "p_recomputed": 0.001755
+    }
+  ],
+  "means": [
+    {
+      "mean": 13.15,
+      "mean_text": "13.15",
+      "sd": 2.07,
+      "sd_text": "2.07",
+      "n": null,
+      "n_source": "",
+      "raw": "13.15 (SD = 2.07)",
+      "page": 9,
+      "sentence": "13.15 (SD = 2.07), 13.53 (1.89), and 13.20 (2.16) in the control, fiction, and nonfiction conditions, respectively, F(2, 301) = 1.05, p = 0.353, η2 = .007.",
+      "pos": 0
+    },
+    {
+      "mean": 12.5,
+      "mean_text": "12.50",
+      "sd": 2.19,
+      "sd_text": "2.19",
+      "n": null,
+      "n_source": "",
+      "raw": "12.50 (SD = 2.19)",
+      "page": 10,
+      "sentence": "...ain hypothesis (i.e., exposure to literary fiction increases the RMET score) using the RMET-B score instead of ΔRMET. However, the RMET-B score did not significantly vary across the three conditions: 12.50 (SD = 2.19), 12.67 (2.02), and 12.91 (2.18) in the control, fiction, and nonfiction conditions, respectively, F(2, 301) = 0.93, p = 0.398, η2 = .006....",
+      "pos": 1379
+    }
+  ],
+  "sample_sizes": [
+    {
+      "n": 338,
+      "page": 1,
+      "raw": "338 Japanese undergraduates",
+      "kind": "count noun"
+    },
+    {
+      "n": 304,
+      "page": 1,
+      "raw": "304 Japanese undergraduates",
+      "kind": "count noun"
+    },
+    {
+      "n": 338,
+      "page": 3,
+      "raw": "338 undergraduate students",
+      "kind": "count noun"
+    },
+    {
+      "n": 187,
+      "page": 3,
+      "raw": "187 women",
+      "kind": "count noun"
+    },
+    {
+      "n": 143,
+      "page": 3,
+      "raw": "143 men",
+      "kind": "count noun"
+    },
+    {
+      "n": 300,
+      "page": 3,
+      "raw": "300 participants",
+      "kind": "count noun"
+    },
+    {
+      "n": 100,
+      "page": 3,
+      "raw": "100 more participants",
+      "kind": "count noun"
+    },
+    {
+      "n": 100,
+      "page": 7,
+      "raw": "100 participants",
+      "kind": "count noun"
+    },
+    {
+      "n": 100,
+      "page": 7,
+      "raw": "100 participants",
+      "kind": "count noun"
+    },
+    {
+      "n": 304,
+      "page": 7,
+      "raw": "304 undergraduate students",
+      "kind": "count noun"
+    },
+    {
+      "n": 154,
+      "page": 7,
+      "raw": "154 women",
+      "kind": "count noun"
+    },
+    {
+      "n": 148,
+      "page": 7,
+      "raw": "148 men",
+      "kind": "count noun"
+    },
+    {
+      "n": 2,
+      "page": 8,
+      "raw": "2 participants",
+      "kind": "count noun"
+    },
+    {
+      "n": 100,
+      "page": 10,
+      "raw": "100 participants",
+      "kind": "count noun"
+    },
+    {
+      "n": 52,
+      "page": 10,
+      "raw": "52 women",
+      "kind": "count noun"
+    },
+    {
+      "n": 47,
+      "page": 10,
+      "raw": "47 men",
+      "kind": "count noun"
+    },
+    {
+      "n": 100,
+      "page": 10,
+      "raw": "100 participants",
+      "kind": "count noun"
+    }
+  ],
+  "disclaimer": "This report lists places where a value reported in the paper differs from the value recomputed from other reported numbers. A difference is not evidence of misconduct. Common benign causes are rounding, typos, one-tailed tests, corrections for multiple comparisons, adjusted degrees of freedom, non-integer scales (which make GRIM and GRIMMER inapplicable) and PDF text-extraction errors. Each flag should be read in the paper before drawing any conclusion."
+}

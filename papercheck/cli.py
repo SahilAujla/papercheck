@@ -9,13 +9,17 @@ from .checks import run_all
 from .extract import extract_means, extract_sample_sizes, extract_stats
 from .pdf import load_pdf, load_text
 from .report import build_payload, to_json, to_markdown
+from .tables import load_tables, means_from_tables
 
 
 def analyze(path: str, items: int = 1) -> dict:
     p = Path(path)
-    pages = load_text(p.read_text(errors="replace")) if p.suffix.lower() in (".txt", ".md") else load_pdf(str(p))
+    is_text = p.suffix.lower() in (".txt", ".md")
+    pages = load_text(p.read_text(errors="replace")) if is_text else load_pdf(str(p))
     stats = extract_stats(pages)
     means = extract_means(pages)
+    if not is_text:
+        means.extend(means_from_tables(load_tables(str(p))))
     sizes = extract_sample_sizes(pages)
     flags = run_all(stats, means, sizes, items=items)
     return build_payload(p.name, stats, means, sizes, flags, len(pages))
