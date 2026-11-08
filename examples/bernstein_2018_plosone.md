@@ -9,47 +9,16 @@ Generated 2026-11-08 with papercheck 0.1.0. 21 pages, 16 test statistics with p 
 | p value recomputation (statcheck style) | 16 | 0 | 0 | 0 |
 | GRIM (means of integer data) | 0 | 0 | 0 | 0 |
 | GRIMMER (SDs of integer data) | 0 | 0 | 0 | 0 |
-| Degrees of freedom vs reported N | 16 | 0 | 4 | 0 |
+| Degrees of freedom vs reported N | 16 | 0 | 0 | 0 |
 | Duplicated statistics | 16 | 0 | 0 | 0 |
 
-Total flags: 4 (errors 0, warnings 4, info 0).
+Total flags: 0 (errors 0, warnings 0, info 0).
 
 Severity: an error is a reported vs recomputed p value on different sides of .05 (the conclusion about significance would change). A warning is a numeric inconsistency that does not change the decision, or a GRIM failure. Info items are worth a look but have common benign explanations.
 
 ## Flagged items
 
-### 1. [WARNING] Degrees of freedom vs reported N, page 13
-
-Reported: `t(233) = 16.64, p < .001`
-
-Sentence: "This revealed a significant difference, t(233) = 16.64, p < .001, d = 2.16."
-
-The degrees of freedom in t(233) = 16.64 imply at least 234 participants under the usual design, but the largest sample size mentioned in the paper is 146. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.
-
-### 2. [WARNING] Degrees of freedom vs reported N, page 13
-
-Reported: `t (233) = 6.48, p < .001`
-
-Sentence: "This too revealed a significant effect, t (233) = 6.48, p < .001, d = .84."
-
-The degrees of freedom in t(233) = 6.48 imply at least 234 participants under the usual design, but the largest sample size mentioned in the paper is 146. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.
-
-### 3. [WARNING] Degrees of freedom vs reported N, page 13
-
-Reported: `t(223) = 3.08, p = .002`
-
-Sentence: "Again, an independent sample t-test revealed a significant difference between the two conditions in terms of our desire to affiliate composite measure (α = .83), t(223) = 3.08, p = .002, d = .40."
-
-The degrees of freedom in t(223) = 3.08 imply at least 224 participants under the usual design, but the largest sample size mentioned in the paper is 146. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.
-
-### 4. [WARNING] Degrees of freedom vs reported N, page 14
-
-Reported: `t(223) = 6.27, p < .001`
-
-Sentence: "An independent sample t-test on the composite empathy measure (α = .94) revealed the predicted difference between the two conditions, t(223) = 6.27, p < .001, d = 1.37."
-
-The degrees of freedom in t(223) = 6.27 imply at least 224 participants under the usual design, but the largest sample size mentioned in the paper is 146. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.
-
+No inconsistencies found by the automated checks.
 ## All extracted test statistics
 
 | Page | Statistic | Reported p | Recomputed p | Status |

@@ -30,7 +30,7 @@ uv pip install --python .venv/bin/python -e ".[dev]"   # or: .venv/bin/pip insta
 .venv/bin/papercheck path/to/paper.pdf --out reports/
 .venv/bin/papercheck data/*.pdf --out reports/            # several papers at once
 .venv/bin/papercheck paper.pdf --items 3                  # GRIM for 3-item averaged scales
-.venv/bin/python -m pytest -q                             # 53 tests
+.venv/bin/python -m pytest -q                             # 55 tests
 ```
 
 `.txt` files are accepted as well as PDFs (handy for tests and for text you have cleaned by hand).

@@ -76,3 +76,24 @@ def test_sentence_at_picks_containing_sentence():
 def test_no_false_z_from_words():
     stats = extract_stats(load_text("The Hz = 2.5, p = .03 setting was used."))
     assert stats == []
+
+
+def test_spelled_out_sample_sizes_and_word_numbers():
+    from papercheck.extract import words_to_int
+    assert words_to_int("Two-hundred and thirty-five") == 235
+    assert words_to_int("One-hundred and nineteen") == 119
+    assert words_to_int("forty") == 40
+    assert words_to_int("two thousand") == 2000
+    assert words_to_int("the") is None
+    txt = "Two-hundred and thirty-five (126 Female; MAge = 32.1) participated. Forty students took part."
+    found = extract_sample_sizes(load_text(txt))
+    assert {d["n"] for d in found if d["kind"] == "spelled out"} >= {235, 40}
+    assert 40 in {d["n"] for d in found}
+
+
+def test_means_without_comma_and_paren_sd():
+    txt = ("Participants (N = 357) did the task. The treatment group (M = 10.51 SD = 2.66) did not differ. "
+           "Their mean age was 33.18 (SD = 9.88).")
+    means = extract_means(load_text(txt))
+    assert [(m.mean, m.sd) for m in means] == [(10.51, 2.66), (33.18, 9.88)]
+    assert all(m.n == 357 for m in means)

@@ -5,15 +5,15 @@
   "date": "2026-11-08",
   "summary": {
     "statistics_extracted": 26,
-    "means_extracted": 17,
-    "means_with_n": 0,
+    "means_extracted": 22,
+    "means_with_n": 11,
     "flags_total": 0,
     "flags_by_severity": {},
     "flags_by_check": {},
     "examined": {
       "p_recompute": 26,
-      "grim": 0,
-      "grimmer": 0,
+      "grim": 11,
+      "grimmer": 11,
       "df_vs_n": 26,
       "duplicate": 26
     }
@@ -465,13 +465,25 @@
   ],
   "means": [
     {
+      "mean": 33.18,
+      "mean_text": "33.18",
+      "sd": 9.88,
+      "sd_text": "9.88",
+      "n": 357,
+      "n_source": "nearest preceding N on the page",
+      "raw": "33.18 (SD = 9.88)",
+      "page": 4,
+      "sentence": "Their mean age was 33.18 (SD = 9.88) and 44.5% of them were women.",
+      "pos": 182
+    },
+    {
       "mean": 10.51,
       "mean_text": "10.51",
-      "sd": null,
-      "sd_text": null,
-      "n": null,
-      "n_source": "",
-      "raw": "M = 10.51",
+      "sd": 2.66,
+      "sd_text": "2.66",
+      "n": 123,
+      "n_source": "nearest preceding N on the page",
+      "raw": "M = 10.51 SD = 2.66",
       "page": 4,
       "sentence": "The relevant analyses revealed that participants in the treatment groups (M = 10.51 SD = 2.66) did not perform better than participants in the control group (M = 10.31 SD = 2.52), t(355) = 0.69, p = .49.",
       "pos": 3026
@@ -479,22 +491,46 @@
     {
       "mean": 10.31,
       "mean_text": "10.31",
-      "sd": null,
-      "sd_text": null,
-      "n": null,
-      "n_source": "",
-      "raw": "M = 10.31",
+      "sd": 2.52,
+      "sd_text": "2.52",
+      "n": 123,
+      "n_source": "nearest preceding N on the page",
+      "raw": "M = 10.31 SD = 2.52",
       "page": 4,
       "sentence": "The relevant analyses revealed that participants in the treatment groups (M = 10.51 SD = 2.66) did not perform better than participants in the control group (M = 10.31 SD = 2.52), t(355) = 0.69, p = .49.",
       "pos": 3110
+    },
+    {
+      "mean": 35.56,
+      "mean_text": "35.56",
+      "sd": 11.17,
+      "sd_text": "11.17",
+      "n": 363,
+      "n_source": "nearest preceding N on the page",
+      "raw": "35.56 (SD = 11.17)",
+      "page": 5,
+      "sentence": "The mean age of the participants was 35.56 (SD = 11.17) and 51% of them were women.",
+      "pos": 2377
+    },
+    {
+      "mean": 37.25,
+      "mean_text": "37.25",
+      "sd": 12.91,
+      "sd_text": "12.91",
+      "n": 222,
+      "n_source": "nearest preceding N on the page",
+      "raw": "37.25 (SD = 12.91)",
+      "page": 7,
+      "sentence": "The mean age of the participants was 37.25 (SD = 12.91) and 50% of them were women.",
+      "pos": 712
     },
     {
       "mean": -2.04,
       "mean_text": "-2.04",
       "sd": 2.04,
       "sd_text": "2.04",
-      "n": null,
-      "n_source": "",
+      "n": 113,
+      "n_source": "nearest preceding N on the page",
       "raw": "M = -2.04, SD = 2.04",
       "page": 7,
       "sentence": "On the same scales reported above, t-test analyses yielded that winners reported (a) higher levels of elation (M = +2.83, SD = 1.94) than losers (M = -2.04, SD = 2.04), t(220) = 18.26, p < .001; (b) higher levels of happiness (M = +3.24, SD = 1.6) than losers (M = -1.89, SD = 1.95), t(220) = 21.39, p < .001; and (c) higher levels of satisfaction (M = +3.06, SD = 1.88) than losers (M = -1.72, SD =...",
@@ -505,8 +541,8 @@
       "mean_text": "-1.89",
       "sd": 1.95,
       "sd_text": "1.95",
-      "n": null,
-      "n_source": "",
+      "n": 113,
+      "n_source": "nearest preceding N on the page",
       "raw": "M = -1.89, SD = 1.95",
       "page": 7,
       "sentence": "...at winners reported (a) higher levels of elation (M = +2.83, SD = 1.94) than losers (M = -2.04, SD = 2.04), t(220) = 18.26, p < .001; (b) higher levels of happiness (M = +3.24, SD = 1.6) than losers (M = -1.89, SD = 1.95), t(220) = 21.39, p < .001; and (c) higher levels of satisfaction (M = +3.06, SD = 1.88) than losers (M = -1.72, SD = 2.03), t(220) = 18.17, p < .001)....",
@@ -517,12 +553,24 @@
       "mean_text": "-1.72",
       "sd": 2.03,
       "sd_text": "2.03",
-      "n": null,
-      "n_source": "",
+      "n": 113,
+      "n_source": "nearest preceding N on the page",
       "raw": "M = -1.72, SD = 2.03",
       "page": 7,
       "sentence": "...p < .001; (b) higher levels of happiness (M = +3.24, SD = 1.6) than losers (M = -1.89, SD = 1.95), t(220) = 21.39, p < .001; and (c) higher levels of satisfaction (M = +3.06, SD = 1.88) than losers (M = -1.72, SD = 2.03), t(220) = 18.17, p < .001)....",
       "pos": 3810
+    },
+    {
+      "mean": 33.98,
+      "mean_text": "33.98",
+      "sd": 9.96,
+      "sd_text": "9.96",
+      "n": 369,
+      "n_source": "nearest preceding N on the page",
+      "raw": "33.98 (SD = 9.96)",
+      "page": 8,
+      "sentence": "Their mean age was 33.98 (SD = 9.96) and 42.5% of them were women.",
+      "pos": 1289
     },
     {
       "mean": 9.89,
@@ -585,12 +633,24 @@
       "pos": 1692
     },
     {
+      "mean": 37.64,
+      "mean_text": "37.64",
+      "sd": 12.27,
+      "sd_text": "12.27",
+      "n": 440,
+      "n_source": "nearest preceding N on the page",
+      "raw": "37.64 (SD = 12.27)",
+      "page": 10,
+      "sentence": "Their mean age was 37.64 (SD = 12.27) and 52.7% of them were women (thirteen participants did not report their gender).",
+      "pos": 1371
+    },
+    {
       "mean": 7.44,
       "mean_text": "7.44",
       "sd": 2.28,
       "sd_text": "2.28",
-      "n": null,
-      "n_source": "",
+      "n": 440,
+      "n_source": "nearest preceding N on the page",
       "raw": "M = 7.44, SD = 2.28",
       "page": 10,
       "sentence": "The competition check questions, to which participants in the treatment groups responded, showed that they wanted to win the game (M = 7.44, SD = 2.28), PLOS ONE Contest participation & subsequent prosocial behavior PLOS ONE | https://doi.org/10.1371/journal.pone.0240712 November 3, 2020 10 / 16",
@@ -670,6 +730,24 @@
     }
   ],
   "sample_sizes": [
+    {
+      "n": 4,
+      "page": 2,
+      "raw": "four",
+      "kind": "spelled out"
+    },
+    {
+      "n": 4,
+      "page": 2,
+      "raw": "four",
+      "kind": "spelled out"
+    },
+    {
+      "n": 2,
+      "page": 2,
+      "raw": "two",
+      "kind": "spelled out"
+    },
     {
       "n": 357,
       "page": 4,
@@ -765,6 +843,12 @@
       "page": 10,
       "raw": "N = 440",
       "kind": "N ="
+    },
+    {
+      "n": 13,
+      "page": 10,
+      "raw": "thirteen",
+      "kind": "spelled out"
     }
   ],
   "disclaimer": "This report lists places where a value reported in the paper differs from the value recomputed from other reported numbers. A difference is not evidence of misconduct. Common benign causes are rounding, typos, one-tailed tests, corrections for multiple comparisons, adjusted degrees of freedom, non-integer scales (which make GRIM and GRIMMER inapplicable) and PDF text-extraction errors. Each flag should be read in the paper before drawing any conclusion."

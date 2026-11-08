@@ -1,14 +1,14 @@
 # papercheck report: moyal_2020_plosone.pdf
 
-Generated 2026-11-08 with papercheck 0.1.0. 16 pages, 26 test statistics with p values, 17 reported means (0 with an N in the same sentence).
+Generated 2026-11-08 with papercheck 0.1.0. 16 pages, 26 test statistics with p values, 22 reported means (11 with an N in the same sentence).
 
 ## Summary
 
 | Check | Items examined | Errors | Warnings | Info |
 |---|---:|---:|---:|---:|
 | p value recomputation (statcheck style) | 26 | 0 | 0 | 0 |
-| GRIM (means of integer data) | 0 | 0 | 0 | 0 |
-| GRIMMER (SDs of integer data) | 0 | 0 | 0 | 0 |
+| GRIM (means of integer data) | 11 | 0 | 0 | 0 |
+| GRIMMER (SDs of integer data) | 11 | 0 | 0 | 0 |
 | Degrees of freedom vs reported N | 26 | 0 | 0 | 0 |
 | Duplicated statistics | 26 | 0 | 0 | 0 |
 

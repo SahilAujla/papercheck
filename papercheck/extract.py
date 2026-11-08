@@ -34,8 +34,17 @@ Z_RE = re.compile(
 
 MEAN_RE = re.compile(
     r"\b(?:M|Mean|mean)\s*=\s*(?P<mean>" + NUM + r")"
-    r"(?:\s*[,;]\s*(?:SD|S\.D\.|sd)\s*=\s*(?P<sd>" + NUM + r"))?"
-    r"(?:\s*[,;]\s*[nN]\s*=\s*(?P<n>\d[\d,]*))?")
+    r"(?:\s*[,;]?\s*(?:SD|S\.D\.|sd)\s*=\s*(?P<sd>" + NUM + r"))?"
+    r"(?:\s*[,;]?\s*[nN]\s*=\s*(?P<n>\d[\d,]*))?")
+# "33.18 (SD = 9.88)" style
+MEAN_PAREN_RE = re.compile(r"(?<![\d.\-=])(?P<mean>\d{1,4}\.\d{1,3})\s*\(\s*SD\s*=\s*(?P<sd>" + NUM + r")\s*\)")
+_ONES = {w: i for i, w in enumerate("zero one two three four five six seven eight nine ten eleven twelve thirteen "
+                                    "fourteen fifteen sixteen seventeen eighteen nineteen".split())}
+_TENS = {w: i * 10 for i, w in enumerate("_ _ twenty thirty forty fifty sixty seventy eighty ninety".split()) if w != "_"}
+_WORDNUM = r"(?:(?:" + "|".join(list(_ONES) + list(_TENS)) + r"|hundred|thousand|and)[\s-]*){1,6}"
+WORDNUM_RE = re.compile(r"\b(?P<w>" + _WORDNUM + r")(?=\s*(?:\(|participants|students|respondents|subjects|"
+                        r"undergraduates|adults|children|individuals|people|volunteers|patients|women|men|"
+                        r"workers|employees|MTurk|Mechanical))", re.IGNORECASE)
 # "3.42 (1.10)" style cells, only used when the surrounding text announces an M (SD) layout
 CELL_RE = re.compile(r"(?<![\d.\-])(?P<mean>\d{1,3}\.\d{1,2})\s*\(\s*(?P<sd>\d{1,3}\.\d{1,2})\s*\)(?![\d.%])")
 N_RE = re.compile(r"\b[nN]\s*=\s*(?P<n>\d[\d,]*)")
@@ -133,6 +142,14 @@ def extract_means(pages: Iterable[Page]) -> list[MeanSD]:
                               sd_text=gd["sd"].strip() if gd.get("sd") else None, n=n, n_source=n_source,
                               raw=re.sub(r"\s+", " ", m.group(0)).strip(), page=page.number,
                               sentence=sent, pos=m.start()))
+        for m in MEAN_PAREN_RE.finditer(page.text):
+            sent = sentence_at(page.text, m.start())
+            n, n_source = _n_in_sentence(sent)
+            if n is None:
+                n, n_source = _n_preceding(page.text, m.start())
+            out.append(MeanSD(mean=_num(m["mean"]), mean_text=m["mean"], sd=_num(m["sd"]), sd_text=m["sd"].strip(),
+                              n=n, n_source=n_source, raw=re.sub(r"\s+", " ", m.group(0)).strip(), page=page.number,
+                              sentence=sent, pos=m.start()))
         if re.search(r"\bM\s*\(\s*SD\s*\)|Mean\s*\(\s*SD\s*\)|\bSD\s*in parentheses", page.text):
             for m in CELL_RE.finditer(page.text):
                 sent = sentence_at(page.text, m.start())
@@ -152,7 +169,7 @@ def _n_in_sentence(sent: str) -> tuple[Optional[int], str]:
     return None, ""
 
 
-def _n_preceding(text: str, pos: int, window: int = 2500) -> tuple[Optional[int], str]:
+def _n_preceding(text: str, pos: int, window: int = 50000) -> tuple[Optional[int], str]:
     """Nearest 'n = X' or 'N = X' before pos on the same page (lower confidence than the same sentence)."""
     last = None
     for m in N_RE.finditer(text, max(0, pos - window), pos):
@@ -177,4 +194,27 @@ def extract_sample_sizes(pages: Iterable[Page]) -> list[dict]:
             n = _int(m["n"])
             if n and 2 <= n <= 1_000_000:
                 found.append({"n": n, "page": page.number, "raw": m.group(0), "kind": "count noun"})
+        for m in WORDNUM_RE.finditer(page.text):
+            n = words_to_int(m["w"])
+            if n is not None and 2 <= n <= 100_000:
+                found.append({"n": n, "page": page.number, "raw": m.group(0).strip(), "kind": "spelled out"})
     return found
+
+
+def words_to_int(words: str) -> Optional[int]:
+    """'Two-hundred and thirty-five' -> 235. Returns None for phrases that are not numbers."""
+    total, current, seen = 0, 0, False
+    for w in re.split(r"[\s-]+", words.strip().lower()):
+        if not w or w == "and":
+            continue
+        if w in _ONES:
+            current += _ONES[w]; seen = True
+        elif w in _TENS:
+            current += _TENS[w]; seen = True
+        elif w == "hundred":
+            current = (current or 1) * 100; seen = True
+        elif w == "thousand":
+            total += (current or 1) * 1000; current = 0; seen = True
+        else:
+            return None
+    return total + current if seen else None

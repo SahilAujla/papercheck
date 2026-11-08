@@ -7,13 +7,9 @@
     "statistics_extracted": 16,
     "means_extracted": 35,
     "means_with_n": 0,
-    "flags_total": 4,
-    "flags_by_severity": {
-      "warning": 4
-    },
-    "flags_by_check": {
-      "df_vs_n": 4
-    },
+    "flags_total": 0,
+    "flags_by_severity": {},
+    "flags_by_check": {},
     "examined": {
       "p_recompute": 16,
       "grim": 0,
@@ -22,68 +18,7 @@
       "duplicate": 16
     }
   },
-  "flags": [
-    {
-      "check": "df_vs_n",
-      "severity": "warning",
-      "page": 13,
-      "sentence": "This revealed a significant difference, t(233) = 16.64, p < .001, d = 2.16.",
-      "raw": "t(233) = 16.64, p < .001",
-      "explanation": "The degrees of freedom in t(233) = 16.64 imply at least 234 participants under the usual design, but the largest sample size mentioned in the paper is 146. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
-      "details": {
-        "implied_n": [
-          234,
-          235
-        ],
-        "max_reported_n": 146
-      }
-    },
-    {
-      "check": "df_vs_n",
-      "severity": "warning",
-      "page": 13,
-      "sentence": "This too revealed a significant effect, t (233) = 6.48, p < .001, d = .84.",
-      "raw": "t (233) = 6.48, p < .001",
-      "explanation": "The degrees of freedom in t(233) = 6.48 imply at least 234 participants under the usual design, but the largest sample size mentioned in the paper is 146. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
-      "details": {
-        "implied_n": [
-          234,
-          235
-        ],
-        "max_reported_n": 146
-      }
-    },
-    {
-      "check": "df_vs_n",
-      "severity": "warning",
-      "page": 13,
-      "sentence": "Again, an independent sample t-test revealed a significant difference between the two conditions in terms of our desire to affiliate composite measure (α = .83), t(223) = 3.08, p = .002, d = .40.",
-      "raw": "t(223) = 3.08, p = .002",
-      "explanation": "The degrees of freedom in t(223) = 3.08 imply at least 224 participants under the usual design, but the largest sample size mentioned in the paper is 146. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
-      "details": {
-        "implied_n": [
-          224,
-          225
-        ],
-        "max_reported_n": 146
-      }
-    },
-    {
-      "check": "df_vs_n",
-      "severity": "warning",
-      "page": 14,
-      "sentence": "An independent sample t-test on the composite empathy measure (α = .94) revealed the predicted difference between the two conditions, t(223) = 6.27, p < .001, d = 1.37.",
-      "raw": "t(223) = 6.27, p < .001",
-      "explanation": "The degrees of freedom in t(223) = 6.27 imply at least 224 participants under the usual design, but the largest sample size mentioned in the paper is 146. Reported vs implied N differ; could be a repeated-measures design, trials as the unit of analysis, or a typo in the df.",
-      "details": {
-        "implied_n": [
-          224,
-          225
-        ],
-        "max_reported_n": 146
-      }
-    }
-  ],
+  "flags": [],
   "statistics": [
     {
       "kind": "t",
@@ -788,6 +723,18 @@
       "kind": "count noun"
     },
     {
+      "n": 119,
+      "page": 4,
+      "raw": "One-hundred and nineteen",
+      "kind": "spelled out"
+    },
+    {
+      "n": 3,
+      "page": 4,
+      "raw": "three",
+      "kind": "spelled out"
+    },
+    {
       "n": 3,
       "page": 6,
       "raw": "3 students",
@@ -798,6 +745,18 @@
       "page": 7,
       "raw": "128 participants",
       "kind": "count noun"
+    },
+    {
+      "n": 121,
+      "page": 7,
+      "raw": "One-hundred and twenty-one",
+      "kind": "spelled out"
+    },
+    {
+      "n": 3,
+      "page": 7,
+      "raw": "three",
+      "kind": "spelled out"
     },
     {
       "n": 128,
@@ -819,9 +778,27 @@
     },
     {
       "n": 146,
+      "page": 10,
+      "raw": "One-hundred and forty-six",
+      "kind": "spelled out"
+    },
+    {
+      "n": 3,
+      "page": 11,
+      "raw": "three",
+      "kind": "spelled out"
+    },
+    {
+      "n": 146,
       "page": 13,
       "raw": "146 participants",
       "kind": "count noun"
+    },
+    {
+      "n": 235,
+      "page": 13,
+      "raw": "Two-hundred and thirty-five",
+      "kind": "spelled out"
     }
   ],
   "disclaimer": "This report lists places where a value reported in the paper differs from the value recomputed from other reported numbers. A difference is not evidence of misconduct. Common benign causes are rounding, typos, one-tailed tests, corrections for multiple comparisons, adjusted degrees of freedom, non-integer scales (which make GRIM and GRIMMER inapplicable) and PDF text-extraction errors. Each flag should be read in the paper before drawing any conclusion."
