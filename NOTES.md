@@ -71,14 +71,17 @@ Working notes for the papercheck build (2026-11-08, 03:42 to 04:35 EST session).
   and one-tailed p with scipy from the printed statistic and df, searches the whole PDF for Bonferroni, Holm, FDR,
   Greenhouse-Geisser and one-tailed statements, gives rounding intervals, benign explanations, what would settle it, and
   closes with an explicit no-inference-about-conduct paragraph.
-- Outcome so far: 6 of 8 items confirmed as reported vs recomputed discrepancies with the significance conclusion
+- Outcome: 8 of 8 items confirmed (6 at the time this paragraph was first written) as reported vs recomputed discrepancies with the significance conclusion
   unchanged in every case. No stated correction or one-tailed test explains any of them. Three (michelkrohler) are one
   unit in the last decimal, consistent with truncating software output; gill's p = .001 vs .0068 and urschler's
   .073 vs .105 and .427 vs .357 look like transcription slips from ANOVA tables; neighbouring tests in the same
   sentences recompute correctly.
-- Items 8 and 9 (takahashi 2023, the r(286) = .15, p = .037 item among them) were still being verified by a sub-agent at
-  04:25 EST; the SUMMARY row says so. If a `docs/findings/takahashi_2023_plosone.md` file exists, it landed after this
-  note was written and its conclusion should be copied into the SUMMARY row.
+- Items 8 and 9 (takahashi 2023, `docs/findings/takahashi_2023_plosone.md`) landed at 04:22 EST: both confirmed
+  discrepancies, conclusions unchanged. Item 8 is informative: the reported eta-p2 = .036 agrees with an F of about
+  5.5 and with the reported p = .004, so the printed F = 5.12 is the value that does not fit. Item 9: r(286) = .15 gives
+  p = .011, not .037; the df matches the described sample, so r or p is the misprint. Final tally: 8 of 8 items are
+  reported vs recomputed discrepancies with no stated correction or one-tailed test explaining them, and none changes a
+  significance conclusion.
 - `examples/SUMMARY.md` has a Hand-verified column; `docs/outreach.md` now links https://github.com/SahilAujla/papercheck
   and says the repo is private until Sahil makes it public.
 - Caveat: all verification was done by agents on the same model family as the extractor; a second human read of each
@@ -90,7 +93,6 @@ Working notes for the papercheck build (2026-11-08, 03:42 to 04:35 EST session).
   the downgrade should also look at the page or the Methods section, or detect df2 as a multiple of N - 1.
 - The unverifiable list is long; group it per page in the report or make it opt-in (`--unverifiable`).
 - Regression check has no real-paper hit yet; needs a paper with `b = x, SE = y, p = z` text to validate.
-- Items 8 and 9 of the triage may still need their finding file (see Round 3).
 
 ## Half done or known gaps
 

@@ -16,7 +16,7 @@ the GRIM and GRIMMER checks could use.
 | makanju_2024 | 34 | 28 | 31 (7) | 0 | 1 | 19 | no items in the true-inconsistency list (warnings here are df vs N, CI or triaged as likely benign) |
 | michelkrohler_2023 | 34 | 86 | 458 (7) | 0 | 6 | 24 | yes, docs/findings/michelkrohler_2023_plosone.md and -item7.md: items 4, 5, 7 confirmed as one-unit-in-the-last-place differences (.12 vs .126, .03 vs .035, .11 vs .102), consistent with truncation; conclusions unchanged |
 | moyal_2020 | 16 | 26 | 22 (11) | 0 | 0 | 1 | no items in the true-inconsistency list (warnings here are df vs N, CI or triaged as likely benign) |
-| takahashi_2023 | 16 | 23 | 35 (0) | 0 | 4 | 4 | pending: items 8 and 9 were still being verified at 04:25 EST |
+| takahashi_2023 | 16 | 23 | 35 (0) | 0 | 4 | 4 | yes, docs/findings/takahashi_2023_plosone.md: items 8 and 9 confirmed (F(2, 296) = 5.12, p = .004 vs recomputed .0065, where the reported eta-p2 = .036 matches F about 5.5 so F is the odd value out; r(286) = .15, p = .037 vs .011), two-sided testing stated, no correction; conclusions unchanged |
 | takayama_2023 | 22 | 18 | 52 (0) | 0 | 9 | 27 | no items in the true-inconsistency list (warnings here are df vs N, CI or triaged as likely benign) |
 | urschler_2024 | 17 | 25 | 18 (0) | 0 | 6 | 2 | yes, docs/findings/urschler_2024_plosone.md: items 12 and 14 confirmed (p = .073 vs recomputed .105; p = .427 vs .357), no correction or one-tailed test stated, conclusions unchanged |
 | yan_2018 | 24 | 30 | 59 (11) | 0 | 1 | 41 | yes, docs/findings/yan-2018.md |
